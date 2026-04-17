@@ -1,0 +1,168 @@
+
+/* Colores personalizados */
+
+.navbar-custom {
+    background-color: #e6d3c3;
+    color: #5e4633;
+    top: 40px;
+  }
+  /* Navbar */
+.navbar {
+    background-color: #1c1c1c !important;
+}
+
+/* Offcanvas */
+.offcanvas {
+    background-color: #2c2c2c;
+}
+
+/* Links */
+.nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+  .offcanvas-custom {
+    background-color: #e6d3c3;
+    color: #5e4633;
+  }
+  
+  
+  /* Logo */
+  .logo-link {
+    margin-left: 80px;
+  }
+  .logo-img {
+    height: 60px;
+  }
+  
+  /* Íconos */
+  .icon-custom {
+    font-size: 1.2rem;
+  }
+
+  
+  .fixed-height {
+    height: 350px;
+    object-fit: contain;
+    
+          }
+  .pantalon-height {
+            height: 300px;
+            object-fit: contain;
+            
+                  }
+  
+  .tarjetas-height {
+            height: 340px; 
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+           
+          }      
+          
+          .card {
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+          }
+ .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+/* ===== Estilos personalizados para inputs del formulario de registro ===== */
+
+/* Estilo general del input date */
+input[type="date"].custom-date {
+  background-color: #fdf6f0; /* beige claro */
+  border: 1px solid #d6c5b5;
+  border-radius: 10px;
+  padding: 10px;
+  color: #5c4a3b;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Cambiar icono del calendario si es soportado por el navegador */
+input[type="date"].custom-date::-webkit-calendar-picker-indicator {
+  filter: invert(55%) sepia(10%) saturate(200%) hue-rotate(330deg) brightness(90%);
+  cursor: pointer;
+}
+
+/* Estilo para el span con icono en el input-group de fecha */
+.date-input-group .input-group-text {
+  background-color: #f8ece2;
+  border: 1px solid #d6c5b5;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  color: #5c4a3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajuste para que el input encaje perfectamente con el icono */
+.date-input-group .form-control.custom-date {
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+}
+
+/* Estilo adicional para que todo el form luzca armónico */
+.tab-pane form .input-group .form-control {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffdfb;
+  border-radius: 10px;
+}
+
+.tab-pane form .input-group-text {
+  background-color: #f3e6d8;
+  color: #5c4a3b;
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+}
+
+/* Botón personalizado para registro */
+.tab-pane form button[type="submit"] {
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* Colores suaves para el fondo del form (opcional) */
+.tab-pane.fade {
+  background-color: #fefaf5;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fdf7f0;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.btn-warning {
+    background-color: #ff9800;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e68900;
+}

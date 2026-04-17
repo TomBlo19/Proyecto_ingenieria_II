@@ -1,0 +1,57 @@
+/* Fondo general del sitio */
+body {
+    background-color: #f5efe6; /* Marrón muy claro */
+    color: #5e4633; /* Marrón oscuro para texto */
+  }
+  
+  /* Contenedor del formulario de contacto */
+  .contact-container {
+    background: #ffffff; /* Blanco para contraste */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Cuando el usuario hace foco en los campos del formulario */
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #d8bfa3; /* Marrón medio claro */
+  }
+  
+  /* Botón personalizado */
+  .btn-custom {
+    background-color: #e6d3c3; /* Marrón base */
+    border: none;
+    color: #ffffff;
+  }
+  
+  .btn-custom:hover {
+    background-color: #d8bfa3; /* Un poco más oscuro al pasar el mouse */
+  }
+  
+  /* Encabezado del sitio */
+  header {
+    background-color: #e6d3c3;
+  }
+  
+  header h1,
+  header p {
+    color: #fdf9f6; /* Casi blanco, para que destaque sobre el fondo */
+  }
+  
+  /* Íconos al lado de la info de contacto */
+  .info-box i {
+    color: #5e4633;
+    margin-right: 10px;
+  }
+  
+  /* Enlaces de redes sociales y del footer */
+  .social-icons a {
+    text-decoration: none;
+    color: #5e4633;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
