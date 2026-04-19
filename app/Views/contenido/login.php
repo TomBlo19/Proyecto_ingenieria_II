@@ -23,23 +23,23 @@ $mensaje = session()->getFlashdata('mensaje');
 
                 <h3 class="text-center mb-4">🔐 Iniciar sesión</h3>
 
-                <form>
+                    <form action="<?= base_url('/procesar-login') ?>" method="POST">
 
-                    <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" class="form-control">
-                    </div>
+                        <div class="mb-3">
+                            <label>Email</label>
+                            <input type="email" name="correo" class="form-control" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label>Contraseña</label>
-                        <input type="password" class="form-control">
-                    </div>
+                        <div class="mb-3">
+                            <label>Contraseña</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
 
-                    <div class="d-grid">
-                        <button class="btn btn-primary">Ingresar</button>
-                    </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                        </div>
 
-                </form>
+                    </form>
 
                 <p class="text-center mt-3">
                     ¿No tenés cuenta? 
