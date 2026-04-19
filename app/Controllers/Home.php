@@ -2,11 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\RecetaModel;
+
 class Home extends BaseController
 {
     public function index()
     {
-        // Cambiamos el welcome_message por tu pantalla de inicio
-        return view('contenido/home');
+        $model = new RecetaModel();
+
+        $data['recetas'] = $model->findAll();
+
+        return view('contenido/home', $data);
     }
 }

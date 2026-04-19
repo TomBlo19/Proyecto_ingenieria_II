@@ -25,31 +25,33 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link text-white" href="<?= base_url('categorias') ?>">Categorías</a>         
-         </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-white" href="<?= base_url('guardados') ?>">Guardados</a>        
-         </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-white" href="<?= base_url('crear-receta') ?>"> Nueva receta</a>
+            <a class="nav-link text-white" href="<?= base_url('categorias') ?>">Categorías</a>
           </li>
 
-          
+          <li class="nav-item">
+            <a class="nav-link text-white" href="<?= base_url('guardados') ?>">Guardados</a>
+          </li>
+
+          <?php if(session()->get('isLoggedIn')): ?>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="<?= base_url('crear-receta') ?>">Nueva receta</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-danger" href="<?= base_url('logout') ?>">Cerrar sesión</a>
+          </li>
+          <?php endif; ?>
 
         </ul>
       </div>
     </div>
 
-    
-
     <!-- LOGO -->
-    <a class="navbar-brand" href="<?= base_url() ?>">
+    <a class="navbar-brand fw-bold" href="<?= base_url() ?>">
       🍔 Cocineritos
     </a>
 
-    <!-- ICONOS -->
+    <!-- DERECHA -->
     <div class="d-flex align-items-center">
 
       <!-- Buscar -->
@@ -57,12 +59,23 @@
         <i class="bi bi-search"></i>
       </a>
 
-      <!-- Usuario -->
-      <a href="<?= base_url('login') ?>" class="btn btn-link text-white">
-    <i class="bi bi-person"></i>
-</a>
+      <?php if(session()->get('isLoggedIn')): ?>
 
-      
+        <span class="text-white me-2">
+          Hola <?= session()->get('nombre') ?>
+        </span>
+
+        <a href="<?= base_url('logout') ?>" class="btn btn-outline-light btn-sm">
+          Salir
+        </a>
+
+      <?php else: ?>
+
+        <a href="<?= base_url('login') ?>" class="btn btn-link text-white">
+          <i class="bi bi-person"></i>
+        </a>
+
+      <?php endif; ?>
 
     </div>
 

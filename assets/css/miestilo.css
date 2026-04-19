@@ -28,7 +28,11 @@
     background-color: #e6d3c3;
     color: #5e4633;
   }
-  
+  .receta-img{
+height:450px;
+object-fit:cover;
+border-radius:20px;
+}
   
   /* Logo */
   .logo-link {

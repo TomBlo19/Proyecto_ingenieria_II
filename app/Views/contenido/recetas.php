@@ -1,29 +1,47 @@
 <?= view('plantilla/header', ['titulo' => 'Recetas']) ?>
 <?= view('plantilla/navbar') ?>
 
-<div class="container mt-5 pt-5">
+<div class="container mt-5 pt-5 pb-5">
 
-    <h2 class="mb-4">📚 Todas las recetas</h2>
+    <div class="text-center mb-5" data-aos="fade-down">
+        <h1 class="fw-bold">📚 Todas las recetas</h1>
+        <p class="text-muted fs-5">Descubrí recetas creadas por la comunidad</p>
+    </div>
 
-    <div class="row">
+    <div class="row g-4">
 
-        <div class="col-md-4" data-aos="fade-up">
-            <div class="card shadow-sm">
-                <img src="https://via.placeholder.com/300" class="card-img-top">
-                <div class="card-body">
-                    <h5>Pizza</h5>
+        <?php foreach($recetas as $receta): ?>
+
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+
+            <a href="<?= base_url('receta/' . $receta['id_receta']) ?>"
+               style="text-decoration:none;color:inherit;">
+
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden h-100 receta-card">
+
+                    <img src="<?= base_url('assets/uploads/' . $receta['imagen_receta']) ?>"
+                         class="w-100"
+                         style="height:260px; object-fit:cover;">
+
+                    <div class="card-body p-4">
+
+                        <h4 class="fw-bold mb-2">
+                            <?= esc($receta['titulo_receta']) ?>
+                        </h4>
+
+                        <p class="text-muted mb-0">
+                            Ver receta completa 🍴
+                        </p>
+
+                    </div>
+
                 </div>
-            </div>
+
+            </a>
+
         </div>
 
-        <div class="col-md-4" data-aos="fade-up">
-            <div class="card shadow-sm">
-                <img src="https://via.placeholder.com/300" class="card-img-top">
-                <div class="card-body">
-                    <h5>Torta</h5>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
 
     </div>
 
