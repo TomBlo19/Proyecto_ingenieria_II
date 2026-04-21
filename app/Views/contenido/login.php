@@ -21,7 +21,7 @@ $mensaje = session()->getFlashdata('mensaje');
 
             <div class="card shadow p-4">
 
-                <h3 class="text-center mb-4">🔐 Iniciar sesión</h3>
+                <h3 class="text-center mb-4"><i class="bi bi-key"></i> Iniciar sesión</h3>
 
                     <form action="<?= base_url('/procesar-login') ?>" method="POST">
 

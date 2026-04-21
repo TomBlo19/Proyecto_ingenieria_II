@@ -4,7 +4,7 @@
 <div class="container mt-5 pt-5 pb-5">
 
     <div class="text-center mb-5" data-aos="fade-down">
-        <h1 class="fw-bold">📚 Todas las recetas</h1>
+        <h1 class="fw-bold"> <i class="bi bi-card-list"></i> Todas las recetas</h1>
         <p class="text-muted fs-5">Descubrí recetas creadas por la comunidad</p>
     </div>
 
@@ -30,7 +30,7 @@
                         </h4>
 
                         <p class="text-muted mb-0">
-                            Ver receta completa 🍴
+                            Ver receta completa 
                         </p>
 
                     </div>

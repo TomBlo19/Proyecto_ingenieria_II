@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-dark bg-dark">
+<nav id="navbarCocineritos" class="navbar fixed-top navbar-dark bg-dark">
   <div class="container-fluid">
 
     <!-- Botón menú -->
@@ -47,8 +47,13 @@
     </div>
 
     <!-- LOGO -->
-    <a class="navbar-brand fw-bold" href="<?= base_url() ?>">
-      🍔 Cocineritos
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="<?= base_url() ?>">
+      <img src="<?= base_url('assets/img/logo_cocineritos.png') ?>" 
+          alt="Logo Cocineritos" 
+          height="50" 
+          class="d-inline-block align-text-top me-2">
+      
+        Cocineritos
     </a>
 
     <!-- DERECHA -->

@@ -9,7 +9,7 @@
 
             <div class="card shadow-lg border-0 rounded-4 p-4">
 
-                <h2 class="text-center mb-4">🍔 Crear Receta</h2>
+                <h2 class="text-center mb-4"> <i class="bi bi-fork-knife"></i> Crear Receta</h2>
 
                 <?php if(session()->getFlashdata('mensaje')): ?>
                     <div class="alert alert-success text-center">
@@ -111,7 +111,7 @@
                     <!-- BOTÓN -->
                     <div class="d-grid">
                         <button type="submit" class="btn btn-warning fw-bold py-2">
-                            Guardar receta 🚀
+                            Guardar receta <i class="bi bi-rocket-takeoff"></i>
                         </button>
                     </div>
 

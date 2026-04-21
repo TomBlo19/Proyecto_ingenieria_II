@@ -9,7 +9,7 @@
 
             <div class="card shadow p-4">
 
-                <h3 class="text-center mb-4">📝 Crear cuenta</h3>
+                <h3 class="text-center mb-4"><i class="bi bi-envelope-at"></i> Crear cuenta</h3>
 
                 <form action="<?= base_url('/guardar-usuario') ?>" method="POST">
 
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-success">Registrarse 🚀</button>
+                        <button type="submit" class="btn btn-success">Registrarse </button>
                     </div>
 
                 </form>

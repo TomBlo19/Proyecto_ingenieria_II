@@ -16,13 +16,22 @@
     <!-- HERO -->
     <div class="bg-dark text-white rounded-4 p-5 shadow-lg mb-5" data-aos="fade-up">
 
-        <h1 class="fw-bold display-5 mb-3">
-            🍔 Bienvenido a Cocineritos
-        </h1>
+                <div class="text-center mb-5">
+            <img src="<?= base_url('assets/img/logo_cocineritos.png') ?>" 
+                alt="Logo Cocineritos" 
+                height="250" 
+                class="mb-3 d-block mx-auto">
 
-        <p class="fs-5 text-light mb-4">
+            <h1 class="fw-bold display-5">
+                Bienvenido a Cocineritos
+            </h1>
+
+            <p class="fs-5 text-light mb-4">
             Descubrí recetas increíbles creadas por la comunidad.
-        </p>
+            </p>
+
+        </div>
+
 
         <form action="<?= base_url('recetas') ?>">
             <div class="input-group input-group-lg">
@@ -30,7 +39,7 @@
                        class="form-control"
                        placeholder="Buscar recetas...">
                 <button class="btn btn-warning fw-bold">
-                    Buscar 🔎
+                    Buscar <i class="bi bi-search-heart"></i>
                 </button>
             </div>
         </form>
@@ -41,7 +50,7 @@
     <div class="mb-5">
 
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="fw-bold">🔥 Recetas destacadas</h2>
+            <h2 class="fw-bold"> <i class="bi bi-fire text-danger"></i> Recetas destacadas </h2>
             <a href="<?= base_url('recetas') ?>" class="btn btn-outline-dark rounded-pill">
                 Ver todas
             </a>
@@ -73,7 +82,7 @@
                             </p>
 
                             <span class="badge bg-success">
-                                👍 <?= $receta['cant_likes'] ?>
+                                <i class="bi bi-hand-thumbs-up"></i> <?= $receta['cant_likes'] ?>
                             </span>
 
                         </div>
@@ -95,7 +104,7 @@
 
         <div class="col-md-4" data-aos="fade-up">
             <div class="bg-white shadow rounded-4 p-4 h-100">
-                <h4 class="fw-bold mb-3">🏆 Más gustadas</h4>
+                <h4 class="fw-bold mb-3"> <i class="bi bi-trophy"> </i>  Más gustadas</h4>
                 <p class="text-muted mb-0">
                     Próximamente ranking automático por likes.
                 </p>
@@ -104,7 +113,7 @@
 
         <div class="col-md-4" data-aos="fade-up">
             <div class="bg-white shadow rounded-4 p-4 h-100">
-                <h4 class="fw-bold mb-3">🆕 Recién subidas</h4>
+                <h4 class="fw-bold mb-3"> <i class="bi bi-bell"></i> Recién subidas</h4>
                 <p class="text-muted mb-0">
                     Mostraremos las últimas recetas creadas.
                 </p>
@@ -113,7 +122,7 @@
 
         <div class="col-md-4" data-aos="fade-up">
             <div class="bg-white shadow rounded-4 p-4 h-100">
-                <h4 class="fw-bold mb-3">⭐ Mejor valoradas</h4>
+                <h4 class="fw-bold mb-3"> <i class="bi bi-star"></i> Mejor valoradas</h4>
                 <p class="text-muted mb-0">
                     Próximamente ranking con reseñas reales.
                 </p>

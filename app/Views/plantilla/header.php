@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <!-- Tu CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/css/miestilo.css') ?>">
+
+  <style>
+        #navbarCocineritos {
+            transition: transform 0.3s ease-in-out; /* Hace que el movimiento sea suave */
+        }
+        .nav-oculto {
+            transform: translateY(-100%); /* Lo empuja hacia arriba, fuera de la pantalla */
+        }
+    </style>
 </head>
  
    
