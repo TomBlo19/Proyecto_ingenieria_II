@@ -29,7 +29,6 @@ AOS.init({
         window.addEventListener("scroll", () => {
             let scrollActual = window.scrollY;
 
-            // Si bajamos y pasamos los 50px de margen superior
             if (scrollActual > ultimoScroll && scrollActual > 50) {
                 navbar.classList.add("nav-oculto"); // Esconde el navbar
             } else {

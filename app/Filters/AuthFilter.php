@@ -18,6 +18,6 @@ class AuthFilter implements FilterInterface
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // No hace falta hacer nada después de la petición
+        // no necesitamos hacer nada despues de la peticion
     }
 }

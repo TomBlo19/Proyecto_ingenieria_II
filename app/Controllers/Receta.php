@@ -27,12 +27,18 @@ class Receta extends BaseController
     return view('contenido/receta_detalle', $data);
 }
 
-    public function crear()
-    {
-        return view('contenido/crear_receta');
-    }
+  public function crear()
+{
+    $db = \Config\Database::connect();
 
- public function guardar()
+    $data['categorias'] = $db->table('categoria')->get()->getResultArray();
+
+    return view('contenido/crear_receta', $data);
+}
+
+public function guardarReceta()
+
+ // guarda la receta en la base de datos
 {
     if (!$this->validate([
 
@@ -76,9 +82,12 @@ class Receta extends BaseController
         ]
 
     ])) {
-        return view('contenido/crear_receta', [
-            'validation' => $this->validator
-        ]);
+        $db = \Config\Database::connect();
+
+$data['categorias'] = $db->table('categoria')->get()->getResultArray();
+$data['validation'] = $this->validator;
+
+return view('contenido/crear_receta', $data);
     }
 
     $model = new RecetaModel();
@@ -135,7 +144,7 @@ class Receta extends BaseController
         }
     }
 
-    session()->setFlashdata('mensaje', 'Receta creada correctamente 🍔');
+    session()->setFlashdata('mensaje', 'Receta creada correctamente ');
 
     return redirect()->to('/crear-receta');
 }
@@ -168,6 +177,7 @@ public function verCategoria($id)
 
     return view('contenido/recetas', $data);
 }
+
     public function guardados()
     {
         return view('contenido/guardados');

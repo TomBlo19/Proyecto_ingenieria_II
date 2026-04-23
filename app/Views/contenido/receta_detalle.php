@@ -18,7 +18,6 @@
 
         </div>
 
-        <!-- INFO -->
         <div class="col-lg-6" data-aos="fade-left">
 
             <div class="bg-white shadow-lg rounded-4 p-4">
@@ -35,7 +34,6 @@
                     <?= esc($receta['descripcion_receta']) ?>
                 </p>
 
-                <!-- INGREDIENTES -->
                 <h4 class="fw-bold mb-3"> <i class="bi bi-egg-fried"></i> Ingredientes</h4>
 
                 <div class="row g-2 mb-4">
@@ -50,7 +48,6 @@
 
                 </div>
 
-                <!-- BOTONES -->
                 <div class="d-flex gap-3 flex-wrap">
 
                     <button class="btn btn-success px-4 py-2 rounded-pill shadow">
@@ -69,7 +66,7 @@
 
     </div>
 
-    <!-- RESEÑAS -->
+    <!-- reseñas en la proxima entrega. -->
     <div class="mt-5" data-aos="fade-up">
 
         <div class="bg-white shadow rounded-4 p-4 text-center">

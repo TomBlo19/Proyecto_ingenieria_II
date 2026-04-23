@@ -9,6 +9,8 @@
 
             <div class="card shadow p-4">
 
+            <!-- ingresamos los datos y los guardamos en la base -->
+
                 <h3 class="text-center mb-4"><i class="bi bi-envelope-at"></i> Crear cuenta</h3>
 
                 <form action="<?= base_url('/guardar-usuario') ?>" method="POST">

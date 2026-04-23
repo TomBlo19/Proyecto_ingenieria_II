@@ -21,7 +21,7 @@
                       action="<?= base_url('guardar-receta') ?>"
                       enctype="multipart/form-data">
 
-                    <!-- TÍTULO -->
+                    <!-- agrega titulo -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Título</label>
 
@@ -38,7 +38,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <!-- DESCRIPCIÓN -->
+                    <!-- agregar descripción -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Descripción</label>
 
@@ -54,7 +54,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <!-- INGREDIENTES -->
+                    <!-- ingredientes -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Ingredientes</label>
 
@@ -70,21 +70,22 @@
                         <?php endif; ?>
                     </div>
 
-                    <!-- CATEGORÍA -->
+                    <!-- sleccionar categoria -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Categoría</label>
 
-                        <select name="categoria" class="form-select">
-                            <option value="">Seleccionar categoría</option>
-                            <option value="1" <?= old('categoria') == '1' ? 'selected' : '' ?>>Rápidas</option>
-                            <option value="2" <?= old('categoria') == '2' ? 'selected' : '' ?>>Saludables</option>
-                            <option value="3" <?= old('categoria') == '3' ? 'selected' : '' ?>>Postres</option>
-                            <option value="4" <?= old('categoria') == '4' ? 'selected' : '' ?>>Pastas</option>
-                            <option value="5" <?= old('categoria') == '5' ? 'selected' : '' ?>>Carnes</option>
-                            <option value="6" <?= old('categoria') == '6' ? 'selected' : '' ?>>Bebidas</option>
-                            <option value="7" <?= old('categoria') == '7' ? 'selected' : '' ?>>Vegetarianas</option>
-                            <option value="8" <?= old('categoria') == '8' ? 'selected' : '' ?>>Desayunos</option>
-                        </select>
+                       <select name="categoria" class="form-select">
+    <option value="">Seleccionar categoría</option>
+
+    <?php foreach($categorias as $categoria): ?>
+        <option value="<?= $categoria['id_categoria'] ?>"
+            <?= old('categoria') == $categoria['id_categoria'] ? 'selected' : '' ?>>
+
+            <?= esc($categoria['nombre_categoria']) ?>
+
+        </option>
+    <?php endforeach; ?>
+</select>
 
                         <?php if(isset($validation) && $validation->hasError('categoria')): ?>
                             <small class="text-danger">
@@ -93,7 +94,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <!-- IMAGEN -->
+                    <!-- guardamos la imagen -->
                     <div class="mb-4">
                         <label class="form-label fw-bold">Imagen</label>
 
@@ -108,7 +109,6 @@
                         <?php endif; ?>
                     </div>
 
-                    <!-- BOTÓN -->
                     <div class="d-grid">
                         <button type="submit" class="btn btn-warning fw-bold py-2">
                             Guardar receta <i class="bi bi-rocket-takeoff"></i>

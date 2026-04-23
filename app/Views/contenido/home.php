@@ -13,7 +13,6 @@
 
 <div class="container mt-5 pt-5 pb-5">
 
-    <!-- HERO -->
     <div class="bg-dark text-white rounded-4 p-5 shadow-lg mb-5" data-aos="fade-up">
 
                 <div class="text-center mb-5">

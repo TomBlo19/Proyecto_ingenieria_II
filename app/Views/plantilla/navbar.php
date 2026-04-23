@@ -1,12 +1,12 @@
 <nav id="navbarCocineritos" class="navbar fixed-top navbar-dark bg-dark">
   <div class="container-fluid">
 
-    <!-- Botón menú -->
+    <!-- Boton menu -->
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- MENÚ LATERAL -->
+    <!-- menu del costadoL -->
     <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="menuLateral">
       <div class="offcanvas-header">
         <h5 class="fw-bold">Menú</h5>
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <!-- LOGO -->
+    <!-- logo cocineritos -->
     <a class="navbar-brand fw-bold d-flex align-items-center" href="<?= base_url() ?>">
       <img src="<?= base_url('assets/img/logo_cocineritos.png') ?>" 
           alt="Logo Cocineritos" 
@@ -56,10 +56,10 @@
         Cocineritos
     </a>
 
-    <!-- DERECHA -->
+
     <div class="d-flex align-items-center">
 
-      <!-- Buscar -->
+      <!-- Buscar (no funciona) -->
       <a href="#" class="btn btn-link text-white">
         <i class="bi bi-search"></i>
       </a>

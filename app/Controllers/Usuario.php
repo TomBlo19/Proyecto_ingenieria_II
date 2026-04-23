@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\UsuarioModel; // ¡No te olvides de esta línea! Es la que llama a tu base de datos.
+use App\Models\UsuarioModel; // llamamos a la base de datos
 
 class Usuario extends BaseController
 {
@@ -24,10 +24,10 @@ class Usuario extends BaseController
 
     public function guardar()
     {
-        // Dejamos de "simular" y conectamos tu modelo
+        // conecta al modelo
         $model = new UsuarioModel();
 
-        // Atrapamos lo que el usuario escribió en el HTML de tu compañero
+        
         $datos = [
             'nombre_usuario'   => $this->request->getPost('nombre'),
             'correo_usuario'   => $this->request->getPost('correo'),
@@ -35,16 +35,16 @@ class Usuario extends BaseController
             'rol_usuario'      => 2
         ];
 
-        // Guardamos de verdad en MySQL
+        
         $model->insert($datos);
 
-        // Usamos el mismo mensaje de éxito que inventó tu compañero
+  
         session()->setFlashdata('mensaje', 'Usuario creado correctamente 🎉');
 
         return redirect()->to('/login');
     }
 
-
+        // se comprueban los datos ingresados en la base de datos
     public function procesarLogin()
     {
         $session = session();
@@ -53,13 +53,12 @@ class Usuario extends BaseController
         $correo = $this->request->getPost('correo');
         $password = $this->request->getPost('password');
 
-        // Buscamos el correo en tu tabla
+       
         $usuario = $model->where('correo_usuario', $correo)->first();
 
-        // Verificamos la contraseña encriptada
         if ($usuario && password_verify($password, $usuario->password_usuario)) {
             
-            // Si entra acá, los datos están bien. ¡Iniciamos sesión!
+           
             $datosSesion = [
                 'id_usuario' => $usuario->id_usuario,
                 'nombre'     => $usuario->nombre_usuario,
@@ -68,11 +67,11 @@ class Usuario extends BaseController
             ];
             $session->set($datosSesion);
             
-            // Lo mandamos al inicio (acá poné la ruta de tu página principal)
+           
             return redirect()->to('/'); 
 
         } else {
-            // Si le pifió a la clave, reusamos el sistema de mensajes de tu compañero
+            // mensaje de error
             $session->setFlashdata('mensaje', 'Correo o contraseña incorrectos ❌');
             return redirect()->to('/login');
         }

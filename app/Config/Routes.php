@@ -13,7 +13,7 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/receta', 'Receta::detalle');
 $routes->get('/crear-receta', 'Receta::crear', ['filter' => 'auth']);
-$routes->post('/guardar-receta', 'Receta::guardar', ['filter' => 'auth']);
+$routes->post('/guardar-receta', 'Receta::guardarReceta', ['filter' => 'auth']);
 
 $routes->get('/recetas', 'Receta::index');
 $routes->get('/categorias', 'Receta::categorias');
@@ -26,7 +26,7 @@ $routes->get('/login', 'Usuario::login');
 $routes->get('/registro', 'Usuario::registro');
 $routes->get('/guardados', 'Usuario::guardados');
 
-$routes->post('/guardar-usuario', 'Usuario::guardar'); // Esta procesa el registro
-$routes->post('/procesar-login', 'Usuario::procesarLogin'); // Esta procesa el login
-$routes->get('/logout', 'Usuario::salir'); // Esta cierra sesión
+$routes->post('/guardar-usuario', 'Usuario::guardar'); 
+$routes->post('/procesar-login', 'Usuario::procesarLogin'); 
+$routes->get('/logout', 'Usuario::salir'); 
 
