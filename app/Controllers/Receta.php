@@ -34,11 +34,28 @@ class Receta extends BaseController
     $data['categorias'] = $db->table('categoria')->get()->getResultArray();
 
     return view('contenido/crear_receta', $data);
+
 }
 
-public function guardarReceta()
 
- // guarda la receta en la base de datos
+public function guardarReceta()
+{
+    if ($respuesta = $this->validarReceta()) {
+        return $respuesta;
+    }
+
+    $categoria = $this->obtenerCategoriaReceta();
+
+    $idReceta = $this->registrarReceta($categoria);
+
+    $this->registrarIngredientesReceta($idReceta);
+
+    session()->setFlashdata('mensaje', 'Receta creada correctamente');
+
+    return redirect()->to('/crear-receta');
+}
+
+private function validarReceta()
 {
     if (!$this->validate([
 
@@ -82,72 +99,76 @@ public function guardarReceta()
         ]
 
     ])) {
+
         $db = \Config\Database::connect();
 
-$data['categorias'] = $db->table('categoria')->get()->getResultArray();
-$data['validation'] = $this->validator;
+        $data['categorias'] = $db->table('categoria')->get()->getResultArray();
+        $data['validation'] = $this->validator;
 
-return view('contenido/crear_receta', $data);
+        return view('contenido/crear_receta', $data);
     }
 
+    return false;
+}
+
+
+private function registrarReceta($categoria)
+{
     $model = new RecetaModel();
 
     $archivo = $this->request->getFile('imagen');
     $nombreImagen = $archivo->getRandomName();
     $archivo->move('assets/uploads/', $nombreImagen);
 
-    $datos = [
-        'titulo_receta'      => $this->request->getPost('titulo'),
+    $model->insert([
+        'titulo_receta' => $this->request->getPost('titulo'),
         'descripcion_receta' => $this->request->getPost('descripcion'),
-        'imagen_receta'      => $nombreImagen,
-        'id_usuario'         => session()->get('id_usuario'),
-        'id_categoria'       => $this->request->getPost('categoria')
-    ];
+        'imagen_receta' => $nombreImagen,
+        'id_usuario' => session()->get('id_usuario'),
+        'id_categoria' => $categoria
+    ]);
 
-    $model->insert($datos);
+    return $model->getInsertID();
+}
 
-    $idReceta = $model->getInsertID();
+private function obtenerCategoriaReceta()
+{
+    return $this->request->getPost('categoria');
+}
 
+private function registrarIngredientesReceta($idReceta)
+{
     $ingredienteModel = new IngredienteModel();
-    $relacionModel    = new RecetaIngredienteModel();
+    $relacionModel = new RecetaIngredienteModel();
 
-    $ingredientesTexto  = $this->request->getPost('ingredientes');
-    $ingredientesArray = explode(',', $ingredientesTexto);
+    $ingredientes = explode(',', $this->request->getPost('ingredientes'));
 
-    foreach ($ingredientesArray as $item)
-    {
+    foreach ($ingredientes as $item) {
         $nombre = trim($item);
 
-        if ($nombre != '')
-        {
-            $ingrediente = $ingredienteModel
-                ->where('nombre_ingrediente', $nombre)
-                ->first();
+        if ($nombre == '') continue;
 
-            if (!$ingrediente)
-            {
-                $ingredienteModel->insert([
-                    'nombre_ingrediente' => $nombre
-                ]);
+        $ingrediente = $ingredienteModel
+            ->where('nombre_ingrediente', $nombre)
+            ->first();
 
-                $idIngrediente = $ingredienteModel->getInsertID();
-            }
-            else
-            {
-                $idIngrediente = $ingrediente['id_ingrediente'];
-            }
-
-            $relacionModel->insert([
-                'id_receta'      => $idReceta,
-                'id_ingrediente' => $idIngrediente
+        if (!$ingrediente) {
+            $ingredienteModel->insert([
+                'nombre_ingrediente' => $nombre
             ]);
+
+            $idIngrediente = $ingredienteModel->getInsertID();
+        } else {
+            $idIngrediente = $ingrediente['id_ingrediente'];
         }
+
+        $relacionModel->insert([
+            'id_receta' => $idReceta,
+            'id_ingrediente' => $idIngrediente
+        ]);
     }
-
-    session()->setFlashdata('mensaje', 'Receta creada correctamente ');
-
-    return redirect()->to('/crear-receta');
 }
+
 
     public function index()
 {
