@@ -190,13 +190,26 @@ private function registrarIngredientesReceta($idReceta)
 
 public function verCategoria($id)
 {
+    $categoria = $this->buscarCategoria($id);
+
     $model = new RecetaModel();
 
+    $data['categoria'] = $categoria;
     $data['recetas'] = $model
         ->where('id_categoria', $id)
         ->findAll();
 
     return view('contenido/recetas', $data);
+}
+
+private function buscarCategoria($id)
+{
+    $db = \Config\Database::connect();
+
+    return $db->table('categoria')
+        ->where('id_categoria', $id)
+        ->get()
+        ->getRowArray();
 }
 
     public function guardados()
