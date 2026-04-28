@@ -30,3 +30,7 @@ $routes->post('/guardar-usuario', 'Usuario::guardar');
 $routes->post('/procesar-login', 'Usuario::procesarLogin'); 
 $routes->get('/logout', 'Usuario::salir'); 
 
+
+// valoracion de recetas 
+$routes->post('/valorar-receta', 'Receta::valorarReceta', ['filter' => 'auth']);
+$routes->post('/valorar-receta-manual', 'Receta::valorarRecetaManual');

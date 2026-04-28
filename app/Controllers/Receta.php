@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\RecetaModel;
 use App\Models\IngredienteModel;
 use App\Models\RecetaIngredienteModel;
+use App\Models\VotoRecetaModel;
 
 class Receta extends BaseController
 {
@@ -187,7 +188,7 @@ private function registrarIngredientesReceta($idReceta)
 
     return view('contenido/categorias', $data);
 }
-
+/////buscar por categoria 
 public function verCategoria($id)
 {
     $categoria = $this->buscarCategoria($id);
@@ -216,4 +217,72 @@ private function buscarCategoria($id)
     {
         return view('contenido/guardados');
     }
+
+
+///////////valorar receta 
+
+
+public function valorarRecetaManual()
+{
+    $idReceta = $this->request->getPost('id_receta');
+
+    if (!session()->get('isLoggedIn')) {
+        return redirect()
+            ->to('/receta/' . $idReceta)
+            ->with('error_voto', 'Debes iniciar sesión para votar esta receta');
+    }
+
+    $tipoVoto = $this->request->getPost('tipo_voto');
+    $idUsuario = session()->get('id_usuario');
+
+    $votoExistente = $this->verificarVotoUsuario($idUsuario, $idReceta);
+    $this->guardarOActualizarVoto($idUsuario, $idReceta, $tipoVoto, $votoExistente);
+    $this->actualizarContadorVotos($idReceta);
+
+    return redirect()
+        ->to('/receta/' . $idReceta)
+        ->with('success_voto', 'Voto registrado correctamente');
+}
+
+
+private function verificarVotoUsuario($idUsuario, $idReceta)
+{
+    $votoModel = new \App\Models\VotoRecetaModel();
+    return $votoModel->where(['id_usuario' => $idUsuario, 'id_receta' => $idReceta])->first();
+}
+
+
+private function guardarOActualizarVoto($idUsuario, $idReceta, $tipoVoto, $votoExistente)
+{
+    $votoModel = new VotoRecetaModel();
+
+    if ($votoExistente) {
+        // Usamos el Query Builder para la PK compuesta (id_usuario + id_receta) [cite: 282]
+        return $votoModel->where('id_usuario', $idUsuario)
+                         ->where('id_receta', $idReceta)
+                         ->set(['tipo_voto' => $tipoVoto])
+                         ->update();
+    }
+    
+    return $votoModel->insert([
+        'id_usuario' => $idUsuario,
+        'id_receta'  => $idReceta,
+        'tipo_voto'  => $tipoVoto
+    ]);
+}
+
+private function actualizarContadorVotos($idReceta)
+{
+    $db = \Config\Database::connect();
+    
+    
+    $likes = $db->table('voto_receta')->where(['id_receta' => $idReceta, 'tipo_voto' => 1])->countAllResults();
+    $dislikes = $db->table('voto_receta')->where(['id_receta' => $idReceta, 'tipo_voto' => 0])->countAllResults();
+
+    $recetaModel = new RecetaModel();
+    $recetaModel->update($idReceta, [
+        'cant_likes' => $likes,
+        'cant_dislikes' => $dislikes
+    ]);
+}
 }

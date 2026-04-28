@@ -38,5 +38,50 @@ AOS.init({
             ultimoScroll = scrollActual;
         });
     </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Usamos delegación de eventos o verificamos que los botones existan 
+    // para que este script no tire error en páginas que no son de detalle
+    const btnLike = document.getElementById('btn-like');
+    const btnDislike = document.getElementById('btn-dislike');
+
+    if (btnLike && btnDislike) {
+        const botones = [btnLike, btnDislike];
+
+        botones.forEach(boton => {
+            boton.addEventListener('click', function() {
+                const idReceta = this.getAttribute('data-id');
+                const tipoVoto = this.getAttribute('data-voto');
+                const formData = new FormData();
+                formData.append('id_receta', idReceta);
+                formData.append('tipo_voto', tipoVoto);
+
+                fetch('<?= base_url('valorar-receta') ?>', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                })
+                .then(res => {
+                    // Si el controlador mandó un 401, la interfaz decide qué mostrar
+                    if (res.status === 401) {
+                        alert('Debes iniciar sesión para valorar la receta.');
+                        return;
+                    }
+                    if (!res.ok) throw new Error('Error en el servidor');
+                    return res.json();
+                })
+                .then(data => {
+                    if (data) {
+                        // Actualizamos contadores (Muestra nuevo total de votos)
+                        document.getElementById('count-likes').innerText = data.likes;
+                        document.getElementById('count-dislikes').innerText = data.dislikes;
+                    }
+                })
+                .catch(err => console.error('Error:', err));
+            });
+        });
+    }
+});
+</script>
 </body>
 </html>

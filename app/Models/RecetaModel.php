@@ -14,6 +14,8 @@ class RecetaModel extends Model
         'descripcion_receta',
         'imagen_receta',
         'id_usuario',
-        'id_categoria'
+        'id_categoria',
+        'cant_likes',    
+        'cant_dislikes'
     ];
 }
