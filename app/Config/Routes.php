@@ -13,7 +13,7 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/receta', 'Receta::detalle');
 $routes->get('/crear-receta', 'Receta::crear', ['filter' => 'auth']);
-$routes->post('/guardar-receta', 'Receta::guardarReceta', ['filter' => 'auth']);
+$routes->post('/guardar-receta', 'Receta::registrarReceta', ['filter' => 'auth']);
 
 $routes->get('/recetas', 'Receta::index');
 $routes->get('/categorias', 'Receta::categorias');
@@ -32,5 +32,4 @@ $routes->get('/logout', 'Usuario::salir');
 
 
 // valoracion de recetas 
-$routes->post('/valorar-receta', 'Receta::valorarReceta', ['filter' => 'auth']);
-$routes->post('/valorar-receta-manual', 'Receta::valorarRecetaManual');
+$routes->post('/valorar-receta-manual', 'Receta::verificarUsuario');
