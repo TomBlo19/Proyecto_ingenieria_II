@@ -13,7 +13,7 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/receta', 'Receta::detalle');
 $routes->get('/crear-receta', 'Receta::crear', ['filter' => 'auth']);
-$routes->post('/guardar-receta', 'Receta::registrarReceta', ['filter' => 'auth']);
+$routes->post('/guardar-receta', 'Receta::validarReceta', ['filter' => 'auth']);
 
 $routes->get('/recetas', 'Receta::index');
 $routes->get('/categorias', 'Receta::categorias');

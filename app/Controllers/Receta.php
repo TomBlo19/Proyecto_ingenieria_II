@@ -39,38 +39,16 @@ class Receta extends BaseController
 }
 //////////////////////// REGISTRAR RECETA 
 
-public function registrarReceta()
+public function validarReceta()
 {
-    $validacion = $this->validarReceta();
+   
+    $titulo = $this->request->getPost('titulo');
+    $descripcion = $this->request->getPost('descripcion');
+    $ingredientes = $this->request->getPost('ingredientes');
+    $idCategoria = $this->request->getPost('categoria');
+    $imagen = $this->request->getFile('imagen');
 
-    if ($validacion !== true) {
-        return $validacion;
-    }
-
-    $model = new RecetaModel();
-
-    $archivo = $this->request->getFile('imagen');
-    $nombreImagen = $archivo->getRandomName();
-    $archivo->move('assets/uploads/', $nombreImagen);
-
-    $model->insert([
-        'titulo_receta' => $this->request->getPost('titulo'),
-        'descripcion_receta' => $this->request->getPost('descripcion'),
-        'imagen_receta' => $nombreImagen,
-        'id_usuario' => session()->get('id_usuario'),
-        'id_categoria' => $this->request->getPost('categoria')
-    ]);
-
-    $idReceta = $model->getInsertID();
-
-    $this->registrarIngredientesReceta($idReceta);
-
-    session()->setFlashdata('mensaje', 'Receta creada correctamente');
-
-    return redirect()->to('/crear-receta');
-}
-private function validarReceta()
-{
+    
     if (!$this->validate([
 
         'titulo' => [
@@ -122,17 +100,53 @@ private function validarReceta()
         ]);
     }
 
-   
-    $idCategoria = $this->request->getPost('categoria');
-
+    
     $categoria = $this->obtenerCategoria($idCategoria);
 
     if (!$categoria) {
         return redirect()->back()->with('error', 'La categoría seleccionada no es válida.');
     }
 
-    return true;
+    
+    return $this->registrarReceta(
+        $titulo,
+        $descripcion,
+        $ingredientes,
+        $idCategoria,
+        $imagen
+    );
 }
+
+
+
+
+private function registrarReceta($titulo, $descripcion, $ingredientes, $idCategoria, $imagen)
+{
+    $model = new RecetaModel();
+
+    $nombreImagen = $imagen->getRandomName();
+    $imagen->move('assets/uploads/', $nombreImagen);
+
+    $model->insert([
+        'titulo_receta' => $titulo,
+        'descripcion_receta' => $descripcion,
+        'imagen_receta' => $nombreImagen,
+        'id_usuario' => session()->get('id_usuario'),
+        'id_categoria' => $idCategoria
+    ]);
+
+    $idReceta = $model->getInsertID();
+
+    
+    $this->registrarIngredientesReceta($idReceta, $ingredientes);
+
+    
+    session()->setFlashdata('mensaje', 'Receta creada correctamente');
+
+    return redirect()->to('/crear-receta');
+}
+
+
 
 private function obtenerCategoria($id)
 {
@@ -144,14 +158,16 @@ private function obtenerCategoria($id)
               ->getRowArray();
 }
 
-private function registrarIngredientesReceta($idReceta)
+
+
+private function registrarIngredientesReceta($idReceta, $ingredientes)
 {
     $ingredienteModel = new IngredienteModel();
     $relacionModel = new RecetaIngredienteModel();
 
-    $ingredientes = explode(',', $this->request->getPost('ingredientes'));
+    $listaIngredientes = explode(',', $ingredientes);
 
-    foreach ($ingredientes as $item) {
+    foreach ($listaIngredientes as $item) {
         $nombre = trim($item);
 
         if ($nombre == '') continue;
@@ -175,6 +191,8 @@ private function registrarIngredientesReceta($idReceta)
             'id_ingrediente' => $idIngrediente
         ]);
     }
+
+    
 }
 ////////////////////////////////////////////
     public function index()
@@ -197,16 +215,31 @@ private function registrarIngredientesReceta($idReceta)
 /////buscar por categoria 
 public function verCategoria($id)
 {
-    $categoria = $this->buscarCategoria($id);
+    
+    $categoria = $this->validarCategoria($id);
 
     $model = new RecetaModel();
 
-    $data['categoria'] = $categoria;
-    $data['recetas'] = $model
+    $recetas = $model
         ->where('id_categoria', $id)
         ->findAll();
 
-    return view('contenido/recetas', $data);
+    return view('contenido/recetas', [
+        'categoria' => $categoria,
+        'recetas' => $recetas
+    ]);
+}
+
+private function validarCategoria($id)
+{
+    $categoria = $this->buscarCategoria($id);
+
+    if (!$categoria) {
+        return redirect()->to('/categorias')
+            ->with('error', 'La categoría seleccionada no existe.');
+    }
+
+    return $categoria;
 }
 
 private function buscarCategoria($id)
@@ -297,5 +330,6 @@ private function actualizarContadorVotos($idReceta)
         ->to('/receta/' . $idReceta)
         ->with('success_voto', 'Voto registrado correctamente');
 }
+
 
 }
