@@ -33,3 +33,8 @@ $routes->get('/logout', 'Usuario::salir');
 
 // valoracion de recetas 
 $routes->post('/valorar-receta-manual', 'Receta::verificarUsuario');
+
+// reseñas
+$routes->post('/guardar-resena', 'Receta::guardarResena', ['filter' => 'auth']);
+
+$routes->post('/votar-resena', 'Receta::votarResena', ['filter' => 'auth']);

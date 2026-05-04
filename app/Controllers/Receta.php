@@ -7,6 +7,9 @@ use App\Models\IngredienteModel;
 use App\Models\RecetaIngredienteModel;
 use App\Models\VotoRecetaModel;
 use App\Models\CategoriaModel;
+use App\Models\ResenaModel;
+use App\Models\VotoResenaModel;
+
 class Receta extends BaseController
 {
  public function detalle($id)
@@ -330,6 +333,102 @@ private function actualizarContadorVotos($idReceta)
         ->to('/receta/' . $idReceta)
         ->with('success_voto', 'Voto registrado correctamente');
 }
+
+
+    // RESEÑAS
+
+
+    public function guardarResena()
+    {
+        $idReceta = $this->request->getPost('id_receta');
+        $idUsuario = session()->get('id_usuario');
+        $textoResena = $this->request->getPost('texto_resena');
+        
+        return $this->procesarNuevaResena($idUsuario, $idReceta, $textoResena);
+    }
+
+    private function procesarNuevaResena($idUsuario, $idReceta, $textoResena)
+    {
+        $resenaModel = new ResenaModel();
+
+        // Verificamos si ya comentó
+        $yaComento = $resenaModel->where(['id_usuario' => $idUsuario, 'id_receta' => $idReceta])->first();
+
+        if ($yaComento) {
+            return redirect()->to('/receta/' . $idReceta)
+                             ->with('error_voto', 'Solo puedes dejar una reseña por receta.');
+        }
+
+        // Insertamos la reseña
+        $resenaModel->insert([
+            'id_receta'         => $idReceta,
+            'id_usuario'        => $idUsuario,
+            'titulo_resena'     => 'Opinión',
+            'comentario_resena' => $textoResena,
+            'cant_likes'        => 0,
+            'cant_dislikes'     => 0
+        ]);
+
+        return redirect()->to('/receta/' . $idReceta)
+                         ->with('success_voto', '¡Tu reseña fue publicada con éxito!');
+    }
+
+    // VOTAR RESEÑAS
+
+    public function votarResena()
+    {
+        $idReceta = $this->request->getPost('id_receta'); 
+        $idResena = $this->request->getPost('id_resena');
+        $idUsuario = session()->get('id_usuario');
+        $tipoVoto = $this->request->getPost('tipo_voto'); // 1 para Like, 0 para Dislike
+
+        return $this->guardarOActualizarVotoResena($idUsuario, $idResena, $idReceta, $tipoVoto);
+    }
+
+    private function guardarOActualizarVotoResena($idUsuario, $idResena, $idReceta, $tipoVoto)
+    {
+        $votoResenaModel = new VotoResenaModel();
+
+        $votoExistente = $votoResenaModel
+            ->where(['id_usuario' => $idUsuario, 'id_resena' => $idResena])
+            ->first();
+
+        if ($votoExistente) {
+            $votoResenaModel->where('id_usuario', $idUsuario)
+                            ->where('id_resena', $idResena)
+                            ->set(['tipo_voto' => $tipoVoto])
+                            ->update();
+        } else {
+            $votoResenaModel->insert([
+                'id_usuario' => $idUsuario,
+                'id_resena'  => $idResena,
+                'tipo_voto'  => $tipoVoto
+            ]);
+        }
+
+        return $this->actualizarContadorVotosResena($idResena, $idReceta);
+    }
+
+    private function actualizarContadorVotosResena($idResena, $idReceta)
+    {
+        $db = \Config\Database::connect();
+
+        $likes = $db->table('voto_resena')
+                    ->where(['id_resena' => $idResena, 'tipo_voto' => 1])
+                    ->countAllResults();
+
+        $dislikes = $db->table('voto_resena')
+                        ->where(['id_resena' => $idResena, 'tipo_voto' => 0])
+                        ->countAllResults();
+
+        $resenaModel = new ResenaModel();
+        $resenaModel->update($idResena, [
+            'cant_likes'    => $likes,
+            'cant_dislikes' => $dislikes
+        ]);
+
+        return redirect()->to('/receta/' . $idReceta);
+    }
 
 
 }
