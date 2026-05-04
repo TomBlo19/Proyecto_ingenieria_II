@@ -12,4 +12,9 @@ class CategoriaModel extends Model
     protected $allowedFields = [
         'nombre_ingrediente'
     ];
+
+   
+    public function obtenerTodas() {
+        return $this->findAll();
+    }
 }

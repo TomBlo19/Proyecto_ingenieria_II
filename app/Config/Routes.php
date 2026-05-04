@@ -12,8 +12,10 @@ $routes->get('/', 'Home::index');
 // recetas
 
 $routes->get('/receta', 'Receta::detalle');
-$routes->get('/crear-receta', 'Receta::crear', ['filter' => 'auth']);
+$routes->get('/crear-receta', 'Receta::mostrarFormularioReceta', ['filter' => 'auth']);
 $routes->post('/guardar-receta', 'Receta::validarReceta', ['filter' => 'auth']);
+$routes->get('/obtener-categorias', 'Receta::obtenerCategorias');
+
 
 $routes->get('/recetas', 'Receta::index');
 $routes->get('/categorias', 'Receta::categorias');

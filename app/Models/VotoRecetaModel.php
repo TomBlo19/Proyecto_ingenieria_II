@@ -16,4 +16,12 @@ class VotoRecetaModel extends Model
         'id_receta',
         'tipo_voto'
     ];
+
+    public function contarVotos($idReceta, $tipo)
+    {
+        return $this->where([
+            'id_receta' => $idReceta, 
+            'tipo_voto' => $tipo
+        ])->countAllResults();
+    }
 }

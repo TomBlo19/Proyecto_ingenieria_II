@@ -30,28 +30,27 @@ class Receta extends BaseController
 
     return view('contenido/receta_detalle', $data);
 }
-
-  public function crear()
+public function mostrarFormularioReceta()
 {
-    $db = \Config\Database::connect();
+    return view('contenido/crear_receta');
+}
 
-    $data['categorias'] = $db->table('categoria')->get()->getResultArray();
-
-    return view('contenido/crear_receta', $data);
-
+public function obtenerCategorias()
+{
+   $model = new CategoriaModel();
+        return $this->response->setJSON($model->findAll());
 }
 //////////////////////// REGISTRAR RECETA 
 
 public function validarReceta()
 {
-   
     $titulo = $this->request->getPost('titulo');
     $descripcion = $this->request->getPost('descripcion');
     $ingredientes = $this->request->getPost('ingredientes');
     $idCategoria = $this->request->getPost('categoria');
     $imagen = $this->request->getFile('imagen');
 
-    
+   
     if (!$this->validate([
 
         'titulo' => [
@@ -93,33 +92,21 @@ public function validarReceta()
             ]
         ]
 
-    ])) {
-
-        $db = \Config\Database::connect();
-
-        return view('contenido/crear_receta', [
-            'categorias' => $db->table('categoria')->get()->getResultArray(),
-            'validation' => $this->validator
-        ]);
-    }
-
+    ])) 
     
-    $categoria = $this->obtenerCategoria($idCategoria);
+    return view('contenido/crear_receta', [
+    'validation' => $this->validator
+]);
 
-    if (!$categoria) {
-        return redirect()->back()->with('error', 'La categoría seleccionada no es válida.');
+      
+        return $this->registrarReceta(
+            $titulo,
+            $descripcion,
+            $ingredientes,
+            $idCategoria,
+            $imagen
+        );
     }
-
-    
-    return $this->registrarReceta(
-        $titulo,
-        $descripcion,
-        $ingredientes,
-        $idCategoria,
-        $imagen
-    );
-}
-
 
 
 
@@ -147,18 +134,6 @@ private function registrarReceta($titulo, $descripcion, $ingredientes, $idCatego
     session()->setFlashdata('mensaje', 'Receta creada correctamente');
 
     return redirect()->to('/crear-receta');
-}
-
-
-
-private function obtenerCategoria($id)
-{
-    $db = \Config\Database::connect();
-
-    return $db->table('categoria')
-              ->where('id_categoria', $id)
-              ->get()
-              ->getRowArray();
 }
 
 
@@ -197,6 +172,7 @@ private function registrarIngredientesReceta($idReceta, $ingredientes)
 
     
 }
+
 ////////////////////////////////////////////
     public function index()
 {
@@ -209,9 +185,9 @@ private function registrarIngredientesReceta($idReceta, $ingredientes)
 
    public function categorias()
 {
-    $db = \Config\Database::connect();
-
-    $data['categorias'] = $db->table('categoria')->get()->getResultArray();
+    $model = new CategoriaModel();
+    
+    $data['categorias'] = $model->findAll(); 
 
     return view('contenido/categorias', $data);
 }
@@ -247,12 +223,9 @@ private function validarCategoria($id)
 
 private function buscarCategoria($id)
 {
-    $db = \Config\Database::connect();
-
-    return $db->table('categoria')
-        ->where('id_categoria', $id)
-        ->get()
-        ->getRowArray();
+   $model = new CategoriaModel();
+    
+    return $model->find($id);
 }
 
     public function guardados()
@@ -313,19 +286,15 @@ private function guardarOActualizarVoto($idUsuario, $idReceta, $tipoVoto, $votoE
 
 private function actualizarContadorVotos($idReceta)
 {
-    $db = \Config\Database::connect();
-
-    $likes = $db->table('voto_receta')
-        ->where(['id_receta' => $idReceta, 'tipo_voto' => 1])
-        ->countAllResults();
-
-    $dislikes = $db->table('voto_receta')
-        ->where(['id_receta' => $idReceta, 'tipo_voto' => 0])
-        ->countAllResults();
-
+    $votoModel = new VotoRecetaModel();
     $recetaModel = new RecetaModel();
+
+    
+    $likes    = $votoModel->contarVotos($idReceta, 1);
+    $dislikes = $votoModel->contarVotos($idReceta, 0);
+
     $recetaModel->update($idReceta, [
-        'cant_likes' => $likes,
+        'cant_likes'    => $likes,
         'cant_dislikes' => $dislikes
     ]);
 

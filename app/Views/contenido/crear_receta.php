@@ -74,18 +74,9 @@
                     <div class="mb-3">
                         <label class="form-label fw-bold">Categoría</label>
 
-                       <select name="categoria" class="form-select">
-    <option value="">Seleccionar categoría</option>
-
-    <?php foreach($categorias as $categoria): ?>
-        <option value="<?= $categoria['id_categoria'] ?>"
-            <?= old('categoria') == $categoria['id_categoria'] ? 'selected' : '' ?>>
-
-            <?= esc($categoria['nombre_categoria']) ?>
-
-        </option>
-    <?php endforeach; ?>
-</select>
+                       <select name="categoria" id="select-categoria" class="form-select">
+                             <option value="">Seleccionar categoría</option>
+                        </select>
 
                         <?php if(isset($validation) && $validation->hasError('categoria')): ?>
                             <small class="text-danger">
@@ -124,5 +115,34 @@
     </div>
 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const select = document.getElementById('select-categoria');
+
+    // Cuando el usuario hace foco (simula "solicita categorias")
+    select.addEventListener('focus', function () {
+
+        // Evita recargar si ya tiene opciones
+        if (select.options.length > 1) return;
+
+        fetch('<?= base_url('obtener-categorias') ?>')
+            .then(res => res.json())
+            .then(data => {
+
+                data.forEach(cat => {
+                    const option = document.createElement('option');
+                    option.value = cat.id_categoria;
+                    option.textContent = cat.nombre_categoria;
+                    select.appendChild(option);
+                });
+
+            })
+            .catch(err => console.error('Error:', err));
+    });
+
+});
+</script>
 
 <?= view('plantilla/footer') ?>
