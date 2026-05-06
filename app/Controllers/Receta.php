@@ -35,14 +35,37 @@ public function mostrarFormularioReceta()
     return view('contenido/crear_receta');
 }
 
-public function obtenerCategorias()
-{
-   $model = new CategoriaModel();
-        return $this->response->setJSON($model->findAll());
-}
 //////////////////////// REGISTRAR RECETA 
 
-public function validarReceta()
+public function obtenerCategorias()
+{
+    $model = new CategoriaModel();
+    return $this->response->setJSON($model->findAll());
+}
+
+
+public function guardarReceta()
+{
+    $datos = $this->validarReceta();
+
+    if ($datos === false) {
+
+        return view('contenido/crear_receta', [
+            'validation' => $this->validator
+        ]);
+    }
+
+    return $this->registrarReceta(
+        $datos['titulo'],
+        $datos['descripcion'],
+        $datos['ingredientes'],
+        $datos['categoria'],
+        $datos['imagen']
+    );
+}
+
+
+private function validarReceta()
 {
     $titulo = $this->request->getPost('titulo');
     $descripcion = $this->request->getPost('descripcion');
@@ -50,7 +73,6 @@ public function validarReceta()
     $idCategoria = $this->request->getPost('categoria');
     $imagen = $this->request->getFile('imagen');
 
-   
     if (!$this->validate([
 
         'titulo' => [
@@ -92,21 +114,19 @@ public function validarReceta()
             ]
         ]
 
-    ])) 
-    
-    return view('contenido/crear_receta', [
-    'validation' => $this->validator
-]);
+    ])) {
 
-      
-        return $this->registrarReceta(
-            $titulo,
-            $descripcion,
-            $ingredientes,
-            $idCategoria,
-            $imagen
-        );
+        return false;
     }
+
+    return [
+        'titulo' => $titulo,
+        'descripcion' => $descripcion,
+        'ingredientes' => $ingredientes,
+        'categoria' => $idCategoria,
+        'imagen' => $imagen
+    ];
+}
 
 
 
@@ -127,10 +147,8 @@ private function registrarReceta($titulo, $descripcion, $ingredientes, $idCatego
 
     $idReceta = $model->getInsertID();
 
-    
     $this->registrarIngredientesReceta($idReceta, $ingredientes);
 
-    
     session()->setFlashdata('mensaje', 'Receta creada correctamente');
 
     return redirect()->to('/crear-receta');
@@ -140,38 +158,56 @@ private function registrarReceta($titulo, $descripcion, $ingredientes, $idCatego
 
 private function registrarIngredientesReceta($idReceta, $ingredientes)
 {
-    $ingredienteModel = new IngredienteModel();
     $relacionModel = new RecetaIngredienteModel();
 
     $listaIngredientes = explode(',', $ingredientes);
 
     foreach ($listaIngredientes as $item) {
+
         $nombre = trim($item);
 
         if ($nombre == '') continue;
 
-        $ingrediente = $ingredienteModel
-            ->where('nombre_ingrediente', $nombre)
-            ->first();
-
-        if (!$ingrediente) {
-            $ingredienteModel->insert([
-                'nombre_ingrediente' => $nombre
-            ]);
-
-            $idIngrediente = $ingredienteModel->getInsertID();
-        } else {
-            $idIngrediente = $ingrediente['id_ingrediente'];
-        }
+        $idIngrediente = $this->obtenerIngrediente($nombre);
 
         $relacionModel->insert([
             'id_receta' => $idReceta,
             'id_ingrediente' => $idIngrediente
         ]);
     }
-
-    
 }
+
+
+
+private function obtenerIngrediente($nombre)
+{
+    $model = new IngredienteModel();
+
+    $ingrediente = $model
+        ->where('nombre_ingrediente', $nombre)
+        ->first();
+
+    if ($ingrediente) {
+
+        return $ingrediente['id_ingrediente'];
+    }
+
+    return $this->registrarIngrediente($nombre);
+}
+
+
+
+private function registrarIngrediente($nombre)
+{
+    $model = new IngredienteModel();
+
+    $model->insert([
+        'nombre_ingrediente' => $nombre
+    ]);
+
+    return $model->getInsertID();
+}
+
 
 ////////////////////////////////////////////
     public function index()
@@ -191,9 +227,10 @@ private function registrarIngredientesReceta($idReceta, $ingredientes)
 
     return view('contenido/categorias', $data);
 }
-/////buscar por categoria 
-public function verCategoria($id)
-{
+/////buscar por categoria
+
+
+public function verRecetas($id){
     
     $categoria = $this->validarCategoria($id);
 
@@ -233,47 +270,100 @@ private function buscarCategoria($id)
         return view('contenido/guardados');
     }
 
+/////////// VALORAR RECETA
 
-///////////valorar receta 
-
-public function verificarUsuario()
+public function valorarReceta()
 {
     $idReceta = $this->request->getPost('id_receta');
 
-    if (!session()->get('isLoggedIn')) {
-        return redirect()
-            ->to('/receta/' . $idReceta)
-            ->with('error_voto', 'Debes iniciar sesión para votar esta receta');
+    $usuarioValido = $this->verificarUsuario($idReceta);
+
+    if ($usuarioValido !== true) {
+        return $usuarioValido;
     }
 
     $idUsuario = session()->get('id_usuario');
-    $tipoVoto = $this->request->getPost('tipo_voto');
+    $tipoVoto  = $this->request->getPost('tipo_voto');
 
-    // 🔥 NO hace todo, delega
-    return $this->verificarVotoUsuario($idUsuario, $idReceta, $tipoVoto);
+    $this->verificarVotoUsuario(
+        $idUsuario,
+        $idReceta,
+        $tipoVoto
+    );
+
+    return redirect()
+        ->to('/receta/' . $idReceta)
+        ->with(
+            'success_voto',
+            'Voto registrado correctamente'
+        );
 }
 
-private function verificarVotoUsuario($idUsuario, $idReceta, $tipoVoto)
+
+
+private function verificarUsuario($idReceta)
+{
+    if (!session()->get('isLoggedIn')) {
+
+        return redirect()
+            ->to('/receta/' . $idReceta)
+            ->with(
+                'error_voto',
+                'Debes iniciar sesión para votar esta receta'
+            );
+    }
+
+    return true;
+}
+
+
+
+private function verificarVotoUsuario(
+    $idUsuario,
+    $idReceta,
+    $tipoVoto
+)
 {
     $votoModel = new VotoRecetaModel();
 
     $votoExistente = $votoModel
-        ->where(['id_usuario' => $idUsuario, 'id_receta' => $idReceta])
+        ->where([
+            'id_usuario' => $idUsuario,
+            'id_receta'  => $idReceta
+        ])
         ->first();
 
-    return $this->guardarOActualizarVoto($idUsuario, $idReceta, $tipoVoto, $votoExistente);
+    return $this->guardarVoto(
+        $idUsuario,
+        $idReceta,
+        $tipoVoto,
+        $votoExistente
+    );
 }
 
-private function guardarOActualizarVoto($idUsuario, $idReceta, $tipoVoto, $votoExistente)
+
+
+private function guardarVoto(
+    $idUsuario,
+    $idReceta,
+    $tipoVoto,
+    $votoExistente
+)
 {
     $votoModel = new VotoRecetaModel();
 
     if ($votoExistente) {
-        $votoModel->where('id_usuario', $idUsuario)
-                  ->where('id_receta', $idReceta)
-                  ->set(['tipo_voto' => $tipoVoto])
-                  ->update();
+
+        $votoModel
+            ->where('id_usuario', $idUsuario)
+            ->where('id_receta', $idReceta)
+            ->set([
+                'tipo_voto' => $tipoVoto
+            ])
+            ->update();
+
     } else {
+
         $votoModel->insert([
             'id_usuario' => $idUsuario,
             'id_receta'  => $idReceta,
@@ -284,12 +374,13 @@ private function guardarOActualizarVoto($idUsuario, $idReceta, $tipoVoto, $votoE
     return $this->actualizarContadorVotos($idReceta);
 }
 
+
+
 private function actualizarContadorVotos($idReceta)
 {
-    $votoModel = new VotoRecetaModel();
+    $votoModel   = new VotoRecetaModel();
     $recetaModel = new RecetaModel();
 
-    
     $likes    = $votoModel->contarVotos($idReceta, 1);
     $dislikes = $votoModel->contarVotos($idReceta, 0);
 
@@ -297,13 +388,7 @@ private function actualizarContadorVotos($idReceta)
         'cant_likes'    => $likes,
         'cant_dislikes' => $dislikes
     ]);
-
-    return redirect()
-        ->to('/receta/' . $idReceta)
-        ->with('success_voto', 'Voto registrado correctamente');
 }
-
-
     // RESEÑAS
 
 
