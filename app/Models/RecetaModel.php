@@ -18,4 +18,6 @@ class RecetaModel extends Model
         'cant_likes',    
         'cant_dislikes'
     ];
+
+   
 }

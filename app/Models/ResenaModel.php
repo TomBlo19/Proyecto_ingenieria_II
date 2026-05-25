@@ -18,6 +18,8 @@ class ResenaModel extends Model
         'cant_likes', 
         'cant_dislikes'
     ];
+
+    
     
     // (No hace falta poner fecha_resena acá porque la base de datos 
     // le pone el CURRENT_TIMESTAMP solita cuando se inserta)

@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // home
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::inicio');
 
 // recetas
 
