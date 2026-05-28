@@ -1,0 +1,193 @@
+DEBUG - 2026-05-28 07:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-05-28 07:57:33 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(6, 0)
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Home.php(29): CodeIgniter\BaseModel->findAll(6)
+#7 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Home.php(12): App\Controllers\Home->obtenerRankingRecetas()
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\Home->inicio()
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(6, 0)
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Home.php(29): CodeIgniter\BaseModel->findAll(6)
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Home.php(12): App\Controllers\Home->obtenerRankingRecetas()
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\Home->inicio()
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-05-28 07:57:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `receta`
+ORDER BY `cant_likes` DESC
+ LIMIT 6', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(6, 0)
+ 5 APPPATH\Controllers\Home.php(29): CodeIgniter\BaseModel->findAll(6)
+ 6 APPPATH\Controllers\Home.php(12): App\Controllers\Home->obtenerRankingRecetas()
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->inicio()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-05-28 07:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:07:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:43:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:52:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 08:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-28 08:52:54 --> Error: Call to undefined method App\Controllers\Receta::obtenerResenas()
+[Method: GET, Route: receta/5]
+in APPPATH\Controllers\Receta.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Receta->detalle('5')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Receta))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-05-28 08:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-28 08:53:43 --> Error: Call to undefined method App\Controllers\Receta::obtenerResenas()
+[Method: GET, Route: receta/5]
+in APPPATH\Controllers\Receta.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Receta->detalle('5')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Receta))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-05-28 08:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-28 08:53:48 --> Error: Call to undefined method App\Controllers\Receta::obtenerResenas()
+[Method: GET, Route: receta/9]
+in APPPATH\Controllers\Receta.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Receta->detalle('9')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Receta))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-05-28 09:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-28 09:02:22 --> Error: Call to private method App\Controllers\Resena::obtenerResenas() from scope App\Controllers\Receta
+[Method: GET, Route: receta/9]
+in APPPATH\Controllers\Receta.php on line 73.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Receta->detalle('9')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Receta))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-05-28 09:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:03:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:05:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-28 09:27:22 --> ArgumentCountError: Too few arguments to function App\Controllers\Usuario::verificarUsuario(), 0 passed in C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\VotoReceta.php on line 23 and exactly 1 expected
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\Usuario.php on line 86.
+ 1 APPPATH\Controllers\VotoReceta.php(23): App\Controllers\Usuario->verificarUsuario()
+ 2 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\VotoReceta->valorarReceta()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VotoReceta))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-05-28 09:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-28 09:29:09 --> Error: Undefined constant "App\Controllers\idReceta"
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\VotoReceta.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\VotoReceta->valorarReceta()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VotoReceta))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-05-28 09:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-28 09:32:11 --> Error: Undefined constant "App\Controllers\idReceta"
+[Method: POST, Route: votar-resena]
+in APPPATH\Controllers\VotoResena.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\VotoResena->votarResena()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VotoResena))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-05-28 09:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:32:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:34:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-28 09:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

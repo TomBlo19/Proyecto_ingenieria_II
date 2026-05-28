@@ -82,4 +82,10 @@ class Usuario extends BaseController
         session()->destroy();
         return redirect()->to('/login');
     }
+
+public function verificarUsuario()
+{
+    return session()->get('isLoggedIn');
+}
+
 }

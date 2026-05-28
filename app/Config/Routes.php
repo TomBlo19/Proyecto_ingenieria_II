@@ -7,21 +7,21 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // home
-$routes->get('/', 'Home::inicio');
+$routes->get('/', 'Receta::inicio');
 
 // recetas
 
 $routes->get('/receta', 'Receta::detalle');
 $routes->get('/crear-receta', 'Receta::mostrarFormularioReceta', ['filter' => 'auth']);
 $routes->post('/guardar-receta', 'Receta::guardarReceta', ['filter' => 'auth']);
-$routes->get('/obtener-categorias', 'Receta::obtenerCategorias');
+$routes->get('/obtener-categorias', 'Categoria::obtenerCategorias');
 
 
 $routes->get('/recetas', 'Receta::index');
-$routes->get('/categorias', 'Receta::categorias');
+$routes->get('/categorias', 'Categoria::categorias');
 $routes->get('/guardados', 'Receta::guardados');
 $routes->get('/receta/(:num)', 'Receta::detalle/$1');
-$routes->get('/categoria/(:num)', 'Receta::verRecetas/$1');
+$routes->get('/categoria/(:num)', 'Categoria::verRecetas/$1');
 
 // login
 
@@ -35,9 +35,9 @@ $routes->get('/logout', 'Usuario::salir');
 
 
 // valoracion de recetas 
-$routes->post('/valorar-receta-manual', 'Receta::valorarReceta');
+$routes->post('/valorar-receta-manual', 'VotoReceta::valorarReceta');
 
 // reseñas
-$routes->post('/guardar-resena', 'Receta::guardarResena', ['filter' => 'auth']);
+$routes->post('/guardar-resena', 'Resena::guardarResena', ['filter' => 'auth']);
 
-$routes->post('/votar-resena', 'Receta::votarResena', ['filter' => 'auth']);
+$routes->post('/votar-resena', 'VotoResena::votarResena', ['filter' => 'auth']);
