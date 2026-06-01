@@ -16,7 +16,7 @@ $routes->get('/crear-receta', 'Receta::mostrarFormularioReceta', ['filter' => 'a
 $routes->post('/guardar-receta', 'Receta::guardarReceta', ['filter' => 'auth']);
 $routes->get('/obtener-categorias', 'Categoria::obtenerCategorias');
 
-
+$routes->get('/ranking', 'Receta::ranking');
 $routes->get('/recetas', 'Receta::index');
 $routes->get('/categorias', 'Categoria::categorias');
 $routes->get('/guardados', 'Receta::guardados');

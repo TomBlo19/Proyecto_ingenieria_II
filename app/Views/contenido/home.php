@@ -68,70 +68,44 @@
 
 
 
-    <!-- MÁS GUSTADAS -->
+        <!-- MÁS GUSTADAS -->
     <div class="mb-5">
-
         <div class="d-flex justify-content-between align-items-center mb-4">
-
             <h2 class="fw-bold">
-
                 <i class="bi bi-fire text-danger"></i>
                 Recetas más gustadas
-
             </h2>
-
+            
+            <!-- BOTÓN NUEVO -->
+            <a href="<?= base_url('ranking') ?>" class="btn btn-outline-danger fw-bold rounded-pill">
+                Ver ranking completo <i class="bi bi-arrow-right ms-1"></i>
+            </a>
         </div>
-
 
         <div class="row g-4">
-
-            <?php foreach($ranking_recetas as $receta): ?>
-
-            <div class="col-md-6 col-lg-4"
-                 data-aos="zoom-in">
-
-                <a href="<?= base_url('receta/' . $receta['id_receta']) ?>"
-                   style="text-decoration:none;color:inherit;">
-
+            <!-- Usamos array_slice para cortar el array y mostrar solo 3 -->
+            <?php foreach(array_slice($ranking_recetas, 0, 3) as $receta): ?>
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                <a href="<?= base_url('receta/' . $receta['id_receta']) ?>" style="text-decoration:none;color:inherit;">
                     <div class="card border-0 shadow-lg rounded-4 overflow-hidden h-100">
-
-                        <img src="<?= base_url('assets/uploads/' . $receta['imagen_receta']) ?>"
-                             class="w-100"
-                             style="height:250px; object-fit:cover;">
-
+                        <img src="<?= base_url('assets/uploads/' . $receta['imagen_receta']) ?>" class="w-100" style="height:250px; object-fit:cover;">
                         <div class="card-body p-4">
-
                             <h4 class="fw-bold mb-2">
-
                                 <?= esc($receta['titulo_receta']) ?>
-
                             </h4>
-
                             <p class="text-muted mb-2">
-
                                 <?= character_limiter($receta['descripcion_receta'], 70) ?>
-
                             </p>
-
                             <span class="badge bg-success">
-
                                 <i class="bi bi-hand-thumbs-up-fill"></i>
                                 <?= $receta['cant_likes'] ?>
-
                             </span>
-
                         </div>
-
                     </div>
-
                 </a>
-
             </div>
-
             <?php endforeach; ?>
-
         </div>
-
     </div>
 
 

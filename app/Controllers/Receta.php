@@ -265,6 +265,49 @@ private function registrarIngrediente($nombre)
 }
 
 
+    // MÉTODOS DEL RANKING DE RECETAS
+    
+    public function ranking()
+    {
+        $data['ranking_por_categoria'] = $this->obtenerRankingPorCategoria();
+
+        return view('contenido/ranking_recetas', $data);
+    }
+
+    private function obtenerRankingPorCategoria($limitePorCategoria = 10)
+    {
+        $categorias = $this->obtenerTodasLasCategorias();
+        $ranking = [];
+
+        foreach ($categorias as $categoria) {
+            $topRecetas = $this->obtenerTopRecetasDeCategoria($categoria['id_categoria'], $limitePorCategoria);
+
+            if (!empty($topRecetas)) {
+                $ranking[$categoria['nombre_categoria']] = $topRecetas;
+            }
+        }
+
+        return $ranking;
+    }
+
+    private function obtenerTodasLasCategorias()
+    {
+        $categoriaModel = new CategoriaModel();
+        
+        return $categoriaModel->findAll();
+    }
+
+    private function obtenerTopRecetasDeCategoria($idCategoria, $limite)
+    {
+        $recetaModel = new RecetaModel();
+
+        return $recetaModel
+            ->where('id_categoria', $idCategoria)
+            ->orderBy('cant_likes', 'DESC')
+            ->findAll($limite);
+    }
+
+
 ////////////////////////////////////////////
     public function index()
 {
