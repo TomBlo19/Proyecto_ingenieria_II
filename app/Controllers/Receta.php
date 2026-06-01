@@ -18,7 +18,11 @@ class Receta extends BaseController
     {
         $data['ranking_recetas'] = $this->obtenerRankingRecetas();
 
-        $data['ranking_resenas'] = $this->obtenerRankingResenas();
+       
+    $resenaController = new Resena();
+
+    $data['ranking_resenas'] =
+        $resenaController->obtenerRankingResenas();
 
         $data['recetas_recientes'] = $this->obtenerRecetasRecientes();
 
@@ -36,21 +40,6 @@ class Receta extends BaseController
             ->findAll($limite);
     }
 
-
-
-    private function obtenerRankingResenas($limite = 3)
-    {
-        $resenaModel = new ResenaModel();
-
-        return $resenaModel
-            ->select('resena.*, receta.titulo_receta, receta.id_receta')
-            ->join('receta', 'receta.id_receta = resena.id_receta')
-            ->orderBy('cant_likes', 'DESC')
-            ->findAll($limite);
-    }
-
-
-
     private function obtenerRecetasRecientes($limite = 6)
     {
         $recetaModel = new RecetaModel();
@@ -66,7 +55,11 @@ class Receta extends BaseController
 
     $data['receta'] = $model->find($id);
 
-    $data['ingredientes'] = $this->obtenerIngredientes($id);
+$ingredienteController = new Ingrediente();
+
+$data['ingredientes'] =
+    $ingredienteController
+        ->obtenerIngredientesReceta($id);
 
     $resenaController = new Resena();
 
@@ -77,17 +70,7 @@ $data['ya_comento'] = $resenaController->usuarioYaComento($id);
     return view('contenido/receta_detalle', $data);
 }
 
-private function obtenerIngredientes($idReceta)
-{
-    $db = \Config\Database::connect();
 
-    return $db->table('receta_ingrediente ri')
-        ->select('i.nombre_ingrediente')
-        ->join('ingrediente i', 'i.id_ingrediente = ri.id_ingrediente')
-        ->where('ri.id_receta', $idReceta)
-        ->get()
-        ->getResultArray();
-}
 
 
 
@@ -224,7 +207,11 @@ private function registrarIngredientesReceta($idReceta, $ingredientes)
 
         if ($nombre == '') continue;
 
-        $idIngrediente = $this->obtenerIngrediente($nombre);
+        $ingredienteController = new Ingrediente();
+
+$idIngrediente =
+    $ingredienteController
+        ->obtenerIngrediente($nombre);
 
         $relacionModel->insert([
             'id_receta' => $idReceta,
@@ -235,77 +222,30 @@ private function registrarIngredientesReceta($idReceta, $ingredientes)
 
 
 
-private function obtenerIngrediente($nombre)
-{
-    $model = new IngredienteModel();
-
-    $ingrediente = $model
-        ->where('nombre_ingrediente', $nombre)
-        ->first();
-
-    if ($ingrediente) {
-
-        return $ingrediente['id_ingrediente'];
-    }
-
-    return $this->registrarIngrediente($nombre);
-}
-
-
-
-private function registrarIngrediente($nombre)
-{
-    $model = new IngredienteModel();
-
-    $model->insert([
-        'nombre_ingrediente' => $nombre
-    ]);
-
-    return $model->getInsertID();
-}
 
 
     // MÉTODOS DEL RANKING DE RECETAS
     
-    public function ranking()
-    {
-        $data['ranking_por_categoria'] = $this->obtenerRankingPorCategoria();
+   public function ranking()
+{
+    $categoriaController = new Categoria();
 
-        return view('contenido/ranking_recetas', $data);
-    }
+    $data['ranking_por_categoria'] =
+        $categoriaController->obtenerRankingPorCategoria();
 
-    private function obtenerRankingPorCategoria($limitePorCategoria = 10)
-    {
-        $categorias = $this->obtenerTodasLasCategorias();
-        $ranking = [];
+    return view('contenido/ranking_recetas', $data);
+}
+   
 
-        foreach ($categorias as $categoria) {
-            $topRecetas = $this->obtenerTopRecetasDeCategoria($categoria['id_categoria'], $limitePorCategoria);
+   public function obtenerTopRecetasDeCategoria($idCategoria, $limite)
+{
+    $recetaModel = new RecetaModel();
 
-            if (!empty($topRecetas)) {
-                $ranking[$categoria['nombre_categoria']] = $topRecetas;
-            }
-        }
-
-        return $ranking;
-    }
-
-    private function obtenerTodasLasCategorias()
-    {
-        $categoriaModel = new CategoriaModel();
-        
-        return $categoriaModel->findAll();
-    }
-
-    private function obtenerTopRecetasDeCategoria($idCategoria, $limite)
-    {
-        $recetaModel = new RecetaModel();
-
-        return $recetaModel
-            ->where('id_categoria', $idCategoria)
-            ->orderBy('cant_likes', 'DESC')
-            ->findAll($limite);
-    }
+    return $recetaModel
+        ->where('id_categoria', $idCategoria)
+        ->orderBy('cant_likes', 'DESC')
+        ->findAll($limite);
+}
 
 
 ////////////////////////////////////////////
@@ -326,6 +266,23 @@ private function registrarIngrediente($nombre)
         return view('contenido/guardados');
     }
 
+///contador de votos
 
+public function actualizarContadorVotos($idReceta)
+{
+$votoModel = new VotoRecetaModel();
+
+
+$likes = $votoModel->contarVotos($idReceta, 1);
+$dislikes = $votoModel->contarVotos($idReceta, 0);
+
+$recetaModel = new RecetaModel();
+
+$recetaModel->update($idReceta, [
+    'cant_likes' => $likes,
+    'cant_dislikes' => $dislikes
+]);
+
+}
 
 }

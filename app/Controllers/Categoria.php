@@ -63,5 +63,34 @@ public function obtenerCategorias()
     return $this->response->setJSON($model->findAll());
 }
 
+//racking
+public function obtenerRankingPorCategoria($limitePorCategoria = 10)
+{
+    $categorias = $this->obtenerTodasLasCategorias();
+    $ranking = [];
 
+    $recetaController = new Receta();
+
+    foreach ($categorias as $categoria) {
+
+        $topRecetas = $recetaController
+            ->obtenerTopRecetasDeCategoria(
+                $categoria['id_categoria'],
+                $limitePorCategoria
+            );
+
+        if (!empty($topRecetas)) {
+            $ranking[$categoria['nombre_categoria']] = $topRecetas;
+        }
+    }
+
+    return $ranking;
+}
+
+    private function obtenerTodasLasCategorias()
+    {
+        $categoriaModel = new CategoriaModel();
+        
+        return $categoriaModel->findAll();
+    }
 }

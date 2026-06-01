@@ -102,37 +102,11 @@ private function guardarVotoResena(
         ]);
     }
 
-    return $this->actualizarContadorVotosResena($idResena);
+   $resenaController = new Resena();
+
+return $resenaController
+    ->actualizarContadorVotosResena($idResena);
 }
-
-
-
-private function actualizarContadorVotosResena($idResena)
-{
-    $db = \Config\Database::connect();
-
-    $likes = $db->table('voto_resena')
-        ->where([
-            'id_resena' => $idResena,
-            'tipo_voto' => 1
-        ])
-        ->countAllResults();
-
-    $dislikes = $db->table('voto_resena')
-        ->where([
-            'id_resena' => $idResena,
-            'tipo_voto' => 0
-        ])
-        ->countAllResults();
-
-    $resenaModel = new ResenaModel();
-
-    $resenaModel->update($idResena, [
-        'cant_likes'    => $likes,
-        'cant_dislikes' => $dislikes
-    ]);
-}
-
 
 
 }

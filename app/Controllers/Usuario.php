@@ -16,10 +16,6 @@ class Usuario extends BaseController
         return view('contenido/registro');
     }
 
-    public function guardados()
-    {
-        return view('contenido/guardados');
-    }
 
 
     public function guardar()

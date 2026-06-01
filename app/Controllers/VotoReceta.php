@@ -99,22 +99,14 @@ private function guardarVoto(
         ]);
     }
 
-    return $this->actualizarContadorVotos($idReceta);
+  $recetaController = new Receta();
+
+return $recetaController
+->actualizarContadorVotos($idReceta);
+
 }
 
-private function actualizarContadorVotos($idReceta)
-{
-    $votoModel   = new VotoRecetaModel();
-    $recetaModel = new RecetaModel();
 
-    $likes    = $votoModel->contarVotos($idReceta, 1);
-    $dislikes = $votoModel->contarVotos($idReceta, 0);
-
-    $recetaModel->update($idReceta, [
-        'cant_likes'    => $likes,
-        'cant_dislikes' => $dislikes
-    ]);
-}
 
 
 

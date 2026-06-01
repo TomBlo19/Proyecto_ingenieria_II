@@ -80,5 +80,44 @@ private function registrarResena(
         'cant_dislikes'     => 0
     ]);
 }
+///votos reseña
+public function actualizarContadorVotosResena($idResena)
+{
+    $db = \Config\Database::connect();
+
+    $likes = $db->table('voto_resena')
+        ->where([
+            'id_resena' => $idResena,
+            'tipo_voto' => 1
+        ])
+        ->countAllResults();
+
+    $dislikes = $db->table('voto_resena')
+        ->where([
+            'id_resena' => $idResena,
+            'tipo_voto' => 0
+        ])
+        ->countAllResults();
+
+    $resenaModel = new ResenaModel();
+
+    $resenaModel->update($idResena, [
+        'cant_likes'    => $likes,
+        'cant_dislikes' => $dislikes
+    ]);
+}
+
+// raking de reseña
+
+    public function obtenerRankingResenas($limite = 3)
+    {
+        $resenaModel = new ResenaModel();
+
+        return $resenaModel
+            ->select('resena.*, receta.titulo_receta, receta.id_receta')
+            ->join('receta', 'receta.id_receta = resena.id_receta')
+            ->orderBy('cant_likes', 'DESC')
+            ->findAll($limite);
+    }
 
 }
