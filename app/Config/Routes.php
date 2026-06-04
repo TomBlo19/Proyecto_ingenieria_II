@@ -21,7 +21,7 @@ $routes->get('/recetas', 'Receta::index');
 $routes->get('/categorias', 'Categoria::categorias');
 $routes->get('/guardados', 'Receta::guardados');
 $routes->get('/receta/(:num)', 'Receta::detalle/$1');
-$routes->get('/categoria/(:num)', 'Categoria::verRecetas/$1');
+$routes->get('/categoria/(:num)', 'Receta::verRecetas/$1');
 
 // login
 

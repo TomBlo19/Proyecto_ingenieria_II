@@ -279,8 +279,25 @@ private function registrarIngredientesReceta(  $idReceta,array $listaIngrediente
         return view('contenido/recetas', $data);
     }
 
- 
+public function verRecetas($idCategoria)
+{
+    $categoriaController = new Categoria();
 
+    $categoria =
+        $categoriaController
+            ->validarCategoria($idCategoria);
+
+    $model = new RecetaModel();
+
+    $recetas = $model
+        ->where('id_categoria', $idCategoria)
+        ->findAll();
+
+    return view('contenido/recetas', [
+        'categoria' => $categoria,
+        'recetas' => $recetas
+    ]);
+}
 
     public function guardados()
     {

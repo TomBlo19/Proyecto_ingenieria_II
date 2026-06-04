@@ -20,23 +20,9 @@ class Categoria extends BaseController
 /////////buscar por categoria
 
 
-public function verRecetas($id){
-    
-    $categoria = $this->validarCategoria($id);
 
-    $model = new RecetaModel();
 
-    $recetas = $model
-        ->where('id_categoria', $id)
-        ->findAll();
-
-    return view('contenido/recetas', [
-        'categoria' => $categoria,
-        'recetas' => $recetas
-    ]);
-}
-
-private function validarCategoria($id)
+public function validarCategoria($id)
 {
     $categoria = $this->buscarCategoria($id);
 
