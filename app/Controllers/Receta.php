@@ -252,13 +252,32 @@ private function registrarIngredientesReceta(  $idReceta,array $listaIngrediente
 
 ////////////////////////////////////////////
     public function index()
-{
-    $model = new RecetaModel();
+    {
+        $model = new RecetaModel();
+        $builder = $model->builder(); // Iniciamos el constructor de consultas
 
-    $data['recetas'] = $model->findAll();
+        // Vemos qué botón apretó el usuario en la vista (por defecto usamos fecha)
+        $tipoOrden = $this->request->getGet('orden') ?? 'fecha';
 
-    return view('contenido/recetas', $data);
-}
+        // APLICAMOS EL PATRÓN ESTRATEGIA
+        if ($tipoOrden === 'likes') {
+            $estrategia = new \App\Libraries\Ordenamiento\OrdenarPorLikes();
+        } elseif ($tipoOrden === 'alfabetico') {
+            $estrategia = new \App\Libraries\Ordenamiento\OrdenarAlfabeticamente();
+        } else {
+            // Por defecto
+            $estrategia = new \App\Libraries\Ordenamiento\OrdenarPorFecha();
+        }
+
+        // Ejecutamos el algoritmo seleccionado
+        $builder = $estrategia->ordenar($builder);
+
+        // Traemos los resultados finales
+        $data['recetas'] = $builder->get()->getResultArray();
+        $data['orden_actual'] = $tipoOrden; // Para pintar el botón activo en el HTML
+
+        return view('contenido/recetas', $data);
+    }
 
  
 

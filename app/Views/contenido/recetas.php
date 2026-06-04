@@ -3,11 +3,30 @@
 
 <div class="container mt-5 pt-5 pb-5">
 
-    <div class="text-center mb-5" data-aos="fade-down">
+    <div class="text-center mb-4" data-aos="fade-down">
         <h1 class="fw-bold"> <i class="bi bi-card-list"></i> Todas las recetas</h1>
         <p class="text-muted fs-5">Descubrí recetas creadas por la comunidad</p>
     </div>
 
+    <div class="text-center mb-5" data-aos="fade-up">
+        <strong class="me-2 fs-5">Ordenar por: </strong>
+        
+        <a href="<?= base_url('recetas?orden=fecha') ?>" 
+           class="btn <?= ($orden_actual == 'fecha') ? 'btn-danger' : 'btn-outline-danger' ?> rounded-pill px-4 me-2 shadow-sm">
+            <i class="bi bi-clock-history"></i> Más Recientes
+        </a>
+        
+        <a href="<?= base_url('recetas?orden=likes') ?>" 
+           class="btn <?= ($orden_actual == 'likes') ? 'btn-danger' : 'btn-outline-danger' ?> rounded-pill px-4 me-2 shadow-sm">
+            <i class="bi bi-fire"></i> Más Gustadas
+        </a>
+
+        <a href="<?= base_url('recetas?orden=alfabetico') ?>" 
+           class="btn <?= ($orden_actual == 'alfabetico') ? 'btn-danger' : 'btn-outline-danger' ?> rounded-pill px-4 shadow-sm">
+            <i class="bi bi-sort-alpha-down"></i> A - Z
+        </a>
+    </div>
+    
     <div class="row g-4">
 
         <?php foreach($recetas as $receta): ?>
