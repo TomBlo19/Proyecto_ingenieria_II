@@ -11,9 +11,6 @@ use App\Models\ResenaModel;
 class VotoResena extends BaseController
 {
 
-
-    //// VOTAR RESEÑA
-
 public function votarResena()
 {
     $idReceta = $this->request->getPost('id_receta');

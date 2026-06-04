@@ -18,9 +18,36 @@ class ResenaModel extends Model
         'cant_likes', 
         'cant_dislikes'
     ];
+public function obtenerResenas($idReceta)
+{
+    return $this->db->table('resena r')
+        ->select('r.*, u.nombre_usuario')
+        ->join('usuario u', 'u.id_usuario = r.id_usuario')
+        ->where('r.id_receta', $idReceta)
+        ->orderBy('r.fecha_resena', 'DESC')
+        ->get()
+        ->getResultArray();
+}
+    public function contarLikes($idResena)
+{
+    return $this->db->table('voto_resena')
+        ->where([
+            'id_resena' => $idResena,
+            'tipo_voto' => 1
+        ])
+        ->countAllResults();
+}
 
+public function contarDislikes($idResena)
+{
+    return $this->db->table('voto_resena')
+        ->where([
+            'id_resena' => $idResena,
+            'tipo_voto' => 0
+        ])
+        ->countAllResults();
+}
     
     
-    // (No hace falta poner fecha_resena acá porque la base de datos 
-    // le pone el CURRENT_TIMESTAMP solita cuando se inserta)
+    
 }

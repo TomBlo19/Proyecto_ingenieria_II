@@ -41,14 +41,11 @@ public  function registrarIngrediente($nombre)
 
 public function obtenerIngredientesReceta($idReceta)
 {
-    $db = \Config\Database::connect();
+    $model = new IngredienteModel();
 
-    return $db->table('receta_ingrediente ri')
-        ->select('i.nombre_ingrediente')
-        ->join('ingrediente i', 'i.id_ingrediente = ri.id_ingrediente')
-        ->where('ri.id_receta', $idReceta)
-        ->get()
-        ->getResultArray();
+    return $model->obtenerIngredientesReceta(
+        $idReceta
+    );
 }
 
 }

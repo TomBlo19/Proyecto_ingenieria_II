@@ -11,17 +11,12 @@ class Resena extends BaseController
 
 
     /////receta detalle  
-    public  function obtenerResenas($idReceta)
+   public function obtenerResenas($idReceta)
 {
-    $db = \Config\Database::connect();
+    $resenaModel = new ResenaModel();
 
-    return $db->table('resena r')
-        ->select('r.*, u.nombre_usuario')
-        ->join('usuario u', 'u.id_usuario = r.id_usuario')
-        ->where('r.id_receta', $idReceta)
-        ->orderBy('r.fecha_resena', 'DESC')
-        ->get()
-        ->getResultArray();
+    return $resenaModel
+        ->obtenerResenas($idReceta);
 }
 
 public  function usuarioYaComento($idReceta) {
@@ -83,26 +78,16 @@ private function registrarResena(
 ///votos reseña
 public function actualizarContadorVotosResena($idResena)
 {
-    $db = \Config\Database::connect();
-
-    $likes = $db->table('voto_resena')
-        ->where([
-            'id_resena' => $idResena,
-            'tipo_voto' => 1
-        ])
-        ->countAllResults();
-
-    $dislikes = $db->table('voto_resena')
-        ->where([
-            'id_resena' => $idResena,
-            'tipo_voto' => 0
-        ])
-        ->countAllResults();
-
     $resenaModel = new ResenaModel();
 
+    $likes = $resenaModel
+        ->contarLikes($idResena);
+
+    $dislikes = $resenaModel
+        ->contarDislikes($idResena);
+
     $resenaModel->update($idResena, [
-        'cant_likes'    => $likes,
+        'cant_likes' => $likes,
         'cant_dislikes' => $dislikes
     ]);
 }

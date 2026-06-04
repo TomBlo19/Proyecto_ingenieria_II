@@ -186,7 +186,9 @@ private function registrarReceta($titulo, $descripcion, $ingredientes, $idCatego
 
     $idReceta = $model->getInsertID();
 
-    $this->registrarIngredientesReceta($idReceta, $ingredientes);
+    $listaIngredientes = explode(',', $ingredientes);
+
+    $this->registrarIngredientesReceta( $idReceta, $listaIngredientes);
 
     session()->setFlashdata('mensaje', 'Receta creada correctamente');
 
@@ -195,23 +197,23 @@ private function registrarReceta($titulo, $descripcion, $ingredientes, $idCatego
 
 
 
-private function registrarIngredientesReceta($idReceta, $ingredientes)
+private function registrarIngredientesReceta(  $idReceta,array $listaIngredientes)
 {
     $relacionModel = new RecetaIngredienteModel();
 
-    $listaIngredientes = explode(',', $ingredientes);
+    foreach ($listaIngredientes as $nombre) {
 
-    foreach ($listaIngredientes as $item) {
+        $nombre = trim($nombre);
 
-        $nombre = trim($item);
-
-        if ($nombre == '') continue;
+        if ($nombre == '') {
+            continue;
+        }
 
         $ingredienteController = new Ingrediente();
 
-$idIngrediente =
-    $ingredienteController
-        ->obtenerIngrediente($nombre);
+        $idIngrediente =
+            $ingredienteController
+                ->obtenerIngrediente($nombre);
 
         $relacionModel->insert([
             'id_receta' => $idReceta,

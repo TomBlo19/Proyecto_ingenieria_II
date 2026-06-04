@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\UsuarioModel; // llamamos a la base de datos
+use App\Models\UsuarioModel; 
 
 class Usuario extends BaseController
 {
@@ -20,7 +20,7 @@ class Usuario extends BaseController
 
     public function guardar()
     {
-        // conecta al modelo
+        
         $model = new UsuarioModel();
 
         
@@ -40,7 +40,7 @@ class Usuario extends BaseController
         return redirect()->to('/login');
     }
 
-        // se comprueban los datos ingresados en la base de datos
+        
     public function procesarLogin()
     {
         $session = session();
@@ -67,7 +67,7 @@ class Usuario extends BaseController
             return redirect()->to('/'); 
 
         } else {
-            // mensaje de error
+            
             $session->setFlashdata('mensaje', 'Correo o contraseña incorrectos ❌');
             return redirect()->to('/login');
         }
