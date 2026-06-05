@@ -7,37 +7,38 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // home
-$routes->get('/', 'Receta::inicio');
+$routes->get('/', 'API\RecetaApi::inicio');
 
 // recetas
 
-$routes->get('/receta', 'Receta::detalle');
-$routes->get('/crear-receta', 'Receta::mostrarFormularioReceta', ['filter' => 'auth']);
-$routes->post('/guardar-receta', 'Receta::guardarReceta', ['filter' => 'auth']);
-$routes->get('/obtener-categorias', 'Categoria::obtenerCategorias');
+$routes->get('/receta', 'API\RecetaApi::detalle');
+$routes->get('/crear-receta', 'API\RecetaApi::mostrarFormularioReceta', ['filter' => 'auth']);
+$routes->post('/guardar-receta', 'API\RecetaApi::guardarReceta', ['filter' => 'auth']);
+$routes->get('/obtener-categorias', 'API\NavegacionApi::obtenerCategorias');
+$routes->get('/ranking', 'API\RecetaApi::ranking');
+$routes->get('/recetas', 'API\RecetaApi::listarRecetas');
+$routes->get('/categorias', 'API\NavegacionApi::categorias');
+$routes->get('/guardados', 'API\NavegacionApi::guardados');
 
-$routes->get('/ranking', 'Receta::ranking');
-$routes->get('/recetas', 'Receta::index');
-$routes->get('/categorias', 'Categoria::categorias');
-$routes->get('/guardados', 'Receta::guardados');
-$routes->get('/receta/(:num)', 'Receta::detalle/$1');
+$routes->get('/receta/(:num)', 'API\RecetaApi::detalle/$1');
+
 $routes->get('/categoria/(:num)', 'Receta::verRecetas/$1');
-
 // login
 
-$routes->get('/login', 'Usuario::login');
-$routes->get('/registro', 'Usuario::registro');
-$routes->get('/guardados', 'Usuario::guardados');
 
-$routes->post('/guardar-usuario', 'Usuario::guardar'); 
-$routes->post('/procesar-login', 'Usuario::procesarLogin'); 
-$routes->get('/logout', 'Usuario::salir'); 
+$routes->get('/login', 'API\NavegacionApi::login');
+$routes->get('/registro', 'API\NavegacionApi::registro');
+$routes->get('/guardados', 'API\NavegacionApi::guardados');
+
+$routes->post('/guardar-usuario', 'API\NavegacionApi::guardar'); 
+$routes->post('/procesar-login', 'API\NavegacionApi::procesarLogin'); 
+$routes->get('/logout', 'API\NavegacionApi::salir'); 
 
 
 // valoracion de recetas 
-$routes->post('/valorar-receta-manual', 'VotoReceta::valorarReceta');
+$routes->post('/valorar-receta-manual', 'API\RecetaApi::valorarReceta');
 
 // reseñas
-$routes->post('/guardar-resena', 'Resena::guardarResena', ['filter' => 'auth']);
+$routes->post('/guardar-resena', 'API\ResenaApi::guardarResena', ['filter' => 'auth']);
 
-$routes->post('/votar-resena', 'VotoResena::votarResena', ['filter' => 'auth']);
+$routes->post('/votar-resena', 'API\ResenaApi::votarResena', ['filter' => 'auth']);

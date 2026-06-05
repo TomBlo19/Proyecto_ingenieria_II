@@ -8,8 +8,6 @@ use App\Models\ResenaModel;
 
 class Resena extends BaseController
 {
-
-
     /////receta detalle  
    public function obtenerResenas($idReceta)
 {
@@ -18,45 +16,45 @@ class Resena extends BaseController
     return $resenaModel
         ->obtenerResenas($idReceta);
 }
-
-public  function usuarioYaComento($idReceta) {
-     if (!session()->get('isLoggedIn')) { return false; } $resenaModel = new ResenaModel(); 
-     return $resenaModel 
-     ->where([ 'id_usuario' => session()
-     ->get('id_usuario'), 'id_receta' => $idReceta ]) 
-     ->first(); }
-
- // RESEÑAS
-
-
-   public function guardarResena()
+// RESEÑAS
+public function guardarResena(
+    $idUsuario,
+    $idReceta,
+    $textoResena
+)
 {
-    $idReceta = $this->request->getPost('id_receta');
-
-    $idUsuario = session()->get('id_usuario');
-
-    $textoResena = $this->request->getPost('texto_resena');
-
-    if ($this->usuarioYaComento($idReceta)) {
-
-        return redirect()->to('/receta/' . $idReceta)
-            ->with(
-                'error_voto',
-                'Solo puedes dejar una reseña por receta.'
-            );
+    if (
+        $this->usuarioYaComento(
+            $idUsuario,
+            $idReceta
+        )
+    ) {
+        return false;
     }
-    $this->registrarResena(
+
+    return $this->registrarResena(
         $idUsuario,
         $idReceta,
         $textoResena
     );
-
-    return redirect()->to('/receta/' . $idReceta)
-        ->with(
-            'success_voto',
-            '¡Tu reseña fue publicada con éxito!'
-        );
 }
+public function usuarioYaComento(
+    $idUsuario,
+    $idReceta
+)
+{
+    $resenaModel =
+        new ResenaModel();
+
+    return $resenaModel
+        ->where([
+            'id_usuario' => $idUsuario,
+            'id_receta' => $idReceta
+        ])
+        ->first();
+}
+ 
+
 
 private function registrarResena(
     $idUsuario,
@@ -74,27 +72,22 @@ private function registrarResena(
         'cant_likes'        => 0,
         'cant_dislikes'     => 0
     ]);
+
+    return true;
 }
 ///votos reseña
 public function actualizarContadorVotosResena($idResena)
 {
     $resenaModel = new ResenaModel();
 
-    $likes = $resenaModel
-        ->contarLikes($idResena);
-
-    $dislikes = $resenaModel
-        ->contarDislikes($idResena);
-
-    $resenaModel->update($idResena, [
-        'cant_likes' => $likes,
-        'cant_dislikes' => $dislikes
-    ]);
+    $resenaModel->actualizarContadorVotosSP(
+        $idResena
+    );
 }
 
 // raking de reseña
 
-    public function obtenerRankingResenas($limite = 3)
+    public function obtenerRankingResenas($limite )
     {
         $resenaModel = new ResenaModel();
 

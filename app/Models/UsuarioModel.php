@@ -5,10 +5,10 @@ use CodeIgniter\Model;
 
 class UsuarioModel extends Model
 {
-    // guarda los datos en la tabla usuario
+   
     protected $table      = 'usuario';
     
-    // Le decimos cuál es el id
+    
     protected $primaryKey = 'id_usuario';
 
     protected $allowedFields = [

@@ -18,6 +18,12 @@ class RecetaModel extends Model
         'cant_likes',    
         'cant_dislikes'
     ];
-
+public function actualizarContadorVotosSP($idReceta)
+{
+    $this->db->query(
+        "CALL sp_actualizar_contador_votos(?)",
+        [$idReceta]
+    );
+}
    
 }

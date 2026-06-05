@@ -14,24 +14,8 @@ class Receta extends BaseController
 {
     ////inicio recetas
 
-     public function inicio()
-    {
-        $data['ranking_recetas'] = $this->obtenerRankingRecetas();
-
-       
-    $resenaController = new Resena();
-
-    $data['ranking_resenas'] =
-        $resenaController->obtenerRankingResenas();
-
-        $data['recetas_recientes'] = $this->obtenerRecetasRecientes();
-
-        return view('contenido/home', $data);
-    }
-
-
-
-    private function obtenerRankingRecetas($limite = 6)
+     
+    public  function obtenerRankingRecetas($limite)
     {
         $recetaModel = new RecetaModel();
 
@@ -40,7 +24,7 @@ class Receta extends BaseController
             ->findAll($limite);
     }
 
-    private function obtenerRecetasRecientes($limite = 6)
+    public  function obtenerRecetasRecientes($limite )
     {
         $recetaModel = new RecetaModel();
 
@@ -48,196 +32,146 @@ class Receta extends BaseController
             ->orderBy('id_receta', 'DESC')
             ->findAll($limite);
     }
-    /////receta detalle
- public function detalle($id)
-{
-    $model = new RecetaModel();
-
-    $data['receta'] = $model->find($id);
-
-$ingredienteController = new Ingrediente();
-
-$data['ingredientes'] =
-    $ingredienteController
-        ->obtenerIngredientesReceta($id);
-
-    $resenaController = new Resena();
-
-$data['resenas'] = $resenaController->obtenerResenas($id);
-
-$data['ya_comento'] = $resenaController->usuarioYaComento($id);
-
-    return view('contenido/receta_detalle', $data);
-}
-
-
-
-
-
-/////
-public function mostrarFormularioReceta()
-{
-    return view('contenido/crear_receta');
-}
-
+   
 //////////////////////// REGISTRAR RECETA 
 
-
-public function guardarReceta()
+public function guardarReceta(
+    $titulo,
+    $descripcion,
+    $ingredientes,
+    $idCategoria,
+    $imagen
+)
 {
-    $datos = $this->validarReceta();
+    $datos = $this->validarReceta(
+        $titulo,
+        $descripcion,
+        $ingredientes,
+        $idCategoria,
+        $imagen
+    );
 
-    if ($datos === false) {
+    if ($datos !== true) {
 
-        return view('contenido/crear_receta', [
-            'validation' => $this->validator
-        ]);
+        return view(
+            'contenido/crear_receta',
+            ['errores' => $datos]
+        );
     }
 
     return $this->registrarReceta(
-        $datos['titulo'],
-        $datos['descripcion'],
-        $datos['ingredientes'],
-        $datos['categoria'],
-        $datos['imagen']
+        $titulo,
+        $descripcion,
+        $idCategoria,
+        $imagen
     );
 }
-
-
-private function validarReceta()
+private function validarReceta(
+    $titulo,
+    $descripcion,
+    $ingredientes,
+    $idCategoria,
+    $imagen
+)
 {
-    $titulo = $this->request->getPost('titulo');
-    $descripcion = $this->request->getPost('descripcion');
-    $ingredientes = $this->request->getPost('ingredientes');
-    $idCategoria = $this->request->getPost('categoria');
-    $imagen = $this->request->getFile('imagen');
+    $errores = [];
 
-    if (!$this->validate([
+  
+    if (empty(trim($titulo))) {
 
-        'titulo' => [
-            'rules' => 'required|min_length[3]',
-            'errors' => [
-                'required'   => 'El título es obligatorio.',
-                'min_length' => 'El título debe tener al menos 3 caracteres.'
-            ]
-        ],
+        $errores['titulo'] =
+            'El título es obligatorio.';
 
-        'descripcion' => [
-            'rules' => 'required|min_length[10]',
-            'errors' => [
-                'required'   => 'La descripción es obligatoria.',
-                'min_length' => 'La descripción debe tener al menos 10 caracteres.'
-            ]
-        ],
+    } elseif (strlen(trim($titulo)) < 3) {
 
-        'ingredientes' => [
-            'rules' => 'required|min_length[5]',
-            'errors' => [
-                'required'   => 'Los ingredientes son obligatorios.',
-                'min_length' => 'Ingresá ingredientes más detallados.'
-            ]
-        ],
-
-        'categoria' => [
-            'rules' => 'required',
-            'errors' => [
-                'required' => 'Debes seleccionar una categoría.'
-            ]
-        ],
-
-        'imagen' => [
-            'rules' => 'uploaded[imagen]|is_image[imagen]',
-            'errors' => [
-                'uploaded' => 'Debes seleccionar una imagen.',
-                'is_image' => 'El archivo debe ser una imagen válida.'
-            ]
-        ]
-
-    ])) {
-
-        return false;
+        $errores['titulo'] =
+            'El título debe tener al menos 3 caracteres.';
     }
 
-    return [
-        'titulo' => $titulo,
-        'descripcion' => $descripcion,
-        'ingredientes' => $ingredientes,
-        'categoria' => $idCategoria,
-        'imagen' => $imagen
-    ];
+   
+    if (empty(trim($descripcion))) {
+
+        $errores['descripcion'] =
+            'La descripción es obligatoria.';
+
+    } elseif (strlen(trim($descripcion)) < 10) {
+
+        $errores['descripcion'] =
+            'La descripción debe tener al menos 10 caracteres.';
+    }
+
+  
+    if (empty(trim($ingredientes))) {
+
+        $errores['ingredientes'] =
+            'Los ingredientes son obligatorios.';
+
+    } elseif (strlen(trim($ingredientes)) < 5) {
+
+        $errores['ingredientes'] =
+            'Ingresá ingredientes más detallados.';
+    }
+
+  
+    if (empty($idCategoria)) {
+
+        $errores['categoria'] =
+            'Debes seleccionar una categoría.';
+    }
+
+    if (!$imagen || !$imagen->isValid()) {
+
+        $errores['imagen'] =
+            'Debes seleccionar una imagen válida.';
+    }
+
+    return empty($errores)
+        ? true
+        : $errores;
 }
-
-
-
-private function registrarReceta($titulo, $descripcion, $ingredientes, $idCategoria, $imagen)
+private function registrarReceta(
+    $titulo,
+    $descripcion,
+    $idCategoria,
+    $imagen
+)
 {
     $model = new RecetaModel();
 
     $nombreImagen = $imagen->getRandomName();
-    $imagen->move('assets/uploads/', $nombreImagen);
+
+    $imagen->move(
+        'assets/uploads/',
+        $nombreImagen
+    );
 
     $model->insert([
-        'titulo_receta' => $titulo,
+        'titulo_receta'      => $titulo,
         'descripcion_receta' => $descripcion,
-        'imagen_receta' => $nombreImagen,
-        'id_usuario' => session()->get('id_usuario'),
-        'id_categoria' => $idCategoria
+        'imagen_receta'      => $nombreImagen,
+        'id_usuario'         => session()->get('id_usuario'),
+        'id_categoria'       => $idCategoria
     ]);
 
-    $idReceta = $model->getInsertID();
-
-    $listaIngredientes = explode(',', $ingredientes);
-
-    $this->registrarIngredientesReceta( $idReceta, $listaIngredientes);
-
-    session()->setFlashdata('mensaje', 'Receta creada correctamente');
-
-    return redirect()->to('/crear-receta');
+    return $model->getInsertID();
 }
 
 
-
-private function registrarIngredientesReceta(  $idReceta,array $listaIngredientes)
+public function registrarIngredienteReceta(
+    $idReceta,
+    $idIngrediente
+)
 {
     $relacionModel = new RecetaIngredienteModel();
 
-    foreach ($listaIngredientes as $nombre) {
-
-        $nombre = trim($nombre);
-
-        if ($nombre == '') {
-            continue;
-        }
-
-        $ingredienteController = new Ingrediente();
-
-        $idIngrediente =
-            $ingredienteController
-                ->obtenerIngrediente($nombre);
-
-        $relacionModel->insert([
-            'id_receta' => $idReceta,
-            'id_ingrediente' => $idIngrediente
-        ]);
-    }
+    $relacionModel->insert([
+        'id_receta'      => $idReceta,
+        'id_ingrediente' => $idIngrediente
+    ]);
 }
-
-
-
-
 
     // MÉTODOS DEL RANKING DE RECETAS
-    
-   public function ranking()
-{
-    $categoriaController = new Categoria();
 
-    $data['ranking_por_categoria'] =
-        $categoriaController->obtenerRankingPorCategoria();
-
-    return view('contenido/ranking_recetas', $data);
-}
-   
 
    public function obtenerTopRecetasDeCategoria($idCategoria, $limite)
 {
@@ -251,76 +185,76 @@ private function registrarIngredientesReceta(  $idReceta,array $listaIngrediente
 
 
 ////////////////////////////////////////////
-    public function index()
-    {
-        $model = new RecetaModel();
-        $builder = $model->builder(); // Iniciamos el constructor de consultas
-
-        // Vemos qué botón apretó el usuario en la vista (por defecto usamos fecha)
-        $tipoOrden = $this->request->getGet('orden') ?? 'fecha';
-
-        // APLICAMOS EL PATRÓN ESTRATEGIA
-        if ($tipoOrden === 'likes') {
-            $estrategia = new \App\Libraries\Ordenamiento\OrdenarPorLikes();
-        } elseif ($tipoOrden === 'alfabetico') {
-            $estrategia = new \App\Libraries\Ordenamiento\OrdenarAlfabeticamente();
-        } else {
-            // Por defecto
-            $estrategia = new \App\Libraries\Ordenamiento\OrdenarPorFecha();
-        }
-
-        // Ejecutamos el algoritmo seleccionado
-        $builder = $estrategia->ordenar($builder);
-
-        // Traemos los resultados finales
-        $data['recetas'] = $builder->get()->getResultArray();
-        $data['orden_actual'] = $tipoOrden; // Para pintar el botón activo en el HTML
-
-        return view('contenido/recetas', $data);
-    }
-
-public function verRecetas($idCategoria)
+    public function obtenerRecetasOrdenadas(
+    $tipoOrden
+)
 {
-    $categoriaController = new Categoria();
-
-    $categoria =
-        $categoriaController
-            ->validarCategoria($idCategoria);
-
     $model = new RecetaModel();
 
-    $recetas = $model
-        ->where('id_categoria', $idCategoria)
-        ->findAll();
+    $builder =
+        $model->builder();
+
+    if ($tipoOrden === 'likes') {
+
+        $estrategia =
+            new \App\Libraries\Ordenamiento\OrdenarPorLikes();
+
+    } elseif (
+        $tipoOrden === 'alfabetico'
+    ) {
+
+        $estrategia =
+            new \App\Libraries\Ordenamiento\OrdenarAlfabeticamente();
+
+    } else {
+
+        $estrategia =
+            new \App\Libraries\Ordenamiento\OrdenarPorFecha();
+    }
+
+    $builder =
+        $estrategia->ordenar(
+            $builder
+        );
+
+    return $builder
+        ->get()
+        ->getResultArray();
+}
+    
+public function verRecetas($idCategoria)
+{
+    $categoriaModel = new CategoriaModel();
+
+    $categoria = $categoriaModel->find($idCategoria);
+
+    if (!$categoria) {
+        return redirect()->to('/categorias');
+    }
+
+    $recetaModel = new RecetaModel();
+
+    $recetas = $recetaModel
+             ->where('id_categoria', $idCategoria)
+             ->findAll();
 
     return view('contenido/recetas', [
-        'categoria' => $categoria,
-        'recetas' => $recetas
+        'categoria'    => $categoria,
+        'recetas'      => $recetas,
+        'orden_actual' => 'fecha'
     ]);
 }
-
-    public function guardados()
-    {
-        return view('contenido/guardados');
-    }
 
 ///contador de votos
 
 public function actualizarContadorVotos($idReceta)
 {
-$votoModel = new VotoRecetaModel();
+    $recetaModel = new RecetaModel();
 
-
-$likes = $votoModel->contarVotos($idReceta, 1);
-$dislikes = $votoModel->contarVotos($idReceta, 0);
-
-$recetaModel = new RecetaModel();
-
-$recetaModel->update($idReceta, [
-    'cant_likes' => $likes,
-    'cant_dislikes' => $dislikes
-]);
-
+    $recetaModel
+        ->actualizarContadorVotosSP(
+            $idReceta
+        );
 }
 
 }

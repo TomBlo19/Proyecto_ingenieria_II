@@ -7,41 +7,21 @@ use App\Models\RecetaModel;
 use App\Models\VotoResenaModel;
 use App\Models\VotoRecetaModel;
 use App\Models\ResenaModel;
-
+use App\Models\UsuarioModel; 
 class VotoResena extends BaseController
 {
 
-public function votarResena()
+public function votarResena(
+    $idUsuario,
+    $idResena,
+    $tipoVoto
+)
 {
-    $idReceta = $this->request->getPost('id_receta');
-
-    $usuarioController = new Usuario();
-
-   $usuarioValido = $usuarioController->verificarUsuario();
-
-    if ($usuarioValido !== true) {
-        return $usuarioValido;
-    }
-
-    $idResena = $this->request->getPost('id_resena');
-
-    $idUsuario = session()->get('id_usuario');
-
-    $tipoVoto = $this->request->getPost('tipo_voto');
-
-
-    $this->verificarVotoResena(
+    return $this->verificarVotoResena(
         $idUsuario,
         $idResena,
         $tipoVoto
     );
-
-    return redirect()
-        ->to('/receta/' . $idReceta)
-        ->with(
-            'success_voto',
-            'Voto registrado correctamente'
-        );
 }
 
 
@@ -78,13 +58,20 @@ private function guardarVotoResena(
     $votoExistente
 )
 {
-    $votoResenaModel = new VotoResenaModel();
+    $votoResenaModel =
+        new VotoResenaModel();
 
     if ($votoExistente) {
 
         $votoResenaModel
-            ->where('id_usuario', $idUsuario)
-            ->where('id_resena', $idResena)
+            ->where(
+                'id_usuario',
+                $idUsuario
+            )
+            ->where(
+                'id_resena',
+                $idResena
+            )
             ->set([
                 'tipo_voto' => $tipoVoto
             ])
@@ -94,15 +81,12 @@ private function guardarVotoResena(
 
         $votoResenaModel->insert([
             'id_usuario' => $idUsuario,
-            'id_resena'  => $idResena,
-            'tipo_voto'  => $tipoVoto
+            'id_resena' => $idResena,
+            'tipo_voto' => $tipoVoto
         ]);
     }
 
-   $resenaController = new Resena();
-
-return $resenaController
-    ->actualizarContadorVotosResena($idResena);
+    return true;
 }
 
 

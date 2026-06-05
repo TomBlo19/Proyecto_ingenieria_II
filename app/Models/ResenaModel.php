@@ -9,7 +9,7 @@ class ResenaModel extends Model
     protected $table            = 'resena';
     protected $primaryKey       = 'id_resena';
     
-    // Le decimos a CodeIgniter qué columnas le dejamos modificar
+    
     protected $allowedFields    = [
         'id_receta', 
         'id_usuario', 
@@ -48,6 +48,12 @@ public function contarDislikes($idResena)
         ->countAllResults();
 }
     
-    
+    public function actualizarContadorVotosSP($idResena)
+{
+    $this->db->query(
+        "CALL sp_actualizar_contador_votos_resena(?)",
+        [$idResena]
+    );
+}
     
 }
