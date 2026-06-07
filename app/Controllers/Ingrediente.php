@@ -39,13 +39,6 @@ public  function registrarIngrediente($nombre)
 
 
 
-public function obtenerIngredientesReceta($idReceta)
-{
-    $model = new IngredienteModel();
 
-    return $model->obtenerIngredientesReceta(
-        $idReceta
-    );
-}
 
 }

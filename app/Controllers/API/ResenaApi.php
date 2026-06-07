@@ -17,19 +17,13 @@ class ResenaApi extends BaseController
 public function guardarResena()
 {
     $idUsuario =
-        session()->get(
-            'id_usuario'
-        );
+        session()->get('id_usuario');
 
     $idReceta =
-        $this->request->getPost(
-            'id_receta'
-        );
+        $this->request->getPost('id_receta');
 
     $textoResena =
-        $this->request->getPost(
-            'texto_resena'
-        );
+        $this->request->getPost('texto_resena');
 
     if (!session()->get('isLoggedIn')) {
 
@@ -44,13 +38,12 @@ public function guardarResena()
     $usuarioController =
         new \App\Controllers\Usuario();
 
-    $usuarioValido =
-        $usuarioController
+    if (
+        !$usuarioController
             ->verificarUsuario(
                 $idUsuario
-            );
-
-    if (!$usuarioValido) {
+            )
+    ) {
 
         return redirect()
             ->to('/receta/' . $idReceta)
@@ -60,18 +53,17 @@ public function guardarResena()
             );
     }
 
-    $resenaController =
-        new \App\Controllers\Resena();
+   $publicacionController =
+    new \App\Controllers\Publicacion();
 
-    $resultado =
-        $resenaController
-            ->guardarResena(
-                $idUsuario,
-                $idReceta,
-                $textoResena
-            );
-
-    if (!$resultado) {
+if (
+    $publicacionController
+        ->verificarComentarioUsuario(
+            $idUsuario,
+            $idReceta
+        )
+)
+    {
 
         return redirect()
             ->to('/receta/' . $idReceta)
@@ -81,6 +73,16 @@ public function guardarResena()
             );
     }
 
+    $publicacionController =
+        new \App\Controllers\Publicacion();
+
+    $publicacionController
+        ->guardarResena(
+            $idUsuario,
+            $idReceta,
+            $textoResena
+        );
+
     return redirect()
         ->to('/receta/' . $idReceta)
         ->with(
@@ -88,6 +90,7 @@ public function guardarResena()
             '¡Tu reseña fue publicada con éxito!'
         );
 }
+
 public function votarResena()
 {
     $idResena =
@@ -139,22 +142,16 @@ public function votarResena()
             );
     }
 
-    $votoController =
-        new \App\Controllers\VotoResena();
+   $valoracionController =
+    new \App\Controllers\Valoracion();
 
-    $votoController->votarResena(
-        $idUsuario,
-        $idResena,
-        $tipoVoto
-    );
+  $valoracionController->valorarPublicacion('resena',$idUsuario,$idResena,$tipoVoto);
 
-    $resenaController =
-        new \App\Controllers\Resena();
+   $resenaController =
+    new \App\Controllers\Resena();
 
-    $resenaController
-        ->actualizarContadorVotosResena(
-            $idResena
-        );
+$resenaController
+    ->actualizarContadorVotosResena($idResena);
 
     return redirect()
         ->to('/receta/' . $idReceta)

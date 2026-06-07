@@ -10,29 +10,25 @@ use App\Controllers\Resena;
 use App\Models\RecetaModel;
 use App\Models\UsuarioModel; 
 use App\Models\CategoriaModel;
+use App\Controllers\Buscador;
 class RecetaApi extends BaseController
 {
   public function inicio()
 {
-    $recetaController = new Receta();
+    $buscadorController =
+    new \App\Controllers\Buscador();
 
-    $data['ranking_recetas'] =
-        $recetaController
-            ->obtenerRankingRecetas(6);
+  $data['ranking_recetas'] =
+    $buscadorController ->obtenerRankingRecetas(6);
 
-    $resenaController = new Resena();
+  $data['ranking_resenas'] =
+    $buscadorController ->obtenerRankingResenas(3);
 
-    $data['ranking_resenas'] =
-        $resenaController
-            ->obtenerRankingResenas(3);
-
-    $data['recetas_recientes'] =
-        $recetaController
-            ->obtenerRecetasRecientes(6);
+  $data['recetas_recientes'] =
+    $buscadorController ->obtenerRecetasRecientes(6);
 
     return view(
-        'contenido/home',
-        $data
+        'contenido/home', $data
     );
 }
 
@@ -43,19 +39,20 @@ class RecetaApi extends BaseController
         $data['receta'] = $model->find($id);
 
         $ingredienteController = new Ingrediente();
+         $publicacionController = new \App\Controllers\Publicacion();
+        $buscadorController =new \App\Controllers\Buscador();
 
         $data['ingredientes'] =
-            $ingredienteController
-                ->obtenerIngredientesReceta($id);
-
-        $resenaController = new Resena();
+         $buscadorController ->obtenerIngredientesReceta($id);
 
         $data['resenas'] =
-            $resenaController->obtenerResenas($id);
+          $buscadorController->obtenerResenas($id);
+        
+          $resenaController = new Resena();
 
        $data['ya_comento'] =
     session()->get('isLoggedIn')
-        ? $resenaController->usuarioYaComento(
+        ? $publicacionController->VerificarComentarioUsuario(
             session()->get('id_usuario'),
             $id
         )
@@ -66,8 +63,8 @@ class RecetaApi extends BaseController
   
 public function guardarReceta()
 {
-    $recetaController =
-        new \App\Controllers\Receta();
+    $publicacionController =
+        new \App\Controllers\Publicacion();
 
     $ingredienteController =
         new \App\Controllers\Ingrediente();
@@ -88,7 +85,7 @@ public function guardarReceta()
         $this->request->getFile('imagen');
 
     $resultado =
-        $recetaController->guardarReceta(
+        $publicacionController->guardarReceta(
             $titulo,
             $descripcion,
             $ingredientes,
@@ -117,7 +114,7 @@ public function guardarReceta()
             $ingredienteController
                 ->obtenerIngrediente($nombre);
 
-        $recetaController
+        $publicacionController
             ->registrarIngredienteReceta(
                 $idReceta,
                 $idIngrediente
@@ -196,10 +193,11 @@ if (
         );
 }
 
-$votoController =
-    new \App\Controllers\VotoReceta();
+$ValoracionController =
+    new \App\Controllers\Valoracion();
 
-$votoController->valorarReceta(
+$ValoracionController->valorarPublicacion(
+    'receta',
     $idUsuario,
     $idReceta,
     $tipoVoto
@@ -209,7 +207,7 @@ $recetaController =
     new \App\Controllers\Receta();
 
 $recetaController
-    ->actualizarContadorVotos(
+    ->actualizarContadorVotosReceta(
         $idReceta
     );
 
@@ -229,11 +227,11 @@ public function listarRecetas()
         $this->request->getGet('orden')
         ?? 'fecha';
 
-    $recetaController =
-        new \App\Controllers\Receta();
+    $buscadorController =
+        new \App\Controllers\Buscador();
 
     $data['recetas'] =
-        $recetaController
+        $buscadorController
             ->obtenerRecetasOrdenadas(
                 $tipoOrden
             );
@@ -247,6 +245,39 @@ public function listarRecetas()
     );
 }
 
+public function verRecetasCategoria(
+    $idCategoria
+)
+{
+    $categoriaController =
+        new \App\Controllers\Categoria();
 
+    if (
+        !$categoriaController
+            ->validarCategoria(
+                $idCategoria
+            )
+    ) {
+        return redirect()
+            ->to('/categorias');
+    }
+
+    $buscadorController =
+        new \App\Controllers\Buscador();
+
+    $data['recetas'] =
+        $buscadorController
+            ->obtenerRecetasPorCategoria(
+                $idCategoria
+            );
+
+    $data['orden_actual'] =
+        'fecha';
+
+    return view(
+        'contenido/recetas',
+        $data
+    );
+}
 
 }

@@ -22,7 +22,7 @@ $routes->get('/guardados', 'API\NavegacionApi::guardados');
 
 $routes->get('/receta/(:num)', 'API\RecetaApi::detalle/$1');
 
-$routes->get('/categoria/(:num)', 'Receta::verRecetas/$1');
+$routes->get('/categoria/(:num)', 'API\RecetaApi::verRecetasCategoria/$1');
 // login
 
 

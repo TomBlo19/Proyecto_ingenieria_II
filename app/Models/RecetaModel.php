@@ -21,9 +21,19 @@ class RecetaModel extends Model
 public function actualizarContadorVotosSP($idReceta)
 {
     $this->db->query(
-        "CALL sp_actualizar_contador_votos(?)",
+        "CALL sp_actualizar_contador_votos_receta(?)",
         [$idReceta]
     );
+}
+
+public function obtenerRankingRecetasSP($limite)
+{
+    return $this->db
+        ->query(
+            "CALL sp_obtener_ranking_recetas(?)",
+            [$limite]
+        )
+        ->getResultArray();
 }
    
 }

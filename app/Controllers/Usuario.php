@@ -6,7 +6,7 @@ use App\Models\UsuarioModel;
 class Usuario extends BaseController
 {
 
-private function registrarUsuario(
+public function registrarUsuario(
     $nombre,
     $correo,
     $password

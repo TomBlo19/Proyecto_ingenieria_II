@@ -1,0 +1,125 @@
+DEBUG - 2026-06-06 06:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:36:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-06 06:39:02 --> Error: Class "App\Controllers\VotoResenaModel" not found
+[Method: POST, Route: votar-resena]
+in APPPATH\Controllers\Resena.php on line 101.
+ 1 APPPATH\Controllers\Resena.php(86): App\Controllers\Resena->verificarVotoResena('1', '5', '0')
+ 2 APPPATH\Controllers\API\ResenaApi.php(145): App\Controllers\Resena->votarResena('1', '5', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-06 06:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-06 06:39:39 --> PROCEDURE cocineritos.sp_actualizar_contador_votos_resena does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CALL sp_actualizar_contador_votos_resena(\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_actualizar_contador_votos_resena(\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_actualizar_contador_votos_resena(\'5\')')
+ 4 APPPATH\Models\ResenaModel.php(53): CodeIgniter\Database\BaseConnection->query('CALL sp_actualizar_contador_votos_resena(?)', [...])
+ 5 APPPATH\Controllers\Resena.php(164): App\Models\ResenaModel->actualizarContadorVotosSP('5')
+ 6 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Resena->actualizarContadorVotosResena('5')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-06 06:39:40 --> CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE cocineritos.sp_actualizar_contador_votos_resena does not exist
+[Method: POST, Route: votar-resena]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 APPPATH\Models\ResenaModel.php(53): CodeIgniter\Database\BaseConnection->query('CALL sp_actualizar_contador_votos_resena(?)', [...])
+ 2 APPPATH\Controllers\Resena.php(164): App\Models\ResenaModel->actualizarContadorVotosSP('5')
+ 3 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Resena->actualizarContadorVotosResena('5')
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-06 06:39:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE cocineritos.sp_actualizar_contador_votos_resena does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_actualizar_contador_votos_resena(\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_actualizar_contador_votos_resena(\'5\')')
+ 3 APPPATH\Models\ResenaModel.php(53): CodeIgniter\Database\BaseConnection->query('CALL sp_actualizar_contador_votos_resena(?)', [...])
+ 4 APPPATH\Controllers\Resena.php(164): App\Models\ResenaModel->actualizarContadorVotosSP('5')
+ 5 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Resena->actualizarContadorVotosResena('5')
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-06 06:39:40 --> [Caused by] mysqli_sql_exception: PROCEDURE cocineritos.sp_actualizar_contador_votos_resena does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CALL sp_actualizar_contador_votos_resena(\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_actualizar_contador_votos_resena(\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_actualizar_contador_votos_resena(\'5\')')
+ 4 APPPATH\Models\ResenaModel.php(53): CodeIgniter\Database\BaseConnection->query('CALL sp_actualizar_contador_votos_resena(?)', [...])
+ 5 APPPATH\Controllers\Resena.php(164): App\Models\ResenaModel->actualizarContadorVotosSP('5')
+ 6 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Resena->actualizarContadorVotosResena('5')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-06 06:48:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:48:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:53:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:53:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:53:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 06:53:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 08:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 10:52:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 11:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 11:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 11:08:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:30:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:51:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:51:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-06 23:51:54 --> Error: Call to undefined method App\Controllers\Resena::usuarioYaComento()
+[Method: GET, Route: receta/5]
+in APPPATH\Controllers\API\RecetaApi.php on line 58.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->detalle('5')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-06 23:54:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:54:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-06 23:58:19 --> Error: Class "App\Controllers\Valorar" not found
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\API\RecetaApi.php on line 200.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-06 23:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-06 23:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

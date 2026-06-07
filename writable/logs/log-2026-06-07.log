@@ -1,0 +1,571 @@
+DEBUG - 2026-06-07 00:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:07:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:07:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:07:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:07:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 00:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 05:16:00 --> Error: Class "App\Controllers\Buscador" not found
+[Method: GET, Route: /]
+in APPPATH\Controllers\API\RecetaApi.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 05:16:40 --> ParseError: syntax error, unexpected token "class", expecting "," or ";"
+[Method: GET, Route: /]
+in APPPATH\Controllers\API\RecetaApi.php on line 14.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto_cocineritos\\app\\Controllers\\API\\RecetaApi.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\API\\RecetaApi')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\API\\RecetaApi')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\API\\RecetaApi')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('/')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 05:16:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 05:16:55 --> Error: Class "App\Controllers\Buscador" not found
+[Method: GET, Route: /]
+in APPPATH\Controllers\API\RecetaApi.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 05:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:24:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:29:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 05:29:58 --> ErrorException: Undefined variable $resenaController
+[Method: GET, Route: receta/5]
+in APPPATH\Controllers\API\RecetaApi.php on line 54.
+ 1 APPPATH\Controllers\API\RecetaApi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $resenaController', 'C:\\xampp\\htdocs\\proyecto_cocineritos\\app\\Controllers\\API\\RecetaApi.php', 54)
+ 2 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->detalle('5')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 05:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:30:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:31:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:48:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 05:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:14:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:55:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:55:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 06:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:10:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:10:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:25:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:35:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:35:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:35:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 07:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 08:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 08:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 08:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 08:07:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 08:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:45:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:45:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 10:45:34 --> Error: Call to undefined method App\Controllers\Resena::VerificarComentarioUsuario()
+[Method: GET, Route: receta/7]
+in APPPATH\Controllers\API\RecetaApi.php on line 55.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->detalle('7')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 10:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 10:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 13:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 13:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 13:42:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 14:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-07 19:05:29 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-06-07 19:05:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 3 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 4 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 19:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-07 19:05:33 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-06-07 19:05:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 3 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 4 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 19:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-07 19:11:56 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-06-07 19:11:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 3 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 4 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 19:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 19:22:41 --> ErrorException: Maximum execution time of 120 seconds exceeded
+[Method: GET, Route: /]
+in SYSTEMPATH\Debug\Exceptions.php on line 197.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-07 19:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-07 19:28:29 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=25108 in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-06-07 19:28:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 3 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 4 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:28:29 --> ErrorException: Maximum execution time of 120 seconds exceeded
+【Previous Exception】
+CodeIgniter\Database\Exceptions\DatabaseException
+Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#2 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+[Method: GET, Route: /]
+in SYSTEMPATH\Autoloader\Autoloader.php on line 295.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-07 19:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-07 19:42:33 --> PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CALL sp_obtener_ranking_recetas(6)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_obtener_ranking_recetas(6)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_obtener_ranking_recetas(6)')
+ 4 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 5 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 6 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:42:33 --> CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 2 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 3 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:42:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_obtener_ranking_recetas(6)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_obtener_ranking_recetas(6)')
+ 3 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 4 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 5 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:42:33 --> [Caused by] mysqli_sql_exception: PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CALL sp_obtener_ranking_recetas(6)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_obtener_ranking_recetas(6)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_obtener_ranking_recetas(6)')
+ 4 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 5 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 6 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 19:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-07 19:42:34 --> PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CALL sp_obtener_ranking_recetas(6)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_obtener_ranking_recetas(6)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_obtener_ranking_recetas(6)')
+ 4 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 5 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 6 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:42:34 --> CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 2 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 3 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:42:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_obtener_ranking_recetas(6)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_obtener_ranking_recetas(6)')
+ 3 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 4 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 5 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:42:34 --> [Caused by] mysqli_sql_exception: PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CALL sp_obtener_ranking_recetas(6)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_obtener_ranking_recetas(6)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_obtener_ranking_recetas(6)')
+ 4 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 5 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 6 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 19:43:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-07 19:43:17 --> PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CALL sp_obtener_ranking_recetas(6)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_obtener_ranking_recetas(6)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_obtener_ranking_recetas(6)')
+ 4 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 5 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 6 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:43:17 --> CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 2 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 3 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:43:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_obtener_ranking_recetas(6)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_obtener_ranking_recetas(6)')
+ 3 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 4 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 5 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-07 19:43:17 --> [Caused by] mysqli_sql_exception: PROCEDURE cocineritos.sp_obtener_ranking_recetas does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CALL sp_obtener_ranking_recetas(6)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_obtener_ranking_recetas(6)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_obtener_ranking_recetas(6)')
+ 4 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 5 APPPATH\Controllers\Buscador.php(23): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 6 APPPATH\Controllers\API\RecetaApi.php(22): App\Controllers\Buscador->obtenerRankingRecetas(6)
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 19:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:48:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:48:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:52:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 19:52:00 --> Error: Call to undefined method App\Controllers\API\NavegacionApi::registrarUsuario()
+[Method: POST, Route: guardar-usuario]
+in APPPATH\Controllers\API\NavegacionApi.php on line 46.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\NavegacionApi->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\NavegacionApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 19:52:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:52:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 19:52:33 --> Error: Call to undefined method App\Controllers\Valoracion::valorarPublicacion()
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\API\RecetaApi.php on line 199.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-07 19:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:53:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

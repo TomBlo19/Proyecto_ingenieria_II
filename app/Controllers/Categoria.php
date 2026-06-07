@@ -19,15 +19,12 @@ public function validarCategoria($idCategoria)
     ) !== null;
 }
 
-private function buscarCategoria($id)
+private function buscarCategoria($idCategoria)
 {
-   $model = new CategoriaModel();
-    
-    return $model->find($id);
+    $model = new CategoriaModel();
+
+    return $model->find($idCategoria);
 }
-
-
-
 
 
 //racking
