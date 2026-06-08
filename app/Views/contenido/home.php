@@ -45,24 +45,59 @@
         </div>
 
 
-        <form action="<?= base_url('recetas') ?>">
+       <form action="<?= base_url('buscar') ?>" method="get">
 
-            <div class="input-group input-group-lg">
+    <div class="row g-2">
 
-                <input type="text"
-                       class="form-control"
-                       placeholder="Buscar recetas...">
+        <div class="col-md-3">
 
-                <button class="btn btn-warning fw-bold">
+            <select
+                name="tipo"
+                class="form-select form-select-lg"
+            >
 
-                    Buscar
-                    <i class="bi bi-search-heart"></i>
+                <option value="nombre">
+                    Nombre
+                </option>
 
-                </button>
+                <option value="categoria">
+                    Categoría
+                </option>
 
-            </div>
+                <option value="ingrediente">
+                    Ingrediente
+                </option>
 
-        </form>
+            </select>
+
+        </div>
+
+        <div class="col-md-7">
+
+            <input
+                type="text"
+                name="valor"
+                class="form-control form-control-lg"
+                placeholder="Buscar..."
+                required
+            >
+
+        </div>
+
+        <div class="col-md-2">
+
+            <button
+                class="btn btn-warning btn-lg w-100 fw-bold"
+            >
+                Buscar
+                <i class="bi bi-search"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</form>
 
     </div>
 

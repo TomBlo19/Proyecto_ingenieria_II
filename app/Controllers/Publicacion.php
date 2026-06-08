@@ -4,202 +4,76 @@ namespace App\Controllers;
 
 use App\Models\RecetaModel;
 use App\Models\IngredienteModel;
-use App\Models\RecetaIngredienteModel;
-use App\Models\VotoRecetaModel;
-use App\Models\CategoriaModel;
 use App\Models\ResenaModel;
-use App\Models\VotoResenaModel;
 
 class Publicacion extends BaseController
 {
-//////////////////////// REGISTRAR RECETA 
+    public function obtenerDetallePublicacion(
+        $idReceta
+    )
+    {
+        $recetaModel =new RecetaModel();
 
-public function guardarReceta(
-    $titulo,
-    $descripcion,
-    $ingredientes,
-    $idCategoria,
-    $imagen
-)
-{
-    $datos = $this->validarReceta(
-        $titulo,
-        $descripcion,
-        $ingredientes,
-        $idCategoria,
-        $imagen
-    );
+        $ingredienteModel =new IngredienteModel();
 
-    if ($datos !== true) {
+        $resenaModel =new ResenaModel();
 
-        return view(
-            'contenido/crear_receta',
-            ['errores' => $datos]
-        );
+        $receta =$recetaModel->find($idReceta);
+
+        $ingredientes =
+            $ingredienteModel
+                ->obtenerIngredientesReceta( $idReceta);
+
+        $resenas =
+            $resenaModel
+                ->obtenerResenas($idReceta);
+        $yaComento = false;
+
+        if (session()->get('isLoggedIn')) {
+            $yaComento =
+                $resenaModel
+                    ->where([
+                        'id_usuario' => session()->get('id_usuario'),
+                        'id_receta' => $idReceta])
+                    ->first();
+        }
+
+        return [
+            'receta'       => $receta,
+            'ingredientes' => $ingredientes,
+            'resenas'      => $resenas,
+            'ya_comento'   => $yaComento
+        ];
     }
 
-    return $this->registrarReceta(
-        $titulo,
-        $descripcion,
-        $idCategoria,
-        $imagen
-    );
-}
-private function validarReceta(
-    $titulo,
-    $descripcion,
-    $ingredientes,
-    $idCategoria,
-    $imagen
-)
-{
-    $errores = [];
-
-  
-    if (empty(trim($titulo))) {
-
-        $errores['titulo'] =
-            'El título es obligatorio.';
-
-    } elseif (strlen(trim($titulo)) < 3) {
-
-        $errores['titulo'] =
-            'El título debe tener al menos 3 caracteres.';
-    }
-
-   
-    if (empty(trim($descripcion))) {
-
-        $errores['descripcion'] =
-            'La descripción es obligatoria.';
-
-    } elseif (strlen(trim($descripcion)) < 10) {
-
-        $errores['descripcion'] =
-            'La descripción debe tener al menos 10 caracteres.';
-    }
-
-  
-    if (empty(trim($ingredientes))) {
-
-        $errores['ingredientes'] =
-            'Los ingredientes son obligatorios.';
-
-    } elseif (strlen(trim($ingredientes)) < 5) {
-
-        $errores['ingredientes'] =
-            'Ingresá ingredientes más detallados.';
-    }
-
-  
-    if (empty($idCategoria)) {
-
-        $errores['categoria'] =
-            'Debes seleccionar una categoría.';
-    }
-
-    if (!$imagen || !$imagen->isValid()) {
-
-        $errores['imagen'] =
-            'Debes seleccionar una imagen válida.';
-    }
-
-    return empty($errores)
-        ? true
-        : $errores;
-}
-private function registrarReceta(
-    $titulo,
-    $descripcion,
-    $idCategoria,
-    $imagen
-)
-{
-    $model = new RecetaModel();
-
-    $nombreImagen = $imagen->getRandomName();
-
-    $imagen->move(
-        'assets/uploads/',
-        $nombreImagen
-    );
-
-    $model->insert([
-        'titulo_receta'      => $titulo,
-        'descripcion_receta' => $descripcion,
-        'imagen_receta'      => $nombreImagen,
-        'id_usuario'         => session()->get('id_usuario'),
-        'id_categoria'       => $idCategoria
-    ]);
-
-    return $model->getInsertID();
-}
-
-
-public function registrarIngredienteReceta(
+public function obtenerPublicacionDesdeResena(
     $idReceta,
-    $idIngrediente
+    $idResena
 )
 {
-    $relacionModel = new RecetaIngredienteModel();
+    $recetaModel =
+        new RecetaModel();
 
-    $relacionModel->insert([
-        'id_receta'      => $idReceta,
-        'id_ingrediente' => $idIngrediente
-    ]);
-}
-
-////// registar reseña
-public function guardarResena(
-    $idUsuario,
-    $idReceta,
-    $textoResena
-)
-{
-    return $this->registrarResena(
-        $idUsuario,
-        $idReceta,
-        $textoResena
-    );
-}
-
-
-
-private function registrarResena(
-    $idUsuario,
-    $idReceta,
-    $textoResena
-)
-{
-    $resenaModel = new ResenaModel();
-
-    $resenaModel->insert([
-        'id_receta'         => $idReceta,
-        'id_usuario'        => $idUsuario,
-        'titulo_resena'     => 'Opinión',
-        'comentario_resena' => $textoResena,
-        'cant_likes'        => 0,
-        'cant_dislikes'     => 0
-    ]);
-
-    return true;
-}
-
-public function VerificarComentarioUsuario(
-    $idUsuario,
-    $idReceta
-)
-{
     $resenaModel =
         new ResenaModel();
 
-    return $resenaModel
-        ->where([
-            'id_usuario' => $idUsuario,
-            'id_receta' => $idReceta
-        ])
-        ->first();
+    $receta =
+        $recetaModel->find(
+            $idReceta
+        );
+
+    $resena =
+        $resenaModel->find(
+            $idResena
+        );
+
+    return [
+        'receta' => $receta,
+        'resena' => $resena
+    ];
 }
+
+    }
  
 
-}
+

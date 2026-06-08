@@ -53,11 +53,11 @@ public function guardarResena()
             );
     }
 
-   $publicacionController =
-    new \App\Controllers\Publicacion();
+   $resenaController =
+    new \App\Controllers\Resena();
 
 if (
-    $publicacionController
+    $resenaController
         ->verificarComentarioUsuario(
             $idUsuario,
             $idReceta
@@ -73,10 +73,10 @@ if (
             );
     }
 
-    $publicacionController =
-        new \App\Controllers\Publicacion();
+    $resenaController =
+        new \App\Controllers\Resena();
 
-    $publicacionController
+    $resenaController
         ->guardarResena(
             $idUsuario,
             $idReceta,
@@ -159,6 +159,56 @@ $resenaController
             'success_voto',
             'Voto registrado correctamente'
         );
+}
+
+public function listarResenas()
+{
+    $resenaModel =
+        new \App\Models\ResenaModel();
+
+    $data['resenas'] =
+        $resenaModel
+            ->orderBy(
+                'id_resena',
+                'DESC'
+            )
+            ->findAll();
+
+    return view(
+        'contenido/resenas',
+        $data
+    );
+}
+
+public function verResena(
+    $idResena
+)
+{
+    $resenaController =
+        new \App\Controllers\Resena();
+
+    $resena =
+        $resenaController
+            ->buscarResena(
+                $idResena
+            );
+
+    $publicacionController =
+        new \App\Controllers\Publicacion();
+
+    $publicacion =
+        $publicacionController
+            ->obtenerPublicacionDesdeResena(
+                $resena['id_receta'],
+                $idResena
+            );
+
+    return redirect()->to(
+        '/receta/' .
+        $publicacion['receta']['id_receta'] .
+        '?resena=' .
+        $publicacion['resena']['id_resena']
+    );
 }
 
 

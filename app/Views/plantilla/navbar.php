@@ -23,6 +23,11 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="<?= base_url('recetas') ?>">Recetas</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link text-white" href="<?= base_url('resenas') ?>">
+            Reseñas
+           </a>
+           </li>
 
           <li class="nav-item">
             <a class="nav-link text-white" href="<?= base_url('ranking') ?>">Ranking</a>

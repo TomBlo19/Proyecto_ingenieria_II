@@ -15,57 +15,50 @@ class RecetaApi extends BaseController
 {
   public function inicio()
 {
-    $buscadorController =
-    new \App\Controllers\Buscador();
+    $recetaController =
+    new \App\Controllers\Receta();
 
-  $data['ranking_recetas'] =
-    $buscadorController ->obtenerRankingRecetas(6);
+$resenaController =
+    new \App\Controllers\Resena();
 
-  $data['ranking_resenas'] =
-    $buscadorController ->obtenerRankingResenas(3);
+$data['ranking_recetas'] =
+    $recetaController
+        ->obtenerRankingRecetas(6);
 
-  $data['recetas_recientes'] =
-    $buscadorController ->obtenerRecetasRecientes(6);
+$data['ranking_resenas'] =
+    $resenaController
+        ->obtenerRankingResenas(3);
+
+$data['recetas_recientes'] =
+    $recetaController
+        ->obtenerRecetasRecientes(6);
 
     return view(
         'contenido/home', $data
     );
 }
 
-    public function detalle($id)
-    {
-        $model = new RecetaModel();
-
-        $data['receta'] = $model->find($id);
-
-        $ingredienteController = new Ingrediente();
-         $publicacionController = new \App\Controllers\Publicacion();
-        $buscadorController =new \App\Controllers\Buscador();
-
-        $data['ingredientes'] =
-         $buscadorController ->obtenerIngredientesReceta($id);
-
-        $data['resenas'] =
-          $buscadorController->obtenerResenas($id);
-        
-          $resenaController = new Resena();
-
-       $data['ya_comento'] =
-    session()->get('isLoggedIn')
-        ? $publicacionController->VerificarComentarioUsuario(
-            session()->get('id_usuario'),
-            $id
-        )
-        : false;
-
-        return view('contenido/receta_detalle', $data);
-    }
-  
-public function guardarReceta()
+   public function detalle($id)
 {
     $publicacionController =
         new \App\Controllers\Publicacion();
 
+    $data =
+        $publicacionController
+            ->obtenerDetallePublicacion(
+                $id
+            );
+
+    return view(
+        'contenido/receta_detalle',
+        $data
+    );
+}
+  
+public function guardarReceta()
+{
+    $recetaController =
+    new \App\Controllers\Receta();
     $ingredienteController =
         new \App\Controllers\Ingrediente();
 
@@ -85,7 +78,7 @@ public function guardarReceta()
         $this->request->getFile('imagen');
 
     $resultado =
-        $publicacionController->guardarReceta(
+    $recetaController->guardarReceta(
             $titulo,
             $descripcion,
             $ingredientes,
@@ -114,7 +107,7 @@ public function guardarReceta()
             $ingredienteController
                 ->obtenerIngrediente($nombre);
 
-        $publicacionController
+        $recetaController
             ->registrarIngredienteReceta(
                 $idReceta,
                 $idIngrediente
@@ -133,19 +126,22 @@ public function guardarReceta()
         return view('contenido/crear_receta');
     }
 
-    public function ranking()
-    {
-        $categoriaController = new Categoria();
+   public function ranking()
+{
+    $categoriaController =
+    new Categoria();
 
-        $data['ranking_por_categoria'] =
-            $categoriaController
-                ->obtenerRankingPorCategoria();
-
-        return view(
-            'contenido/ranking_recetas',
-            $data
+$data['ranking_por_categoria'] =
+    $categoriaController
+        ->obtenerRankingPorCategoria(
+            10
         );
-    }
+
+    return view(
+        'contenido/ranking_recetas',
+        $data
+    );
+}
 
 
    public function valorarReceta()
@@ -227,14 +223,14 @@ public function listarRecetas()
         $this->request->getGet('orden')
         ?? 'fecha';
 
-    $buscadorController =
-        new \App\Controllers\Buscador();
+    $recetaController =
+    new \App\Controllers\Receta();
 
-    $data['recetas'] =
-        $buscadorController
-            ->obtenerRecetasOrdenadas(
-                $tipoOrden
-            );
+$data['recetas'] =
+    $recetaController
+        ->obtenerRecetasOrdenadas(
+            $tipoOrden
+        );
 
     $data['orden_actual'] =
         $tipoOrden;
@@ -262,14 +258,14 @@ public function verRecetasCategoria(
             ->to('/categorias');
     }
 
-    $buscadorController =
-        new \App\Controllers\Buscador();
+    $recetaController =
+    new \App\Controllers\Receta();
 
-    $data['recetas'] =
-        $buscadorController
-            ->obtenerRecetasPorCategoria(
-                $idCategoria
-            );
+$data['recetas'] =
+    $recetaController
+        ->obtenerRecetasPorCategoria(
+            $idCategoria
+        );
 
     $data['orden_actual'] =
         'fecha';
@@ -279,5 +275,56 @@ public function verRecetasCategoria(
         $data
     );
 }
+
+ public function buscar()
+    {
+        $tipo =
+            $this->request->getGet(
+                'tipo'
+            );
+
+        $valor =
+            $this->request->getGet(
+                'valor'
+            );
+
+        $buscadorController =
+            new Buscador();
+
+        if ($tipo === 'nombre') {
+
+            $data['recetas'] =
+                $buscadorController
+                    ->buscarRecetasPorNombre(
+                        $valor
+                    );
+
+        } elseif ($tipo === 'categoria') {
+
+            $data['recetas'] =
+                $buscadorController
+                    ->buscarRecetasPorCategoria(
+                        $valor
+                    );
+
+        } elseif ($tipo === 'ingrediente') {
+
+    $data['recetas'] = [];
+
+    $data['mensaje'] =
+        'La búsqueda por ingrediente aún no está disponible.';
+} else {
+
+            $data['recetas'] = [];
+        }
+
+        $data['orden_actual'] =
+            'fecha';
+
+        return view(
+            'contenido/recetas',
+            $data
+        );
+    }
 
 }

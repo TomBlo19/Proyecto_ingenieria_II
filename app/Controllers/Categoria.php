@@ -9,8 +9,6 @@ class Categoria extends BaseController
 {
 
   
-
-
 /////////buscar por categoria
 public function validarCategoria($idCategoria)
 {
@@ -26,18 +24,14 @@ private function buscarCategoria($idCategoria)
     return $model->find($idCategoria);
 }
 
-
-//racking
-public function obtenerRankingPorCategoria(
-    $limitePorCategoria = 10
-)
+ 
+public function obtenerRankingPorCategoria($limitePorCategoria)
 {
-    $categoriaModel = new CategoriaModel();
+    $categoriaModel =new CategoriaModel();
 
-    $categorias =
-        $categoriaModel->findAll();
+    $categorias =$categoriaModel->findAll();
 
-    $recetaModel = new RecetaModel();
+    $recetaModel =new RecetaModel();
 
     $ranking = [];
 
@@ -66,5 +60,10 @@ public function obtenerRankingPorCategoria(
     }
 
     return $ranking;
-}   
+
+
+
+}
+
+ 
 }

@@ -34,7 +34,8 @@ $routes->post('/guardar-usuario', 'API\NavegacionApi::guardar');
 $routes->post('/procesar-login', 'API\NavegacionApi::procesarLogin'); 
 $routes->get('/logout', 'API\NavegacionApi::salir'); 
 
-
+$routes->get('/resenas','API\ResenaApi::listarResenas');
+$routes->get('/resena/(:num)','API\ResenaApi::verResena/$1');
 // valoracion de recetas 
 $routes->post('/valorar-receta-manual', 'API\RecetaApi::valorarReceta');
 
@@ -42,3 +43,5 @@ $routes->post('/valorar-receta-manual', 'API\RecetaApi::valorarReceta');
 $routes->post('/guardar-resena', 'API\ResenaApi::guardarResena', ['filter' => 'auth']);
 
 $routes->post('/votar-resena', 'API\ResenaApi::votarResena', ['filter' => 'auth']);
+//buscar
+$routes->get('/buscar','API\RecetaApi::buscar');
