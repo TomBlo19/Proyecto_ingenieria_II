@@ -14,6 +14,7 @@ use App\Models\CategoriaModel;
 class NavegacionApi extends BaseController
 {
 
+
 ////////////// categorias 
 public function categorias()
 {
@@ -23,6 +24,7 @@ public function categorias()
 
     return view('contenido/categorias', $data);
 }
+
 
 public function obtenerCategorias()
 {
@@ -43,6 +45,7 @@ public function login()
 
  public function guardar()
 {
+
     $this->registrarUsuario(
         $this->request->getPost('nombre'),
         $this->request->getPost('correo'),

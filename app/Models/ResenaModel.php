@@ -61,7 +61,7 @@ public function obtenerRankingResenasSP($limite)
     return $this->db
         ->query(
             "CALL sp_obtener_ranking_resenas(?)",
-            [$limite]
+            [$limite]  
         )
         ->getResultArray();
 }

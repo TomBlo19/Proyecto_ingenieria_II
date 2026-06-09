@@ -38,16 +38,40 @@ $data['recetas_recientes'] =
     );
 }
 
-   public function detalle($id)
+ public function detalle($id)
 {
-    $publicacionController =
-        new \App\Controllers\Publicacion();
+    $recetaController =
+        new \App\Controllers\Receta();
 
-    $data =
-        $publicacionController
-            ->obtenerDetallePublicacion(
-                $id
-            );
+    $ingredienteController =
+        new \App\Controllers\Ingrediente();
+
+    $resenaController =
+        new \App\Controllers\Resena();
+
+    $data['receta'] =
+        $recetaController
+            ->buscarReceta($id);
+
+    $data['ingredientes'] =
+        $ingredienteController
+            ->obtenerIngredientesReceta($id);
+
+    $data['resenas'] =
+        $resenaController
+            ->obtenerResenas($id);
+
+    $data['ya_comento'] = false;
+
+    if (session()->get('isLoggedIn')) {
+
+        $data['ya_comento'] =
+            $resenaController
+                ->verificarComentarioUsuario(
+                    session()->get('id_usuario'),
+                    $id
+                );
+    }
 
     return view(
         'contenido/receta_detalle',
@@ -77,14 +101,17 @@ public function guardarReceta()
     $imagen =
         $this->request->getFile('imagen');
 
-    $resultado =
-    $recetaController->guardarReceta(
-            $titulo,
-            $descripcion,
-            $ingredientes,
-            $categoria,
-            $imagen
-        );
+    $publicacionController =
+    new \App\Controllers\Publicacion();
+
+$resultado =
+    $publicacionController->publicarReceta(
+        $titulo,
+        $descripcion,
+        $ingredientes,
+        $categoria,
+        $imagen
+    );
 
     if (!is_numeric($resultado)) {
         return $resultado;
@@ -107,11 +134,7 @@ public function guardarReceta()
             $ingredienteController
                 ->obtenerIngrediente($nombre);
 
-        $recetaController
-            ->registrarIngredienteReceta(
-                $idReceta,
-                $idIngrediente
-            );
+        
     }
 
     session()->setFlashdata(
@@ -189,23 +212,15 @@ if (
         );
 }
 
-$ValoracionController =
+$valoracionController =
     new \App\Controllers\Valoracion();
 
-$ValoracionController->valorarPublicacion(
+$valoracionController->valorarPublicacion(
     'receta',
     $idUsuario,
     $idReceta,
     $tipoVoto
 );
-
-$recetaController =
-    new \App\Controllers\Receta();
-
-$recetaController
-    ->actualizarContadorVotosReceta(
-        $idReceta
-    );
 
 return redirect()
     ->to('/receta/' . $idReceta)
@@ -288,26 +303,26 @@ $data['recetas'] =
                 'valor'
             );
 
-        $buscadorController =
-            new Buscador();
+        $recetaController =
+    new Receta();
 
-        if ($tipo === 'nombre') {
+if ($tipo === 'nombre') {
 
-            $data['recetas'] =
-                $buscadorController
-                    ->buscarRecetasPorNombre(
-                        $valor
-                    );
+    $data['recetas'] =
+        $recetaController
+            ->buscarRecetasPorNombre(
+                $valor
+            );
 
-        } elseif ($tipo === 'categoria') {
+} elseif ($tipo === 'categoria') {
 
-            $data['recetas'] =
-                $buscadorController
-                    ->buscarRecetasPorCategoria(
-                        $valor
-                    );
+    $data['recetas'] =
+        $recetaController
+            ->obtenerRecetasPorCategoria(
+                $valor
+            );
 
-        } elseif ($tipo === 'ingrediente') {
+} elseif ($tipo === 'ingrediente') {
 
     $data['recetas'] = [];
 

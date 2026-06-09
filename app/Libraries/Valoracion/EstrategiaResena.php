@@ -2,7 +2,8 @@
 namespace App\Libraries\Valoracion;
 
 use App\Models\VotoResenaModel;
-
+use App\Models\RecetaModel;
+use App\Models\ResenaModel;
 class EstrategiaResena implements EstrategiaValoracionInterface 
 {
     public function buscarVoto($idUsuario, $idPublicacion) 
@@ -41,5 +42,15 @@ class EstrategiaResena implements EstrategiaValoracionInterface
         }
 
         return true;
+    }
+
+     public function actualizarContadorVotos(
+        $idPublicacion
+    ) {
+        $resenaModel = new ResenaModel();
+
+        $resenaModel->actualizarContadorVotosSP(
+            $idPublicacion
+        );
     }
 }
