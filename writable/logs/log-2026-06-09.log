@@ -1,0 +1,622 @@
+DEBUG - 2026-06-09 04:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 04:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 04:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 04:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 04:48:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 04:48:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 04:55:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:02:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:02:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:02:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-09 07:02:42 --> MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `voto_resena` SET `tipo_voto` = \'0\'
+WHERE `id_usuario` = \'1\'
+AND `id_resena` = \'8\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `voto_resena` SET `tipo_voto` = \'0\'
+WHERE `id_usuario` = \'1\'
+AND `id_resena` = \'8\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `voto_resena` SET `tipo_voto` = \'0\'
+WHERE `id_usuario` = \'1\'
+AND `id_resena` = \'8\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `voto_resena` SET `tipo_voto` = :tipo_voto:
+WHERE `id_usuario` = :id_usuario:
+AND `id_resena` = :id_resena:', [...], false)
+ 5 SYSTEMPATH\Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1074): CodeIgniter\Model->doUpdate(null, [...])
+ 7 SYSTEMPATH\Model.php(709): CodeIgniter\BaseModel->update(null, [...])
+ 8 APPPATH\Libraries\Valoracion\EstrategiaResena.php(32): CodeIgniter\Model->update()
+ 9 APPPATH\Controllers\Valoracion.php(42): App\Libraries\Valoracion\EstrategiaResena->guardarVoto('1', '8', '0', [...])
+10 APPPATH\Controllers\Valoracion.php(15): App\Controllers\Valoracion->guardarVotoPublicacion('resena', '1', '8', '0', [...])
+11 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Valoracion->valorarPublicacion('resena', '1', '8', '0')
+12 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+13 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+14 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-09 07:02:42 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+[Method: POST, Route: votar-resena]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `voto_resena` SET `tipo_voto` = :tipo_voto:
+WHERE `id_usuario` = :id_usuario:
+AND `id_resena` = :id_resena:', [...], false)
+ 2 SYSTEMPATH\Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1074): CodeIgniter\Model->doUpdate(null, [...])
+ 4 SYSTEMPATH\Model.php(709): CodeIgniter\BaseModel->update(null, [...])
+ 5 APPPATH\Libraries\Valoracion\EstrategiaResena.php(32): CodeIgniter\Model->update()
+ 6 APPPATH\Controllers\Valoracion.php(42): App\Libraries\Valoracion\EstrategiaResena->guardarVoto('1', '8', '0', [...])
+ 7 APPPATH\Controllers\Valoracion.php(15): App\Controllers\Valoracion->guardarVotoPublicacion('resena', '1', '8', '0', [...])
+ 8 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Valoracion->valorarPublicacion('resena', '1', '8', '0')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-09 07:02:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `voto_resena` SET `tipo_voto` = \'0\'
+WHERE `id_usuario` = \'1\'
+AND `id_resena` = \'8\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `voto_resena` SET `tipo_voto` = \'0\'
+WHERE `id_usuario` = \'1\'
+AND `id_resena` = \'8\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `voto_resena` SET `tipo_voto` = :tipo_voto:
+WHERE `id_usuario` = :id_usuario:
+AND `id_resena` = :id_resena:', [...], false)
+ 4 SYSTEMPATH\Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1074): CodeIgniter\Model->doUpdate(null, [...])
+ 6 SYSTEMPATH\Model.php(709): CodeIgniter\BaseModel->update(null, [...])
+ 7 APPPATH\Libraries\Valoracion\EstrategiaResena.php(32): CodeIgniter\Model->update()
+ 8 APPPATH\Controllers\Valoracion.php(42): App\Libraries\Valoracion\EstrategiaResena->guardarVoto('1', '8', '0', [...])
+ 9 APPPATH\Controllers\Valoracion.php(15): App\Controllers\Valoracion->guardarVotoPublicacion('resena', '1', '8', '0', [...])
+10 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Valoracion->valorarPublicacion('resena', '1', '8', '0')
+11 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+12 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+13 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-09 07:02:42 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `voto_resena` SET `tipo_voto` = \'0\'
+WHERE `id_usuario` = \'1\'
+AND `id_resena` = \'8\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `voto_resena` SET `tipo_voto` = \'0\'
+WHERE `id_usuario` = \'1\'
+AND `id_resena` = \'8\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `voto_resena` SET `tipo_voto` = \'0\'
+WHERE `id_usuario` = \'1\'
+AND `id_resena` = \'8\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `voto_resena` SET `tipo_voto` = :tipo_voto:
+WHERE `id_usuario` = :id_usuario:
+AND `id_resena` = :id_resena:', [...], false)
+ 5 SYSTEMPATH\Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1074): CodeIgniter\Model->doUpdate(null, [...])
+ 7 SYSTEMPATH\Model.php(709): CodeIgniter\BaseModel->update(null, [...])
+ 8 APPPATH\Libraries\Valoracion\EstrategiaResena.php(32): CodeIgniter\Model->update()
+ 9 APPPATH\Controllers\Valoracion.php(42): App\Libraries\Valoracion\EstrategiaResena->guardarVoto('1', '8', '0', [...])
+10 APPPATH\Controllers\Valoracion.php(15): App\Controllers\Valoracion->guardarVotoPublicacion('resena', '1', '8', '0', [...])
+11 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Valoracion->valorarPublicacion('resena', '1', '8', '0')
+12 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+13 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+14 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 07:03:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 07:03:33 --> Error: Class "App\Libraries\Valoracion\ResenaModel" not found
+[Method: POST, Route: votar-resena]
+in APPPATH\Libraries\Valoracion\EstrategiaResena.php on line 49.
+ 1 APPPATH\Controllers\Valoracion.php(54): App\Libraries\Valoracion\EstrategiaResena->actualizarContadorVotos('8')
+ 2 APPPATH\Controllers\Valoracion.php(23): App\Controllers\Valoracion->actualizarContadorPublicacion('resena', '8')
+ 3 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Valoracion->valorarPublicacion('resena', '1', '8', '0')
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 07:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 07:03:33 --> Error: Class "App\Libraries\Valoracion\ResenaModel" not found
+[Method: POST, Route: votar-resena]
+in APPPATH\Libraries\Valoracion\EstrategiaResena.php on line 49.
+ 1 APPPATH\Controllers\Valoracion.php(54): App\Libraries\Valoracion\EstrategiaResena->actualizarContadorVotos('8')
+ 2 APPPATH\Controllers\Valoracion.php(23): App\Controllers\Valoracion->actualizarContadorPublicacion('resena', '8')
+ 3 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Valoracion->valorarPublicacion('resena', '1', '8', '1')
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 07:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:05:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 07:05:20 --> ErrorException: Undefined variable $valoracionController
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\API\RecetaApi.php on line 196.
+ 1 APPPATH\Controllers\API\RecetaApi.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $valoracionController', 'C:\\xampp\\htdocs\\proyecto_cocineritos\\app\\Controllers\\API\\RecetaApi.php', 196)
+ 2 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 07:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 07:06:11 --> ErrorException: Undefined variable $valoracionController
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\API\RecetaApi.php on line 196.
+ 1 APPPATH\Controllers\API\RecetaApi.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $valoracionController', 'C:\\xampp\\htdocs\\proyecto_cocineritos\\app\\Controllers\\API\\RecetaApi.php', 196)
+ 2 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 07:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:09:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:10:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 07:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:15:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:16:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 08:17:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 10:17:29 --> Error: Call to undefined method App\Controllers\Receta::buscarReceta()
+[Method: GET, Route: receta/5]
+in APPPATH\Controllers\API\RecetaApi.php on line 54.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->detalle('5')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 10:19:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:19:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:19:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:55:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 10:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:11:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:17:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:17:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 11:17:36 --> Error: Call to undefined method App\Controllers\Publicacion::publicarResena()
+[Method: POST, Route: guardar-resena]
+in APPPATH\Controllers\API\ResenaApi.php on line 81.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->guardarResena()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 11:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 11:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-09 17:10:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `db...', Array, false)
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(668): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Publicacion.php(161): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Publicacion.php(144): App\Controllers\Publicacion->registrarPublicacioResena(1, 1, 'Rese\xC3\xB1a creada ...')
+#9 C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php(15): App\Controllers\Publicacion->publicarResena(1, 1, 'Rese\xC3\xB1a creada ...')
+#10 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\contratosCriticosTest->testPublicarResena()
+#11 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#12 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+#13 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\contratosCriticosTest))
+#14 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+#15 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#16 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#17 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run(Array)
+#18 C:\xampp\htdocs\proyecto_cocineritos\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
+#19 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `db...', Array, false)
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(668): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Publicacion.php(161): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Publicacion.php(144): App\Controllers\Publicacion->registrarPublicacioResena(1, 1, 'Rese\xC3\xB1a creada ...')
+#8 C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php(15): App\Controllers\Publicacion->publicarResena(1, 1, 'Rese\xC3\xB1a creada ...')
+#9 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\contratosCriticosTest->testPublicarResena()
+#10 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#11 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+#12 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\contratosCriticosTest))
+#13 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+#14 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#15 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#16 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run(Array)
+#17 C:\xampp\htdocs\proyecto_cocineritos\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
+#18 {main}
+ERROR - 2026-06-09 17:10:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Libraries\Valoracion\EstrategiaReceta.php(9): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Valoracion.php(35): App\Libraries\Valoracion\EstrategiaReceta->buscarVoto(1, 1)
+#8 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Valoracion.php(9): App\Controllers\Valoracion->verificarVotoPublicacion('receta', 1, 1)
+#9 C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php(28): App\Controllers\Valoracion->valorarPublicacion('receta', 1, 1, 1)
+#10 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\contratosCriticosTest->testValorarPublicacion()
+#11 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#12 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+#13 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\contratosCriticosTest))
+#14 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+#15 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#16 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#17 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run(Array)
+#18 C:\xampp\htdocs\proyecto_cocineritos\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
+#19 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Libraries\Valoracion\EstrategiaReceta.php(9): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Valoracion.php(35): App\Libraries\Valoracion\EstrategiaReceta->buscarVoto(1, 1)
+#7 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Valoracion.php(9): App\Controllers\Valoracion->verificarVotoPublicacion('receta', 1, 1)
+#8 C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php(28): App\Controllers\Valoracion->valorarPublicacion('receta', 1, 1, 1)
+#9 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\contratosCriticosTest->testValorarPublicacion()
+#10 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#11 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+#12 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\contratosCriticosTest))
+#13 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+#14 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#15 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#16 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run(Array)
+#17 C:\xampp\htdocs\proyecto_cocineritos\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
+#18 {main}
+ERROR - 2026-06-09 17:14:41 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_1` FOREIGN KEY (`id_receta`) REFERENCES `receta` (`id_receta`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Reseña creada desde PHPUnit\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Reseña creada desde PHPUnit\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Reseña creada desde PHPUnit\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Publicacion.php(161): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Publicacion.php(144): App\Controllers\Publicacion->registrarPublicacioResena(1, 1, 'Reseña creada desde PHPUnit')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(15): App\Controllers\Publicacion->publicarResena(1, 1, 'Reseña creada desde PHPUnit')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\contratosCriticosTest->testPublicarResena()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\contratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+ERROR - 2026-06-09 17:14:41 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`voto_receta`, CONSTRAINT `voto_receta_ibfk_2` FOREIGN KEY (`id_receta`) REFERENCES `receta` (`id_receta`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `voto_receta` (`id_usuario`, `id_receta`, `tipo_voto`) VALUES (1, 1, 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `voto_receta` (`id_usuario`, `id_receta`, `tipo_voto`) VALUES (1, 1, 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `voto_receta` (`id_usuario`, `id_receta`, `tipo_voto`) VALUES (1, 1, 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `voto_receta` (`id_usuario`, `id_receta`, `tipo_voto`) VALUES (:id_usuario:, :id_receta:, :tipo_voto:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Libraries\Valoracion\EstrategiaReceta.php(17): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Valoracion.php(42): App\Libraries\Valoracion\EstrategiaReceta->guardarVoto(1, 1, 1, null)
+10 APPPATH\Controllers\Valoracion.php(15): App\Controllers\Valoracion->guardarVotoPublicacion('receta', 1, 1, 1, null)
+11 ROOTPATH\tests\Controllers\contratosCriticosTest.php(28): App\Controllers\Valoracion->valorarPublicacion('receta', 1, 1, 1)
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\contratosCriticosTest->testValorarPublicacion()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\contratosCriticosTest))
+16 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+18 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+19 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+20 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+DEBUG - 2026-06-09 17:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:25:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:26:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:28:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 15:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:00:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:14:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:23:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-09 22:23:52 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Receta.php(236): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(26): App\Controllers\Receta->obtenerRankingRecetas(6)
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\app\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener...', Array)
+#3 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Receta.php(236): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+#4 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\API\RecetaApi.php(26): App\Controllers\Receta->obtenerRankingRecetas(6)
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+#6 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+#7 C:\xampp\htdocs\proyecto_cocineritos\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\proyecto_cocineritos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\proyecto_cocineritos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-06-09 22:23:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\RecetaModel.php(32): CodeIgniter\Database\BaseConnection->query('CALL sp_obtener_ranking_recetas(?)', [...])
+ 3 APPPATH\Controllers\Receta.php(236): App\Models\RecetaModel->obtenerRankingRecetasSP(6)
+ 4 APPPATH\Controllers\API\RecetaApi.php(26): App\Controllers\Receta->obtenerRankingRecetas(6)
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 22:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 22:24:15 --> Error: Call to undefined method App\Controllers\Resena::obtenerRankingResenas()
+[Method: GET, Route: /]
+in APPPATH\Controllers\API\RecetaApi.php on line 30.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 22:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 22:25:17 --> Error: Call to undefined method App\Controllers\Resena::obtenerResenas()
+[Method: GET, Route: receta/5]
+in APPPATH\Controllers\API\RecetaApi.php on line 62.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->detalle('5')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 22:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:26:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:26:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 22:40:29 --> Error: Class "App\Controllers\Resena" not found
+[Method: GET, Route: /]
+in APPPATH\Controllers\API\RecetaApi.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->inicio()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 22:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 22:41:16 --> Error: Class "App\Controllers\Resena" not found
+[Method: GET, Route: receta/8]
+in APPPATH\Controllers\API\RecetaApi.php on line 49.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->detalle('8')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 22:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-09 22:41:45 --> Error: Call to undefined method App\Controllers\Valoracion::valorarPublicacion()
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\API\RecetaApi.php on line 216.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 22:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:42:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-09 22:42:33 --> MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `voto_receta` SET `tipo_voto` = \'1\'
+WHERE `id_usuario` = \'1\'
+AND `id_receta` = \'8\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `voto_receta` SET `tipo_voto` = \'1\'
+WHERE `id_usuario` = \'1\'
+AND `id_receta` = \'8\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `voto_receta` SET `tipo_voto` = \'1\'
+WHERE `id_usuario` = \'1\'
+AND `id_receta` = \'8\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `voto_receta` SET `tipo_voto` = :tipo_voto:
+WHERE `id_usuario` = :id_usuario:
+AND `id_receta` = :id_receta:', [...], false)
+ 5 SYSTEMPATH\Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1074): CodeIgniter\Model->doUpdate(null, [...])
+ 7 SYSTEMPATH\Model.php(709): CodeIgniter\BaseModel->update(null, [...])
+ 8 APPPATH\Libraries\Valoracion\EstrategiaReceta.php(15): CodeIgniter\Model->update()
+ 9 APPPATH\Controllers\Receta.php(364): App\Libraries\Valoracion\EstrategiaReceta->guardarVoto('1', '8', '1', [...])
+10 APPPATH\Controllers\Receta.php(337): App\Controllers\Receta->guardarVotoPublicacion('receta', '1', '8', '1', [...])
+11 APPPATH\Controllers\API\RecetaApi.php(215): App\Controllers\Receta->valorarPublicacion('receta', '1', '8', '1')
+12 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+13 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+14 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-09 22:42:34 --> CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+[Method: POST, Route: valorar-receta-manual]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `voto_receta` SET `tipo_voto` = :tipo_voto:
+WHERE `id_usuario` = :id_usuario:
+AND `id_receta` = :id_receta:', [...], false)
+ 2 SYSTEMPATH\Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1074): CodeIgniter\Model->doUpdate(null, [...])
+ 4 SYSTEMPATH\Model.php(709): CodeIgniter\BaseModel->update(null, [...])
+ 5 APPPATH\Libraries\Valoracion\EstrategiaReceta.php(15): CodeIgniter\Model->update()
+ 6 APPPATH\Controllers\Receta.php(364): App\Libraries\Valoracion\EstrategiaReceta->guardarVoto('1', '8', '1', [...])
+ 7 APPPATH\Controllers\Receta.php(337): App\Controllers\Receta->guardarVotoPublicacion('receta', '1', '8', '1', [...])
+ 8 APPPATH\Controllers\API\RecetaApi.php(215): App\Controllers\Receta->valorarPublicacion('receta', '1', '8', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-09 22:42:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `voto_receta` SET `tipo_voto` = \'1\'
+WHERE `id_usuario` = \'1\'
+AND `id_receta` = \'8\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `voto_receta` SET `tipo_voto` = \'1\'
+WHERE `id_usuario` = \'1\'
+AND `id_receta` = \'8\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `voto_receta` SET `tipo_voto` = :tipo_voto:
+WHERE `id_usuario` = :id_usuario:
+AND `id_receta` = :id_receta:', [...], false)
+ 4 SYSTEMPATH\Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1074): CodeIgniter\Model->doUpdate(null, [...])
+ 6 SYSTEMPATH\Model.php(709): CodeIgniter\BaseModel->update(null, [...])
+ 7 APPPATH\Libraries\Valoracion\EstrategiaReceta.php(15): CodeIgniter\Model->update()
+ 8 APPPATH\Controllers\Receta.php(364): App\Libraries\Valoracion\EstrategiaReceta->guardarVoto('1', '8', '1', [...])
+ 9 APPPATH\Controllers\Receta.php(337): App\Controllers\Receta->guardarVotoPublicacion('receta', '1', '8', '1', [...])
+10 APPPATH\Controllers\API\RecetaApi.php(215): App\Controllers\Receta->valorarPublicacion('receta', '1', '8', '1')
+11 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+12 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+13 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-09 22:42:34 --> [Caused by] mysqli_sql_exception: MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `voto_receta` SET `tipo_voto` = \'1\'
+WHERE `id_usuario` = \'1\'
+AND `id_receta` = \'8\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `voto_receta` SET `tipo_voto` = \'1\'
+WHERE `id_usuario` = \'1\'
+AND `id_receta` = \'8\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `voto_receta` SET `tipo_voto` = \'1\'
+WHERE `id_usuario` = \'1\'
+AND `id_receta` = \'8\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `voto_receta` SET `tipo_voto` = :tipo_voto:
+WHERE `id_usuario` = :id_usuario:
+AND `id_receta` = :id_receta:', [...], false)
+ 5 SYSTEMPATH\Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1074): CodeIgniter\Model->doUpdate(null, [...])
+ 7 SYSTEMPATH\Model.php(709): CodeIgniter\BaseModel->update(null, [...])
+ 8 APPPATH\Libraries\Valoracion\EstrategiaReceta.php(15): CodeIgniter\Model->update()
+ 9 APPPATH\Controllers\Receta.php(364): App\Libraries\Valoracion\EstrategiaReceta->guardarVoto('1', '8', '1', [...])
+10 APPPATH\Controllers\Receta.php(337): App\Controllers\Receta->guardarVotoPublicacion('receta', '1', '8', '1', [...])
+11 APPPATH\Controllers\API\RecetaApi.php(215): App\Controllers\Receta->valorarPublicacion('receta', '1', '8', '1')
+12 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+13 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+14 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-09 22:42:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:42:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:42:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:42:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:43:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 22:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 23:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 23:03:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 23:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 23:03:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 23:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 23:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 23:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 23:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-09 23:03:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

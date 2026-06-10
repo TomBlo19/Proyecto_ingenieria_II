@@ -1,0 +1,267 @@
+DEBUG - 2026-06-10 00:15:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 00:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:09:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-10 01:09:24 --> ErrorException: Undefined variable $idResena
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\API\RecetaApi.php on line 216.
+ 1 APPPATH\Controllers\API\RecetaApi.php(216): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idResena', 'C:\\xampp\\htdocs\\proyecto_cocineritos\\app\\Controllers\\API\\RecetaApi.php', 216)
+ 2 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-10 01:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-10 01:12:01 --> Error: Object of class App\Controllers\Receta could not be converted to string
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\API\RecetaApi.php on line 215.
+ 1 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-10 01:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-10 01:13:27 --> Error: Call to undefined method App\Controllers\Receta::actualizarContador()
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Controllers\Receta.php on line 352.
+ 1 APPPATH\Controllers\API\RecetaApi.php(215): App\Controllers\Receta->valorarPublicacion('receta', '1', '9', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-10 01:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:16:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:16:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:30:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-10 01:30:20 --> Error: Class "App\Libraries\Valoracion\EstrategiaResena" not found
+[Method: POST, Route: votar-resena]
+in APPPATH\Controllers\Receta.php on line 411.
+ 1 APPPATH\Controllers\Receta.php(356): App\Controllers\Receta->obtenerEstrategia('resena')
+ 2 APPPATH\Controllers\Receta.php(337): App\Controllers\Receta->verificarVotoPublicacion('resena', '1', '7')
+ 3 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Receta->valorarPublicacion('resena', '1', '7', '1')
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-10 01:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-10 01:31:17 --> Error: Class "App\App\Estrategia\EstrategiaResena" not found
+[Method: POST, Route: votar-resena]
+in APPPATH\Controllers\Receta.php on line 411.
+ 1 APPPATH\Controllers\Receta.php(356): App\Controllers\Receta->obtenerEstrategia('resena')
+ 2 APPPATH\Controllers\Receta.php(337): App\Controllers\Receta->verificarVotoPublicacion('resena', '1', '7')
+ 3 APPPATH\Controllers\API\ResenaApi.php(148): App\Controllers\Receta->valorarPublicacion('resena', '1', '7', '1')
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\ResenaApi->votarResena()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\ResenaApi))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-10 01:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 01:31:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:06:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:06:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:06:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-10 03:06:58 --> ErrorException: Undefined array key "id_voto_receta"
+[Method: POST, Route: valorar-receta-manual]
+in APPPATH\Estrategia\EstrategiaReceta.php on line 49.
+ 1 APPPATH\Estrategia\EstrategiaReceta.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_voto_receta"', 'C:\\xampp\\htdocs\\proyecto_cocineritos\\app\\Estrategia\\EstrategiaReceta.php', 49)
+ 2 APPPATH\Controllers\Receta.php(366): App\Estrategia\EstrategiaReceta->guardarVoto('1', '10', '1', [...])
+ 3 APPPATH\Controllers\API\RecetaApi.php(215): App\Controllers\Receta->valorarPublicacion('receta', '1', '10', '1')
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\API\RecetaApi->valorarReceta()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\API\RecetaApi))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-10 03:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 03:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-10 07:16:24 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (7, 3, \'Opinión\', \'Otra reseña válida\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (7, 3, \'Opinión\', \'Otra reseña válida\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (7, 3, \'Opinión\', \'Otra reseña válida\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Receta.php(172): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(155): App\Controllers\Receta->registrarPublicacioResena(3, 7, 'Otra reseña válida')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(32): App\Controllers\Receta->publicarResena(3, 7, 'Otra reseña válida')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testPublicarResena()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+ERROR - 2026-06-10 07:22:25 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (6, 6, \'Opinión\', \'me gusto\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (6, 6, \'Opinión\', \'me gusto\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (6, 6, \'Opinión\', \'me gusto\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Receta.php(172): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(155): App\Controllers\Receta->registrarPublicacioResena(6, 6, 'me gusto')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(24): App\Controllers\Receta->publicarResena(6, 6, 'me gusto')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testPublicarResena()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+ERROR - 2026-06-10 07:22:25 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_1` FOREIGN KEY (`id_receta`) REFERENCES `receta` (`id_receta`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 99999, \'Opinión\', \'Reseña inválida\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 99999, \'Opinión\', \'Reseña inválida\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 99999, \'Opinión\', \'Reseña inválida\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Receta.php(172): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(155): App\Controllers\Receta->registrarPublicacioResena(99999, 1, 'Reseña inválida')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(47): App\Controllers\Receta->publicarResena(99999, 1, 'Reseña inválida')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testPublicarResenaUsuarioInexistente()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+ERROR - 2026-06-10 07:23:42 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_1` FOREIGN KEY (`id_receta`) REFERENCES `receta` (`id_receta`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 99999, \'Opinión\', \'Reseña inválida\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 99999, \'Opinión\', \'Reseña inválida\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 99999, \'Opinión\', \'Reseña inválida\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Receta.php(172): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(155): App\Controllers\Receta->registrarPublicacioResena(99999, 1, 'Reseña inválida')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(48): App\Controllers\Receta->publicarResena(99999, 1, 'Reseña inválida')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testPublicarResenaUsuarioInexistente()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+ERROR - 2026-06-10 07:25:33 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (6, 99999, \'Opinión\', \'me gusto\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (6, 99999, \'Opinión\', \'me gusto\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (6, 99999, \'Opinión\', \'me gusto\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Receta.php(172): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(155): App\Controllers\Receta->registrarPublicacioResena(99999, 6, 'me gusto')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(29): App\Controllers\Receta->publicarResena(99999, 6, 'me gusto')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testPublicarResena()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+ERROR - 2026-06-10 07:25:33 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_1` FOREIGN KEY (`id_receta`) REFERENCES `receta` (`id_receta`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 99999, \'Opinión\', \'Reseña inválida\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 99999, \'Opinión\', \'Reseña inválida\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 99999, \'Opinión\', \'Reseña inválida\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Receta.php(172): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(155): App\Controllers\Receta->registrarPublicacioResena(99999, 1, 'Reseña inválida')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(44): App\Controllers\Receta->publicarResena(99999, 1, 'Reseña inválida')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testPublicarResenaUsuarioInexistente()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+CRITICAL - 2026-06-10 08:08:13 --> ErrorException: Cannot redeclare Tests\Controllers\ContratosCriticosTest::testPublicarResena()
+[Method: GET, Route: /]
+in ROOTPATH\tests\Controllers\contratosCriticosTest.php on line 39.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

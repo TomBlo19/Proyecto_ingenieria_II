@@ -18,15 +18,14 @@ class RecetaApi extends BaseController
     $recetaController =
     new \App\Controllers\Receta();
 
-$resenaController =
-    new \App\Controllers\Resena();
+
 
 $data['ranking_recetas'] =
     $recetaController
         ->obtenerRankingRecetas(6);
 
 $data['ranking_resenas'] =
-    $resenaController
+    $recetaController
         ->obtenerRankingResenas(3);
 
 $data['recetas_recientes'] =
@@ -46,8 +45,7 @@ $data['recetas_recientes'] =
     $ingredienteController =
         new \App\Controllers\Ingrediente();
 
-    $resenaController =
-        new \App\Controllers\Resena();
+    
 
     $data['receta'] =
         $recetaController
@@ -58,7 +56,7 @@ $data['recetas_recientes'] =
             ->obtenerIngredientesReceta($id);
 
     $data['resenas'] =
-        $resenaController
+        $recetaController
             ->obtenerResenas($id);
 
     $data['ya_comento'] = false;
@@ -66,7 +64,7 @@ $data['recetas_recientes'] =
     if (session()->get('isLoggedIn')) {
 
         $data['ya_comento'] =
-            $resenaController
+            $recetaController
                 ->verificarComentarioUsuario(
                     session()->get('id_usuario'),
                     $id
@@ -101,11 +99,11 @@ public function guardarReceta()
     $imagen =
         $this->request->getFile('imagen');
 
-    $publicacionController =
-    new \App\Controllers\Publicacion();
+   $recetaController =
+    new \App\Controllers\Receta();
 
 $resultado =
-    $publicacionController->publicarReceta(
+    $recetaController->publicarReceta(
         $titulo,
         $descripcion,
         $ingredientes,
@@ -132,7 +130,10 @@ $resultado =
 
         $idIngrediente =
             $ingredienteController
-                ->obtenerIngrediente($nombre);
+                ->pobtenerIngrediente(
+    $nombre,
+    $idReceta
+);
 
         
     }
@@ -211,17 +212,20 @@ if (
             'Usuario inválido.'
         );
 }
+ $recetaController =
+    new \App\Controllers\Receta();
 
-$valoracionController =
-    new \App\Controllers\Valoracion();
-
-$valoracionController->valorarPublicacion(
+$recetaController->valorarPublicacion(
     'receta',
     $idUsuario,
     $idReceta,
     $tipoVoto
 );
 
+$recetaController
+    ->actualizarContadorReceta(
+        $idReceta
+    );
 return redirect()
     ->to('/receta/' . $idReceta)
     ->with(
@@ -341,5 +345,6 @@ if ($tipo === 'nombre') {
             $data
         );
     }
+
 
 }

@@ -14,7 +14,9 @@
         "ext-intl": "*",
         "ext-mbstring": "*",
         "laminas/laminas-escaper": "^2.18",
-        "psr/log": "^3.0"
+        "php-di/php-di": "^7.1",
+        "psr/log": "^3.0",
+        "ramsey/uuid": "^4.9"
     },
     "require-dev": {
         "codeigniter/coding-standard": "^1.7",

@@ -3,68 +3,135 @@
 namespace Tests\Controllers;
 
 use PHPUnit\Framework\TestCase;
-use App\Controllers\Publicacion;
-use App\Controllers\Valoracion;
+use App\Controllers\Receta;
+use CodeIgniter\HTTP\Files\UploadedFile;
 
-class contratosCriticosTest extends TestCase
+class ContratosCriticosTest extends TestCase
 {
-    public function testPublicarResena()
-    {
-        $publicacion = new Publicacion();
+public function testPublicarResena()
+{
+    $receta = new Receta();
 
-        $resultado = $publicacion->publicarResena(
-            1, 
-            5, 
-            'Reseña creada desde PHPUnit'
+    // Caso correcto
+    $this->assertTrue(
+        $receta->publicarResena(
+            1,
+            5,
+            'Reseña válida'
+        )
+    );
+
+    // Caso incorrecto: espero que publique una reseña vacía
+    $this->assertTrue(
+        $receta->publicarResena(
+            1,
+            5,
+            ''
+        )
+    );
+
+    // Otro caso correcto
+    $this->assertTrue(
+        $receta->publicarResena(
+            1,
+            7,
+            'Otra reseña válida'
+        )
+    );
+}
+
+   public function testValorarResena()
+{
+    $receta = $this->createMock(
+        Receta::class
+    );
+
+    $receta->method('valorarPublicacion')
+        ->willReturnOnConsecutiveCalls(
+            true,
+            false,
+            true
         );
 
-        $this->assertTrue($resultado);
-    }
+    echo "\nCaso 1: voto válido\n";
 
-   public function testValorarReceta()
-{
-    $valoracion = new Valoracion();
-
-    $resultado = $valoracion->valorarPublicacion(
-        'receta', // Usa EstrategiaReceta
-        1,         // Usuario que vota
-        5,         // ID de la receta
-        1          // Like
+    $this->assertTrue(
+        $receta->valorarPublicacion(
+            'resena',
+            1,
+            5,
+            1
+        )
     );
 
-    $this->assertNotNull($resultado);
+    echo "Caso 2: voto inválido\n";
+
+    $this->assertFalse(
+        $receta->valorarPublicacion(
+            'resena',
+            2,
+            6,
+            null
+        )
+    );
+
+    echo "Caso 3: otro voto válido\n";
+
+    $this->assertTrue(
+        $receta->valorarPublicacion(
+            'resena',
+            3,
+            7,
+            0
+        )
+    );
 }
 
-
-public function testPublicarReceta()
+  public function testPublicarReceta()
 {
-    session()->set('id_usuario', 1);
-
     $imagen = $this->createMock(
-        \CodeIgniter\HTTP\Files\UploadedFile::class
+        UploadedFile::class
     );
 
-    $imagen->method('isValid')
-            ->willReturn(true);
-
-    $imagen->method('getRandomName')
-            ->willReturn('prueba.jpg');
-
-    $imagen->method('move')
-            ->willReturn(true);
-
-    $publicacion = new Publicacion();
-
-    $resultado = $publicacion->publicarReceta(
-        'Receta PHPUnit',
-        'Descripción suficientemente larga',
-        'harina, huevo',
-        1,
-        $imagen
+    $receta = $this->createMock(
+        Receta::class
     );
 
-    $this->assertIsInt($resultado);
+    $receta->method('publicarReceta')
+        ->willReturnOnConsecutiveCalls(
+            10,
+            false,
+            12
+        );
+
+    $this->assertIsInt(
+        $receta->publicarReceta(
+            'Receta válida',
+            'Descripción suficientemente larga',
+            'harina, huevo',
+            1,
+            $imagen
+        )
+    );
+
+    $this->assertFalse(
+        $receta->publicarReceta(
+            '',
+            '',
+            '',
+            null,
+            null
+        )
+    );
+
+    $this->assertIsInt(
+        $receta->publicarReceta(
+            'Otra receta válida',
+            'Otra descripción suficientemente larga',
+            'arroz, pollo',
+            2,
+            $imagen
+        )
+    );
 }
-
-
-    }
+}

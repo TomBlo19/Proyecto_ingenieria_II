@@ -53,11 +53,11 @@ public function guardarResena()
             );
     }
 
-   $resenaController =
-    new \App\Controllers\Resena();
+   $recetaController =
+    new \App\Controllers\Receta();
 
 if (
-    $resenaController
+    $recetaController
         ->verificarComentarioUsuario(
             $idUsuario,
             $idReceta
@@ -74,11 +74,10 @@ if (
     }
 
     
-    $publicacionController =
-    new \App\Controllers\Publicacion();
+    $recetaController =
+    new \App\Controllers\Receta();
 
-$publicacionController
-    ->publicarResena(
+$recetaController->publicarResena(
         $idUsuario,
         $idReceta,
         $textoResena
@@ -143,15 +142,20 @@ public function votarResena()
             );
     }
 
-   $valoracionController =
-    new \App\Controllers\Valoracion();
+   $recetaController =
+    new \App\Controllers\Receta();
 
-$valoracionController->valorarPublicacion(
+$recetaController->valorarPublicacion(
     'resena',
     $idUsuario,
     $idResena,
     $tipoVoto
 );
+
+$recetaController
+    ->actualizarContadorResena(
+        $idResena
+    );
 
 return redirect()
     ->to('/receta/' . $idReceta)
@@ -184,14 +188,14 @@ public function verResena(
     $idResena
 )
 {
-    $resenaController =
-        new \App\Controllers\Resena();
+    $recetaController =
+    new \App\Controllers\Receta();
 
-    $resena =
-        $resenaController
-            ->buscarResena(
-                $idResena
-            );
+$resena =
+    $recetaController
+        ->buscarResena(
+            $idResena
+        );
 
    return redirect()->to(
     '/receta/' .

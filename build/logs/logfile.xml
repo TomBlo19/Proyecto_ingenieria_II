@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Controllers\ContratosCriticosTest" file="C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.129815">
+    <testcase name="testValorarResena" file="C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php" line="43" class="Tests\Controllers\ContratosCriticosTest" classname="Tests.Controllers.ContratosCriticosTest" assertions="3" time="0.129815">
+      <system-out>
+Caso 1: voto válido
+Caso 2: voto inválido
+Caso 3: otro voto válido
+</system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
