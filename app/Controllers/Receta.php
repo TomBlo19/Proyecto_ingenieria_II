@@ -158,7 +158,19 @@ public function publicarResena(
         $textoResena
     );
 }
+public function registrarIngredienteReceta(
+    $idReceta,
+    $idIngrediente
+)
+{
+    $relacionModel =
+        new RecetaIngredienteModel();
 
+    $relacionModel->insert([
+        'id_receta'      => $idReceta,
+        'id_ingrediente' => $idIngrediente
+    ]);
+}
 
 
 private function  registrarPublicacioResena(
@@ -329,7 +341,7 @@ public function obtenerResenas(
             ->obtenerRankingResenasSP($limiteResena);
     }
 
-    ///valorar 
+
     
     ///// valorar publicaion 
 public function valorarPublicacion(
@@ -374,8 +386,6 @@ public function valorarPublicacion(
         $votoExistente
     );
 }
-
-
  
 public function actualizarContadorReceta(
     $idReceta
@@ -389,7 +399,6 @@ public function actualizarContadorReceta(
             $idReceta
         );
 }
-
 public function actualizarContadorResena(
     $idResena
 )
@@ -402,7 +411,4 @@ public function actualizarContadorResena(
             $idResena
         );
 }
-
-   
-
-}
+ }

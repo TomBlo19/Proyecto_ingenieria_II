@@ -1,3 +1,5 @@
 Contratos Criticos (Tests\Controllers\ContratosCriticos)
- [x] Valorar resena
+ [x] Publicar resena
+ [ ] Valorar publicacion
+ [x] Publicar receta
 

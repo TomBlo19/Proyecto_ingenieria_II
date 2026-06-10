@@ -80,7 +80,8 @@ $data['recetas_recientes'] =
 public function guardarReceta()
 {
     $recetaController =
-    new \App\Controllers\Receta();
+        new \App\Controllers\Receta();
+
     $ingredienteController =
         new \App\Controllers\Ingrediente();
 
@@ -99,17 +100,14 @@ public function guardarReceta()
     $imagen =
         $this->request->getFile('imagen');
 
-   $recetaController =
-    new \App\Controllers\Receta();
-
-$resultado =
-    $recetaController->publicarReceta(
-        $titulo,
-        $descripcion,
-        $ingredientes,
-        $categoria,
-        $imagen
-    );
+    $resultado =
+        $recetaController->publicarReceta(
+            $titulo,
+            $descripcion,
+            $ingredientes,
+            $categoria,
+            $imagen
+        );
 
     if (!is_numeric($resultado)) {
         return $resultado;
@@ -130,12 +128,15 @@ $resultado =
 
         $idIngrediente =
             $ingredienteController
-                ->pobtenerIngrediente(
-    $nombre,
-    $idReceta
-);
+                ->obtenerIngrediente(
+                    $nombre
+                );
 
-        
+        $recetaController
+            ->registrarIngredienteReceta(
+                $idReceta,
+                $idIngrediente
+            );
     }
 
     session()->setFlashdata(
@@ -143,7 +144,8 @@ $resultado =
         'Receta creada correctamente'
     );
 
-    return redirect()->to('/crear-receta');
+    return redirect()
+        ->to('/crear-receta');
 }
     public function mostrarFormularioReceta()
     {

@@ -8,11 +8,7 @@ use App\Models\RecetaIngredienteModel;
 class Ingrediente extends BaseController
 {
 
-
-public function obtenerIngrediente(
-    $nombre,
-    $idReceta
-)
+public function obtenerIngrediente($nombre)
 {
     $model = new IngredienteModel();
 
@@ -25,27 +21,13 @@ public function obtenerIngrediente(
 
     if ($ingrediente) {
 
-        $idIngrediente =
-            $ingrediente[
-                'id_ingrediente'
-            ];
-
-    } else {
-
-        $idIngrediente =
-            $this->registrarIngrediente(
-                $nombre
-            );
+        return $ingrediente['id_ingrediente'];
     }
 
-    $this->registrarIngredienteReceta(
-        $idReceta,
-        $idIngrediente
+    return $this->registrarIngrediente(
+        $nombre
     );
-
-    return $idIngrediente;
 }
-
 
 
 private  function registrarIngrediente($nombre)
@@ -60,18 +42,7 @@ private  function registrarIngrediente($nombre)
 }
 
 
-private function registrarIngredienteReceta(
-    $idReceta,
-    $idIngrediente
-)
-{
-    $relacionModel = new RecetaIngredienteModel();
 
-    $relacionModel->insert([
-        'id_receta'      => $idReceta,
-        'id_ingrediente' => $idIngrediente
-    ]);
-}
 
 
    //incrediente

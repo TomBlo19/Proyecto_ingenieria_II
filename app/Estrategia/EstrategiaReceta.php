@@ -19,60 +19,72 @@ class EstrategiaReceta implements EstrategiaValoracionInterface
             ->first();
     }
 
-    public function guardarVoto(
-        $idUsuario,
-        $idReceta,
-        $tipoVoto,
-        $votoExistente
+   public function guardarVoto(
+    $idUsuario,
+    $idReceta,
+    $tipoVoto,
+    $votoExistente
+) {
+    $tipoVoto = (int) $tipoVoto;
+
+    if (
+        !in_array(
+            $tipoVoto,
+            [0, 1],
+            true
+        )
     ) {
-        $model = new VotoRecetaModel();
+        return false;
+    }
 
-        Uuid::uuid4();
+    $model = new VotoRecetaModel();
 
-        if ($votoExistente) {
+    Uuid::uuid4();
 
-            if (
-                $votoExistente['tipo_voto']
-                === $tipoVoto
-            ) {
+    if ($votoExistente) {
 
-                $model
-                    ->where(
-                        'id_usuario',
-                        $idUsuario
-                    )
-                    ->where(
-                        'id_receta',
-                        $idReceta
-                    )
-                    ->delete();
+        if (
+            (int) $votoExistente['tipo_voto']
+    === $tipoVoto
+        ) {
 
-            } else {
-
-                $model
-                    ->where(
-                        'id_usuario',
-                        $idUsuario
-                    )
-                    ->where(
-                        'id_receta',
-                        $idReceta
-                    )
-                    ->set([
-                        'tipo_voto' => $tipoVoto
-                    ])
-                    ->update();
-            }
+            $model
+                ->where(
+                    'id_usuario',
+                    $idUsuario
+                )
+                ->where(
+                    'id_receta',
+                    $idReceta
+                )
+                ->delete();
 
         } else {
 
-            $model->insert([
-                'id_usuario' => $idUsuario,
-                'id_receta'  => $idReceta,
-                'tipo_voto'  => $tipoVoto
-            ]);
+            $model
+                ->where(
+                    'id_usuario',
+                    $idUsuario
+                )
+                ->where(
+                    'id_receta',
+                    $idReceta
+                )
+                ->set([
+                    'tipo_voto' => $tipoVoto
+                ])
+                ->update();
         }
 
-        return true;
+    } else {
+
+        $model->insert([
+            'id_usuario' => $idUsuario,
+            'id_receta'  => $idReceta,
+            'tipo_voto'  => $tipoVoto
+        ]);
     }
+
+    return true;
+}
 }

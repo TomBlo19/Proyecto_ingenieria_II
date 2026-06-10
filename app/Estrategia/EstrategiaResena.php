@@ -19,60 +19,72 @@ class EstrategiaResena implements EstrategiaValoracionInterface
             ->first();
     }
 
-    public function guardarVoto(
-        $idUsuario,
-        $idResena,
-        $tipoVoto,
-        $votoExistente
+   public function guardarVoto(
+    $idUsuario,
+    $idResena,
+    $tipoVoto,
+    $votoExistente
+) {
+    $tipoVoto = (int) $tipoVoto;
+
+    if (
+        !in_array(
+            $tipoVoto,
+            [0, 1],
+            true
+        )
     ) {
-        $model = new VotoResenaModel();
+        return false;
+    }
 
-        Uuid::uuid4();
+    $model = new VotoResenaModel();
 
-        if ($votoExistente) {
+    Uuid::uuid4();
 
-            if (
-                $votoExistente['tipo_voto']
-                === $tipoVoto
-            ) {
+    if ($votoExistente) {
 
-                $model
-                    ->where(
-                        'id_usuario',
-                        $idUsuario
-                    )
-                    ->where(
-                        'id_resena',
-                        $idResena
-                    )
-                    ->delete();
+        if (
+           (int) $votoExistente['tipo_voto']
+    === $tipoVoto
+        ) {
 
-            } else {
-
-                $model
-                    ->where(
-                        'id_usuario',
-                        $idUsuario
-                    )
-                    ->where(
-                        'id_resena',
-                        $idResena
-                    )
-                    ->set([
-                        'tipo_voto' => $tipoVoto
-                    ])
-                    ->update();
-            }
+            $model
+                ->where(
+                    'id_usuario',
+                    $idUsuario
+                )
+                ->where(
+                    'id_resena',
+                    $idResena
+                )
+                ->delete();
 
         } else {
 
-            $model->insert([
-                'id_usuario' => $idUsuario,
-                'id_resena'  => $idResena,
-                'tipo_voto'  => $tipoVoto
-            ]);
+            $model
+                ->where(
+                    'id_usuario',
+                    $idUsuario
+                )
+                ->where(
+                    'id_resena',
+                    $idResena
+                )
+                ->set([
+                    'tipo_voto' => $tipoVoto
+                ])
+                ->update();
         }
 
-        return true;
+    } else {
+
+        $model->insert([
+            'id_usuario' => $idUsuario,
+            'id_resena'  => $idResena,
+            'tipo_voto'  => $tipoVoto
+        ]);
     }
+
+    return true;
+}
 }

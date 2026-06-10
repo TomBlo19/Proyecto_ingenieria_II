@@ -265,3 +265,267 @@ CRITICAL - 2026-06-10 08:08:13 --> ErrorException: Cannot redeclare Tests\Contro
 [Method: GET, Route: /]
 in ROOTPATH\tests\Controllers\contratosCriticosTest.php on line 39.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2026-06-10 08:47:43 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Estrategia\EstrategiaResena.php(19): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Receta.php(365): App\Estrategia\EstrategiaResena->buscarVoto(1, 5)
+#8 C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php(49): App\Controllers\Receta->valorarPublicacion('resena', 1, 5, 1)
+#9 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testValorarResena()
+#10 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#11 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+#12 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+#13 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+#14 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#15 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#16 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run(Array)
+#17 C:\xampp\htdocs\proyecto_cocineritos\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
+#18 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Estrategia\EstrategiaResena.php(19): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Receta.php(365): App\Estrategia\EstrategiaResena->buscarVoto(1, 5)
+#7 C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php(49): App\Controllers\Receta->valorarPublicacion('resena', 1, 5, 1)
+#8 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testValorarResena()
+#9 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#10 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+#11 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+#12 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+#13 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#14 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#15 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run(Array)
+#16 C:\xampp\htdocs\proyecto_cocineritos\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
+#17 {main}
+ERROR - 2026-06-10 08:48:15 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'cocineritos', 3306, '', 0)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Estrategia\EstrategiaResena.php(19): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Receta.php(365): App\Estrategia\EstrategiaResena->buscarVoto(1, 5)
+#8 C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php(49): App\Controllers\Receta->valorarPublicacion('resena', 1, 5, 1)
+#9 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testValorarResena()
+#10 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#11 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+#12 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+#13 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+#14 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#15 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#16 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run(Array)
+#17 C:\xampp\htdocs\proyecto_cocineritos\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
+#18 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyecto_cocineritos\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyecto_cocineritos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyecto_cocineritos\system\Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyecto_cocineritos\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\proyecto_cocineritos\app\Estrategia\EstrategiaResena.php(19): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\proyecto_cocineritos\app\Controllers\Receta.php(365): App\Estrategia\EstrategiaResena->buscarVoto(1, 5)
+#7 C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php(49): App\Controllers\Receta->valorarPublicacion('resena', 1, 5, 1)
+#8 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testValorarResena()
+#9 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#10 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+#11 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+#12 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+#13 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#14 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#15 C:\xampp\htdocs\proyecto_cocineritos\vendor\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run(Array)
+#16 C:\xampp\htdocs\proyecto_cocineritos\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
+#17 {main}
+ERROR - 2026-06-10 08:50:17 --> Column 'tipo_voto' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `voto_resena` (`id_usuario`, `id_resena`, `tipo_voto`) VALUES (2, 6, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `voto_resena` (`id_usuario`, `id_resena`, `tipo_voto`) VALUES (2, 6, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `voto_resena` (`id_usuario`, `id_resena`, `tipo_voto`) VALUES (2, 6, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `voto_resena` (`id_usuario`, `id_resena`, `tipo_voto`) VALUES (:id_usuario:, :id_resena:, :tipo_voto:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Estrategia\EstrategiaResena.php(69): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(370): App\Estrategia\EstrategiaResena->guardarVoto(2, 6, null, null)
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(59): App\Controllers\Receta->valorarPublicacion('resena', 2, 6, null)
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testValorarResena()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+DEBUG - 2026-06-10 06:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 09:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 07:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 07:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 07:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 07:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 07:29:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 07:29:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 07:57:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 08:16:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 08:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 08:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 08:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 08:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 08:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 08:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 08:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 09:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 09:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 10:33:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 10:33:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 10:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 10:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 10:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 10:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 10:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-10 16:25:16 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_1` FOREIGN KEY (`id_receta`) REFERENCES `receta` (`id_receta`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Excelente receta\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Excelente receta\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Excelente receta\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Receta.php(184): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(155): App\Controllers\Receta->registrarPublicacioResena(1, 1, 'Excelente receta')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(19): App\Controllers\Receta->publicarResena(1, 1, 'Excelente receta')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testPublicarResena()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+ERROR - 2026-06-10 16:26:56 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_1` FOREIGN KEY (`id_receta`) REFERENCES `receta` (`id_receta`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Excelente receta\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Excelente receta\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Excelente receta\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Receta.php(184): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(155): App\Controllers\Receta->registrarPublicacioResena(1, 1, 'Excelente receta')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(18): App\Controllers\Receta->publicarResena(1, 1, 'Excelente receta')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testPublicarResena()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+ERROR - 2026-06-10 16:27:30 --> Cannot add or update a child row: a foreign key constraint fails (`cocineritos`.`resena`, CONSTRAINT `resena_ibfk_1` FOREIGN KEY (`id_receta`) REFERENCES `receta` (`id_receta`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Excelente receta\', 0, 0)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Excelente receta\', 0, 0)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (1, 1, \'Opinión\', \'Excelente receta\', 0, 0)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `resena` (`id_receta`, `id_usuario`, `titulo_resena`, `comentario_resena`, `cant_likes`, `cant_dislikes`) VALUES (:id_receta:, :id_usuario:, :titulo_resena:, :comentario_resena:, :cant_likes:, :cant_dislikes:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Receta.php(184): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Receta.php(155): App\Controllers\Receta->registrarPublicacioResena(1, 1, 'Excelente receta')
+10 ROOTPATH\tests\Controllers\contratosCriticosTest.php(18): App\Controllers\Receta->publicarResena(1, 1, 'Excelente receta')
+11 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(1667): Tests\Controllers\ContratosCriticosTest->testPublicarResena()
+12 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+13 VENDORPATH\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+14 VENDORPATH\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(Tests\Controllers\ContratosCriticosTest))
+15 VENDORPATH\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+16 VENDORPATH\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+17 VENDORPATH\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+18 VENDORPATH\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run([...])
+19 VENDORPATH\bin\phpunit(122): include('C:\\xampp\\htdocs\\proyecto_cocineritos\\vendor\\phpunit\\phpunit\\phpunit')
+DEBUG - 2026-06-10 14:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 17:04:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 17:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 17:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 17:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:48:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:51:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:51:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:51:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:52:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:52:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 15:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 18:00:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 18:09:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 18:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-10 16:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
