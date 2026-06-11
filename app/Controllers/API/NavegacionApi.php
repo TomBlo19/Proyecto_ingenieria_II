@@ -45,8 +45,10 @@ public function login()
 
  public function guardar()
 {
+    $usuarioController =
+        new \App\Controllers\Usuario();
 
-    $this->registrarUsuario(
+    $usuarioController->registrarUsuario(
         $this->request->getPost('nombre'),
         $this->request->getPost('correo'),
         $this->request->getPost('password')

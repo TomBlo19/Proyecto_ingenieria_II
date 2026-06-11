@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Tests\Controllers\ContratosCriticosTest" file="C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php" tests="3" assertions="16" errors="0" failures="1" skipped="0" time="0.340514">
-    <testcase name="testPublicarResena" file="C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php" line="32" class="Tests\Controllers\ContratosCriticosTest" classname="Tests.Controllers.ContratosCriticosTest" assertions="5" time="0.104533"/>
-    <testcase name="testValorarPublicacion" file="C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php" line="86" class="Tests\Controllers\ContratosCriticosTest" classname="Tests.Controllers.ContratosCriticosTest" assertions="5" time="0.122966">
-      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Controllers\ContratosCriticosTest::testValorarPublicacion&#13;
-Failed asserting that false is true.
-&#13;
-C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php:131</failure>
-    </testcase>
-    <testcase name="testPublicarReceta" file="C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php" line="155" class="Tests\Controllers\ContratosCriticosTest" classname="Tests.Controllers.ContratosCriticosTest" assertions="6" time="0.113015"/>
+  <testsuite name="Tests\Controllers\ContratosCriticosTest" file="C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php" tests="1" assertions="5" errors="0" failures="0" skipped="0" time="0.879531">
+    <testcase name="testPublicarResena" file="C:\xampp\htdocs\proyecto_cocineritos\tests\Controllers\contratosCriticosTest.php" line="32" class="Tests\Controllers\ContratosCriticosTest" classname="Tests.Controllers.ContratosCriticosTest" assertions="5" time="0.879531"/>
   </testsuite>
 </testsuites>
